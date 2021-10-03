@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "623876782101",
+    "project_id": "tech-cuttie",
+    "storage_bucket": "tech-cuttie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623876782101:android:c2ad2b200650faf306f61c",
+        "android_client_info": {
+          "package_name": "com.sifer.tech_cuttie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623876782101-bcppoca3fh613kj1b48fj9vcn6r4b8q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCChiJ7z-NKJeb2hFxUXgfdJed8zF7U91E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623876782101-bcppoca3fh613kj1b48fj9vcn6r4b8q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
