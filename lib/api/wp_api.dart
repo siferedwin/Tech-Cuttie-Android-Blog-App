@@ -7,3 +7,10 @@ Future<List> fetchWpPosts() async {
   var convertDatatoJson = jsonDecode(response.body);
   return convertDatatoJson;
 }
+
+Future<List> fetchWpPostImageUrl(href) async {
+  final response = await http.get(href,
+      headers: {"Accept": "application/json"});
+  var convertDatatoJson = jsonDecode(response.body);
+  return convertDatatoJson;
+}

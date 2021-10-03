@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tech_cuttie/api/wp_api.dart';
-import 'package:tech_cuttie/pages/post_widget.dart';
 import 'package:wordpress_api/wordpress_api.dart';
+
+import 'package:tech_cuttie/api/wp_api.dart';
 
 WordPressAPI api = WordPressAPI('wp-site.com');
 
@@ -28,19 +28,24 @@ class _BlogsWidgetState extends State<BlogsWidget> {
         //   elevation: 4,
         // ),
         // backgroundColor: Color(0xFFF5F5F5),
-        body: FutureBuilder(
+        body: FutureBuilder<List>(
           future: fetchWpPosts(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              ListView.builder(
-                itemCount: snapshot.data!.hashCode,
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, int index) {
-                  Map wppost = snapshot.data[index];
-                  return Text(wppost["title"]["rendered"]);
+                  Map wppost = snapshot.data![index];
+                  return PostTile(
+                      content: wppost["content"]["rendered"],
+                      desc: wppost["excerpt"]["rendered"],
+                      href: '',
+                      // wppost["_links"]["wp:featuredmedia"][0]["href"],
+                      title: wppost["title"]["rendered"]);
                 },
               );
             }
-            return const CircularProgressIndicator();
+            return const Center(child: CircularProgressIndicator());
           },
         )
         // SafeArea(
@@ -99,5 +104,24 @@ class _BlogsWidgetState extends State<BlogsWidget> {
 
         // ),
         );
+  }
+}
+
+class PostTile extends StatelessWidget {
+  final String title, href, desc, content;
+  // ignore: use_key_in_widget_constructors
+  const PostTile({
+     required this.content,
+    required this.desc,
+    required this.href,
+    required this.title,
+  });
+  
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [Text(title), Text(desc)],
+    );
   }
 }
