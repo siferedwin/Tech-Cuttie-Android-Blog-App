@@ -1,7 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:tech_cuttie/pages/abbreviations.dart';
+import 'package:tech_cuttie/pages/about_widget.dart';
+import 'package:tech_cuttie/pages/affiliate.dart';
+import 'package:tech_cuttie/pages/ask.dart';
+import 'package:tech_cuttie/pages/contact_widget.dart';
+import 'package:tech_cuttie/pages/disclaimer_widget.dart';
+import 'package:tech_cuttie/pages/faq.dart';
+import 'package:tech_cuttie/pages/glossary_widget.dart';
+import 'package:tech_cuttie/pages/newsletter_widget.dart';
+import 'package:tech_cuttie/pages/privacy_widget.dart';
+import 'package:tech_cuttie/pages/quiz.dart';
 import 'package:tech_cuttie/pages/reviews_widget.dart';
 import 'package:tech_cuttie/pages/services_widget.dart';
+import 'package:tech_cuttie/pages/terms_widget.dart';
+import 'package:tech_cuttie/pages/tips_widget.dart';
 
 
 
@@ -86,7 +99,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Ask()));
                     },
                   ),
                 ),
@@ -114,7 +127,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Quiz()));
                     },
                   ),
                 ),
@@ -142,7 +155,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Glossary()));
                     },
                   ),
                 ),
@@ -170,7 +183,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Abbreviations()));
                     },
                   ),
                 ),
@@ -226,7 +239,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const FAQs()));
                     },
                   ),
                 ),
@@ -254,7 +267,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Tips()));
                     },
                   ),
                 ),
@@ -282,7 +295,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Terms()));
                     },
                   ),
                 ),
@@ -310,7 +323,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Disclaimer()));
                     },
                   ),
                 ),
@@ -338,7 +351,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Privacy()));
                     },
                   ),
                 ),
@@ -366,7 +379,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const About()));
                     },
                   ),
                 ),
@@ -394,7 +407,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Newsletter()));
                     },
                   ),
                 ),
@@ -422,7 +435,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Contact()));
                     },
                   ),
                 ),
@@ -450,7 +463,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                       await Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
+                              builder: (context) => const Affiliate()));
                     },
                   ),
                 ),
