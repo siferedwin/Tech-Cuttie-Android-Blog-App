@@ -14,6 +14,15 @@ class Posts extends StatefulWidget {
 class _PostState extends State<Posts> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title:Text(widget.title),),
+      body: ListView(children: [
+        FadeInImage.assetNetwork(
+                                  placeholder: 'assets/images/loading.gif',
+                                  image: widget.imageurl,
+                                ),
+
+      ],),
+    );
   }
 }

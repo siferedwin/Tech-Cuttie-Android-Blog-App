@@ -18,6 +18,7 @@ class BlogsWidget extends StatefulWidget {
 }
 
 class _BlogsWidgetState extends State<BlogsWidget> {
+  var imageUrl = '';
   final api = WordPressAPI('techcuttie.com');
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -42,9 +43,21 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
                   var imageurl = wppost["featured_image_src"];
+                  var title=wppost['title']['rendered'];
+                  var desc=parse((wppost['excerpt']['rendered'])
+                                        .toString())
+                                    .documentElement!
+                                    .text;
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Posts(desc: '', imageurl: '', title: '',)));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>  Posts(
+                                    desc: desc,
+                                    imageurl: imageurl,
+                                    title: title,
+                                  )));
                     },
                     child: Padding(
                         padding: const EdgeInsets.all(8.0),
