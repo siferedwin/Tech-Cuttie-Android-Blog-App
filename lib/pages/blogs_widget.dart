@@ -2,6 +2,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tech_cuttie/pages/posts_widget.dart';
 import 'package:wordpress_api/wordpress_api.dart';
 import 'package:html/parser.dart';
 
@@ -40,38 +41,52 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
-                  var imageurl=wppost["featured_image_src"];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: 
-                    Card(child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(children: [
-                        FadeInImage.assetNetwork(placeholder: 'assets/images/loading.gif', image: imageurl,),
-                        
-                        Text(wppost['title']['rendered'],style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-                        Text(parse((wppost['excerpt']['rendered']).toString()).documentElement!.text)
-
-                      ],),
-                    ),))
-                  ;
+                  var imageurl = wppost["featured_image_src"];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Posts(desc: '', imageurl: '', title: '',)));
+                    },
+                    child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                FadeInImage.assetNetwork(
+                                  placeholder: 'assets/images/loading.gif',
+                                  image: imageurl,
+                                ),
+                                Text(wppost['title']['rendered'],
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold)),
+                                Text(parse((wppost['excerpt']['rendered'])
+                                        .toString())
+                                    .documentElement!
+                                    .text)
+                              ],
+                            ),
+                          ),
+                        )),
+                  );
                 },
               );
             }
             return Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Image.asset('assets/images/loading.gif'),
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text('Please wait as the latest posts update.'),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Image.asset('assets/images/loading.gif'),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Please wait as the latest posts update.'),
+                    )
+                  ],
+                ),
+              ),
+            );
           },
         ));
   }
@@ -106,7 +121,7 @@ class _PostTileState extends State<PostTile> {
                     if (snapshot.hasData) {
                       return Image.network(widget.href);
                     }
-                    return  Center(
+                    return Center(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset('assets/images/loading.gif'),
@@ -115,7 +130,11 @@ class _PostTileState extends State<PostTile> {
                   }),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(widget.title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                child: Text(
+                  widget.title,
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
