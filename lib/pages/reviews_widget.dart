@@ -16,7 +16,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leading: IconButton(
           // borderColor: Colors.transparent,
@@ -24,7 +24,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
           // buttonSize: 46,
           icon: const Icon(
             Icons.arrow_back_rounded,
-            color: Color(0xFF95A1AC),
+            // color: Color(0xFF95A1AC),
             size: 24,
           ),
           onPressed: () async {
@@ -35,7 +35,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
           'Reviews',
           style: TextStyle(
             fontFamily: 'Lexend Deca',
-            color: Color(0xFF151B1E),
+            // color: Color(0xFF151B1E),
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
@@ -44,7 +44,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: const Color(0xFFF1F4F8),
+      // backgroundColor: const Color(0xFFF1F4F8),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -53,11 +53,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
               Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  // color: Colors.white,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3,
-                      color: Color(0x39000000),
+                      // color: Color(0x39000000),
                       offset: Offset(0, 1),
                     )
                   ],
@@ -73,13 +73,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 12),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                             child: Text(
                               '2,503',
                               style: TextStyle(
                                 fontFamily: 'Lexend Deca',
-                                color: Color(0xFF090F13),
+                                // color: Color(0xFF090F13),
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -89,7 +89,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                             '# of Ratings',
                             style: TextStyle(
                               fontFamily: 'Lexend Deca',
-                              color: Color(0xFF95A1AC),
+                              // color: Color(0xFF95A1AC),
                               fontSize: 12,
                               fontWeight: FontWeight.normal,
                             ),
@@ -104,13 +104,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: const [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0, 0, 0, 12),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                                 child: Text(
                                   '4.6',
                                   style: TextStyle(
                                     fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF090F13),
+                                    // color: Color(0xFF090F13),
                                     fontSize: 28,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -131,7 +131,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                             'Avg. Rating',
                             style: TextStyle(
                               fontFamily: 'Lexend Deca',
-                              color: Color(0xFF8B97A2),
+                              // color: Color(0xFF8B97A2),
                               fontSize: 12,
                               fontWeight: FontWeight.normal,
                             ),
@@ -151,11 +151,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.96,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        // color: Colors.white,
                         boxShadow: const [
                           BoxShadow(
                             blurRadius: 4,
-                            color: Color(0x33000000),
+                            // color: Color(0x33000000),
                             offset: Offset(0, 2),
                           )
                         ],
@@ -185,7 +185,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           'Vacation Home',
                                           style: TextStyle(
                                             fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF151B1E),
+                                            // color: Color(0xFF151B1E),
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -201,7 +201,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             ),
                                             direction: Axis.horizontal,
                                             rating: 5,
-                                            unratedColor: const Color(0xFF95A1AC),
+                                            unratedColor:
+                                                const Color(0xFF95A1AC),
                                             itemCount: 5,
                                             itemSize: 24,
                                           ),
@@ -210,7 +211,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                     ),
                                     Card(
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      color: const Color(0xFFDBE2E7),
+                                      // color: const Color(0xFFDBE2E7),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(40),
                                       ),
@@ -224,8 +225,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
-                                          child: Image.asset(
-                                            'assets/images/userAvatar.png',
+                                          child: Image.network(
+                                            'https://picsum.photos/seed/837/604',
                                           ),
                                         ),
                                       ),
@@ -244,7 +245,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                         style: TextStyle(
                                           fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF8B97A2),
+                                          // color: Color(0xFF8B97A2),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -270,11 +271,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.96,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        // color: Colors.white,
                         boxShadow: const [
                           BoxShadow(
                             blurRadius: 4,
-                            color: Color(0x33000000),
+                            // color: Color(0x33000000),
                             offset: Offset(0, 2),
                           )
                         ],
@@ -304,7 +305,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           'Vacation Home',
                                           style: TextStyle(
                                             fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF151B1E),
+                                            // color: Color(0xFF151B1E),
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -320,7 +321,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             ),
                                             direction: Axis.horizontal,
                                             rating: 5,
-                                            unratedColor: const Color(0xFF95A1AC),
+                                            unratedColor:
+                                                const Color(0xFF95A1AC),
                                             itemCount: 5,
                                             itemSize: 24,
                                           ),
@@ -329,7 +331,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                     ),
                                     Card(
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      color: const Color(0xFFDBE2E7),
+                                      // color: const Color(0xFFDBE2E7),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(40),
                                       ),
@@ -343,8 +345,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
-                                          child: Image.asset(
-                                            'assets/images/userAvatar.png',
+                                          child: Image.network(
+                                            'https://picsum.photos/seed/837/605',
                                           ),
                                         ),
                                       ),
@@ -363,7 +365,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                         style: TextStyle(
                                           fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF8B97A2),
+                                          // color: Color(0xFF8B97A2),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -385,11 +387,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.96,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    // color: Colors.white,
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 4,
-                        color: Color(0x33000000),
+                        // color: Color(0x33000000),
                         offset: Offset(0, 2),
                       )
                     ],
@@ -412,11 +414,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                   const Text(
+                                    const Text(
                                       'Vacation Home',
                                       style: TextStyle(
                                         fontFamily: 'Lexend Deca',
-                                        color:  Color(0xFF151B1E),
+                                        // color:  Color(0xFF151B1E),
                                         fontSize: 18,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -442,7 +444,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                 ),
                                 Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  color: const Color(0xFFDBE2E7),
+                                  // color: const Color(0xFFDBE2E7),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40),
                                   ),
@@ -457,8 +459,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Image.asset(
-                                        'assets/images/userAvatar.png',
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/837/607',
                                       ),
                                     ),
                                   ),
@@ -477,7 +479,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                     style: TextStyle(
                                       fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
+                                      // color: Color(0xFF8B97A2),
                                       fontSize: 14,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -497,11 +499,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.96,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    // color: Colors.white,
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 4,
-                        color: Color(0x33000000),
+                        // color: Color(0x33000000),
                         offset: Offset(0, 2),
                       )
                     ],
@@ -524,11 +526,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                   const Text(
+                                    const Text(
                                       'Vacation Home',
                                       style: TextStyle(
                                         fontFamily: 'Lexend Deca',
-                                        color: Color(0xFF151B1E),
+                                        // color: Color(0xFF151B1E),
                                         fontSize: 18,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -554,7 +556,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                 ),
                                 Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  color: const Color(0xFFDBE2E7),
+                                  // color: const Color(0xFFDBE2E7),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40),
                                   ),
@@ -569,8 +571,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Image.asset(
-                                        'assets/images/userAvatar.png',
+                                      child: Image.network(
+                                        'https://picsum.photos/seed/837/608',
                                       ),
                                     ),
                                   ),
@@ -589,7 +591,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                                     style: TextStyle(
                                       fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
+                                      // color: Color(0xFF8B97A2),
                                       fontSize: 14,
                                       fontWeight: FontWeight.normal,
                                     ),

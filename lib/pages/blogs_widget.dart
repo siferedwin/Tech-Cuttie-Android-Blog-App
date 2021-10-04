@@ -36,20 +36,21 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
-                  return PostTile(
-                      content: wppost["content"]["rendered"],
-                      desc: wppost["excerpt"]["rendered"],
-                      href: 
-                      wppost["guid"]["wp:featured_media"][0]["href"],
-                      title: wppost["title"]["rendered"]);
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: PostTile(
+                        content: '',
+                        desc: '',
+                        href: '',
+                        // wppost["guid"]["wp:featured_media"][0]["href"],
+                        title: wppost["title"]["rendered"]),
+                  );
                 },
               );
             }
             return const Center(child: CircularProgressIndicator());
           },
-        )
-
-        );
+        ));
   }
 }
 
@@ -72,24 +73,27 @@ class _PostTileState extends State<PostTile> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FutureBuilder(
-              future: fetchWpPostImageUrl(widget.href),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Image.network('https://picsum.photos/seed/837/600');
-                }
-                return const Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: CircularProgressIndicator(),
-                  ),
-                );
-              }),
-          Text(widget.title),
-          Text(widget.desc)
-        ],
+      child: Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FutureBuilder(
+                future: fetchWpPostImageUrl(widget.href),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Image.network('https://picsum.photos/seed/837/600');
+                  }
+                  return const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+                }),
+            Text(widget.title),
+            Text(widget.desc)
+          ],
+        ),
       ),
     );
   }
