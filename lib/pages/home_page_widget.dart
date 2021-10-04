@@ -25,78 +25,105 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         scrollDirection: Axis.vertical,
         children: [
           const Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+            padding:  EdgeInsets.all(8.0),
             child: Text(
-              'Tech is just a click if you have the time',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Poppins',
+                'Tech is just a click if you have the time',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                ),),),
+            const Padding(
+            
+              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: Text(
+                'Welcome to Tech Cuttie, a destination for any tech enthusiast. We offer the best articles and information solutions related to computers and how they work.',
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-            child: Container(
-              width: 100,
-              height: 100,
-              decoration: const BoxDecoration(
-                  // color: Color(0xFFEEEEEE),
-                  ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: const [
-                      Text(
-                        'Blog Categories',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
+            const Padding(
+            padding:  EdgeInsets.all(8.0),
+            child: Text(
+                'Here is Our Platform Structure',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                ),),),
+                Center(child: CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-3.png?resize=299%2C169&ssl=1')),
+            const Padding(
+            padding:  EdgeInsets.all(8.0),
+            child: Text(
+                "The website offers classified and personalized information to help users make the most of this time while learning even more than they initially learned. The site has a main blog called Knowledge Base from which a user can view a list of recent articles that have been checked and updated. The posts are organized into categories and tags which help categorize related information. The user can select the different categories they want via a side panel on each page they are on."
+               , textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                ),),),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+              child: Container(
+                width: 100,
+                height: 100,
+                decoration: const BoxDecoration(
+                    // color: Color(0xFFEEEEEE),
+                    ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: const [
+                        Text(
+                          'Blog Categories',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                          ),
                         ),
-                      ),
-                      Icon(
-                        Icons.navigate_next_outlined,
-                        color: Colors.black,
-                        size: 24,
-                      )
-                    ],
-                  )
-                ],
+                        Icon(
+                          Icons.navigate_next_outlined,
+                          color: Colors.black,
+                          size: 24,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-            child: Container(
-              width: 100,
-              height: 100,
-              decoration: const BoxDecoration(
-                  // color: Color(0xFFEEEEEE),
-                  ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: const [
-                      Text(
-                        'Recent Blogs',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+              child: Container(
+                width: 100,
+                height: 100,
+                decoration: const BoxDecoration(
+                    // color: Color(0xFFEEEEEE),
+                    ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: const [
+                        Text(
+                          'Recent Blogs',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                          ),
                         ),
-                      ),
-                      Icon(
-                        Icons.navigate_next_outlined,
-                        color: Colors.black,
-                        size: 24,
-                      )
-                    ],
-                  )
-                ],
+                        Icon(
+                          Icons.navigate_next_outlined,
+                          color: Colors.black,
+                          size: 24,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            )
+        ,
+          ],
       ),
     ),
     const BlogsWidget(),
@@ -140,7 +167,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                   ),
-                  child: CachedNetworkImage(imageUrl: 'https://picsum.photos/seed/835/600'),
+                  // ignore: unrelated_type_equality_checks
+                  child: Image.asset('assets/images/user_loading.gif'),
                 ),
               ),
               Row(

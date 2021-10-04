@@ -44,6 +44,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                   Map wppost = snapshot.data![index];
                   var imageurl = wppost["featured_image_src"];
                   var title = wppost['title']['rendered'];
+                  var link = wppost['link'];
                   var content = parse((wppost['excerpt']['rendered']).toString())
                       .documentElement!
                       .text;
@@ -56,6 +57,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                           MaterialPageRoute(
                               builder: (context) => Posts(
                                     content: content,
+                                    link: link,
                                     imageurl: imageurl,
                                     title: title, htmlContent: htmlContent,
                                   )));
@@ -95,7 +97,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                     Image.asset('assets/images/loading.gif'),
                     const Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('Please wait as the latest posts update.'),
+                      child: Text('Please wait as the latest posts update...'),
                     )
                   ],
                 ),

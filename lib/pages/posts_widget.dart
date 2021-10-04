@@ -3,12 +3,13 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Posts extends StatefulWidget {
-  final String imageurl, title, content, htmlContent;
+  final String imageurl, title, content, htmlContent,link;
 
   const Posts({
     Key? key,
     required this.imageurl,
     required this.title,
+    required this.link,
     required this.content,
     required this.htmlContent,
   }) : super(key: key);
@@ -25,7 +26,7 @@ class _PostState extends State<Posts> {
       appBar: AppBar(
         title: const Text('Knowledge Base'),
         actions: [
-          like
+          like == false
               ? IconButton(
                   onPressed: () {
                     launch('https://widgets.wp.com/likes/#');
@@ -44,7 +45,8 @@ class _PostState extends State<Posts> {
                   icon: const Icon(Icons.favorite)),
           IconButton(
               onPressed: () {
-                launch('https://techcuttie.com');
+                launch(widget.link,);
+                
               },
               icon: const Icon(Icons.share_rounded))
         ],
