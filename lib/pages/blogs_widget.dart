@@ -1,7 +1,9 @@
+// ignore: unused_import
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:wordpress_api/wordpress_api.dart';
+import 'package:html/parser.dart';
 
 import 'package:tech_cuttie/api/wp_api.dart';
 
@@ -38,15 +40,17 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
-                  var imageurl=wppost["embedded"]["wp:featuredmedia"][0]["source_url"];
+                  var imageurl=wppost["featured_image_src"];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: 
                     Card(child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(children: [
-                        CachedNetworkImage(imageUrl: imageurl),
-                        Text(wppost['title']['rendered'],style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold))
+                        FadeInImage.assetNetwork(placeholder: 'assets/images/loading.gif', image: imageurl,),
+                        
+                        Text(wppost['title']['rendered'],style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        Text(parse((wppost['excerpt']['rendered']).toString()).documentElement!.text)
 
                       ],),
                     ),))
@@ -59,7 +63,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          CachedNetworkImage(imageUrl: 'https://picsum.photos/id/1/367/267'),
+                          Image.asset('assets/images/loading.gif'),
                           const Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text('Please wait as the latest posts update.'),
@@ -105,7 +109,7 @@ class _PostTileState extends State<PostTile> {
                     return  Center(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: CachedNetworkImage(imageUrl: 'https://picsum.photos/id/0/367/267'),
+                        child: Image.asset('assets/images/loading.gif'),
                       ),
                     );
                   }),
