@@ -38,15 +38,19 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
+                  var imageurl=wppost["embedded"]["wp:featuredmedia"][0]["source_url"];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: PostTile(
-                        content: '',
-                        desc: '',
-                        href: '',
-                        // wppost["guid"]["wp:featured_media"][0]["href"],
-                        title: wppost["title"]["rendered"]),
-                  );
+                    child: 
+                    Card(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(children: [
+                        CachedNetworkImage(imageUrl: imageurl),
+                        Text(wppost['title']['rendered'],style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold))
+
+                      ],),
+                    ),))
+                  ;
                 },
               );
             }
