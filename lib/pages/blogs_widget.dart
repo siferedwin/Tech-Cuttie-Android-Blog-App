@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wordpress_api/wordpress_api.dart';
 
@@ -48,7 +49,20 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 },
               );
             }
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CachedNetworkImage(imageUrl: 'https://picsum.photos/id/1/367/267'),
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text('Please wait as the latest posts update.'),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
           },
         ));
   }
@@ -71,30 +85,42 @@ class PostTile extends StatefulWidget {
 class _PostTileState extends State<PostTile> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            FutureBuilder(
-                future: fetchWpPostImageUrl(widget.href),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Image.network('https://picsum.photos/seed/837/600');
-                  }
-                  return const Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: CircularProgressIndicator(),
-                    ),
-                  );
-                }),
-            Text(widget.title),
-            Text(widget.desc)
-          ],
+    return Column(
+      children: [
+        Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FutureBuilder(
+                      future: fetchWpPostImageUrl(widget.href),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Image.network(widget.href);
+                        }
+                        return  Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CachedNetworkImage(imageUrl: 'https://picsum.photos/id/0/367/267'),
+                          ),
+                        );
+                      }),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(widget.title),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(widget.desc),
+                  )
+                ],
+              ),
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
