@@ -13,7 +13,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
         // backgroundColor: Colors.white,
@@ -330,8 +331,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       ],
                                     ),
                                     Card(
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      
                                       // color: const Color(0xFFDBE2E7),
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(40),
                                       ),
@@ -611,5 +613,6 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
         ),
       ),
     );
+  
   }
 }

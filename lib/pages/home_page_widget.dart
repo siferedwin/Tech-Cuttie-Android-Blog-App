@@ -5,10 +5,7 @@ import 'package:tech_cuttie/pages/blogs_widget.dart';
 import 'package:tech_cuttie/pages/more_widget.dart';
 import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
-import 'package:tech_cuttie/pages/welcome_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import 'login_sign_up_widget.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);

@@ -65,8 +65,12 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                     child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Column(
                               children: [
                                 FadeInImage.assetNetwork(
@@ -80,7 +84,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                 Text(parse((wppost['excerpt']['rendered'])
                                         .toString())
                                     .documentElement!
-                                    .text)
+                                    .text.replaceAll('Click Your preferred platform to share:TweetPocketTelegramWhatsAppPrintShare on Tumblr', ""))
                               ],
                             ),
                           ),
@@ -128,6 +132,10 @@ class _PostTileState extends State<PostTile> {
     return Column(
       children: [
         Card(
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

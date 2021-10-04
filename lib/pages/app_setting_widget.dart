@@ -8,14 +8,13 @@ class AppSettingWidget extends StatefulWidget {
 }
 
 class _AppSettingWidgetState extends State<AppSettingWidget> {
- 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    bool switchListTileValue1=true;
-    bool switchListTileValue2=true;
-    bool switchListTileValue3=true;
+    bool switchListTileValue1 = true;
+    bool switchListTileValue2 = true;
+    bool switchListTileValue3 = true;
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
@@ -163,7 +162,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
             child: ElevatedButton(
-              onPressed: () async {},
+              onPressed: () async {
+                Navigator.pop(context);
+              },
               child: const Text('Save Settings'),
             ),
             // TextButton(

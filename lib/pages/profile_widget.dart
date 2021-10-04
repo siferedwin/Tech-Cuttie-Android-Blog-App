@@ -15,7 +15,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: const Color(0xFF262D34),
+      // backgroundColor: const Color(0xFF262D34),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -23,6 +23,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
               child: Card(
+                
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 color: const Color(0xFF4B39EF),
                 elevation: 2,
@@ -67,7 +68,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 '[User Name]',
                                 style: TextStyle(
                                   fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -86,7 +87,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 'User.name@domainname.com',
                                 style: TextStyle(
                                   fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF95A1AC),
+                                  // color: Color(0xFF95A1AC),
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
@@ -111,7 +112,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     children: [
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: const Color(0x250D9BF1),
+                        // color: const Color(0x250D9BF1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -142,7 +143,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Chat',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -155,7 +156,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     children: [
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: const Color(0x250D9BF1),
+                        // color: const Color(0x250D9BF1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -186,7 +187,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Video Call',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -199,7 +200,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     children: [
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: const Color(0x250D9BF1),
+                        // color: const Color(0x250D9BF1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -231,7 +232,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Call',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -244,7 +245,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     children: [
                       Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color:const Color(0x250D9BF1),
+                        // color:const Color(0x250D9BF1),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -276,7 +277,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Follow',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Colors.white,
+                            // color: Colors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -292,7 +293,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               thickness: 2,
               indent: 16,
               endIndent: 16,
-              color: Color(0x250D9BF1),
+              // color: Color(0x250D9BF1),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
@@ -308,7 +309,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Company',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF95A1AC),
+                            // color: Color(0xFF95A1AC),
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -326,7 +327,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             'Flutterflow',
                             style: TextStyle(
                               fontFamily: 'Lexend Deca',
-                              color: Colors.white,
+                              // color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
@@ -352,7 +353,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'User Bio',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF95A1AC),
+                            // color: Color(0xFF95A1AC),
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -370,7 +371,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             'I have a proven track record of working with clients, coming up with project briefs, solving existing problems and offering solutions that increase revenue & user engagement. My focus is in Product & User Experience Design, I have worked on over 120 projects over the last 8 years.',
                             style: TextStyle(
                               fontFamily: 'Lexend Deca',
-                              color: Colors.white,
+                              // color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
@@ -396,7 +397,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Local Time',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF95A1AC),
+                            // color: Color(0xFF95A1AC),
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -414,7 +415,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             '4:20pm',
                             style: TextStyle(
                               fontFamily: 'Lexend Deca',
-                              color: Colors.white,
+                              // color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
@@ -440,7 +441,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           'Address',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF95A1AC),
+                            // color: Color(0xFF95A1AC),
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -458,7 +459,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             '1492 West Sential Way, \nSan Mateo CA 928101',
                             style: TextStyle(
                               fontFamily: 'Lexend Deca',
-                              color: Colors.white,
+                              // color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
