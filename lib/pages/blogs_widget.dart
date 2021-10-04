@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:wordpress_api/wordpress_api.dart';
 
 import 'package:tech_cuttie/api/wp_api.dart';
@@ -87,37 +88,32 @@ class _PostTileState extends State<PostTile> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  FutureBuilder(
-                      future: fetchWpPostImageUrl(widget.href),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Image.network(widget.href);
-                        }
-                        return  Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CachedNetworkImage(imageUrl: 'https://picsum.photos/id/0/367/267'),
-                          ),
-                        );
-                      }),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(widget.title),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(widget.desc),
-                  )
-                ],
+        Card(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FutureBuilder(
+                  future: fetchWpPostImageUrl(widget.href),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Image.network(widget.href);
+                    }
+                    return  Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CachedNetworkImage(imageUrl: 'https://picsum.photos/id/0/367/267'),
+                      ),
+                    );
+                  }),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(widget.title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(widget.desc),
+              )
+            ],
           ),
         ),
       ],
