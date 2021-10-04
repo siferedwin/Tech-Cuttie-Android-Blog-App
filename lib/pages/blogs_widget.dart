@@ -43,20 +43,21 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
                   var imageurl = wppost["featured_image_src"];
-                  var title=wppost['title']['rendered'];
-                  var desc=parse((wppost['excerpt']['rendered'])
-                                        .toString())
-                                    .documentElement!
-                                    .text;
+                  var title = wppost['title']['rendered'];
+                  var content = parse((wppost['excerpt']['rendered']).toString())
+                      .documentElement!
+                      .text;
+                  var htmlContent=wppost['content']['rendered'];
+
                   return GestureDetector(
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  Posts(
-                                    desc: desc,
+                              builder: (context) => Posts(
+                                    content: content,
                                     imageurl: imageurl,
-                                    title: title,
+                                    title: title, htmlContent: htmlContent,
                                   )));
                     },
                     child: Padding(
@@ -151,7 +152,7 @@ class _PostTileState extends State<PostTile> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(widget.desc),
+                child: Text(widget.content),
               )
             ],
           ),
