@@ -13,6 +13,12 @@ class _SearchWidgetState extends State<SearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: const Center(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Center(child: Text('The search functionality is still underconstruction. We will notify you as soon as it is complete. \n Thank you!'),),
+        ),
+      ),
       key: scaffoldKey,
       // appBar: AppBar(
       //   backgroundColor: Colors.deepPurple,
