@@ -1,5 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:tech_cuttie/pages/consultancy_widget.dart';
+import 'package:tech_cuttie/pages/content_widget.dart';
+import 'package:tech_cuttie/pages/development_widget.dart';
+import 'package:tech_cuttie/pages/excel_widget.dart';
+import 'package:tech_cuttie/pages/retouching.dart';
+import 'package:tech_cuttie/pages/web_widget.dart';
 
 class ServicesWidget extends StatefulWidget {
   const ServicesWidget({Key? key}) : super(key: key);
@@ -45,18 +51,9 @@ class _ServicesState extends State<ServicesWidget> {
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Column(mainAxisSize: MainAxisSize.max, children: [
-          Container(
+          SizedBox(
             width: double.infinity,
-            decoration: const BoxDecoration(
-              // color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 3,
-                  // color: Color(0x39000000),
-                  offset: Offset(0, 1),
-                )
-              ],
-            ),
+            
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
               child: Row(
@@ -66,12 +63,58 @@ class _ServicesState extends State<ServicesWidget> {
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')],
+                    children: [
+                      CachedNetworkImage(
+                          imageUrl:
+                              'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1')
+                    ],
                   ),
                 ],
               ),
             ),
           ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'The platform further offers a variety of in-house and site-linked programs or services to its users. The users can be assured to have the best results and delivery of whatever tasks that they may require help doing. A brief listing of the services is such as:',
+            ),
+          ),
+          ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Development()));
+              },
+              child: const Text('Cross-platform app development')),
+          ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const WebDesign()));
+              },
+              child: const Text('Website design and Implementation')),
+          ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Content()));
+              },
+              child: const Text('Content Writing and Copywriting')),
+          ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Excel()));
+              },
+              child: const Text('Excel Data analysis and manipulation')),
+          ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Retouching()));
+              },
+              child: const Text('Image Retouching and Editing')),
+          ElevatedButton(
+              onPressed: () async {
+                await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Consultancy()));
+              },
+              child: const Text('Tech Consultancy')),
         ]))));
   }
 }
