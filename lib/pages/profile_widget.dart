@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +13,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         // backgroundColor: const Color(0xFF262D34),
         body: Scrollbar(
@@ -57,7 +55,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -66,8 +65,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
                                 Padding(
-                                  padding:
-                                      EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 0, 0),
                                   child: Text(
                                     '[User Name]',
                                     style: TextStyle(
@@ -85,8 +84,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
                                 Padding(
-                                  padding:
-                                      EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 4, 0, 0),
                                   child: Text(
                                     'User.name@domainname.com',
                                     style: TextStyle(
@@ -121,8 +120,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  2, 2, 2, 2),
                               child: ElevatedButton(
                                 onPressed: () async {},
                                 child: const Icon(Icons.chat_bubble),
@@ -166,8 +165,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  2, 2, 2, 2),
                               child: ElevatedButton(
                                 onPressed: () async {},
                                 child: const Icon(Icons.videocam_rounded),
@@ -211,8 +210,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  2, 2, 2, 2),
                               child: ElevatedButton(
                                 onPressed: () async {},
                                 child: const Icon(Icons.call_end_rounded),
@@ -256,8 +255,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  2, 2, 2, 2),
                               child: ElevatedButton(
                                 onPressed: () async {},
                                 child: const Icon(Icons.add_alert_rounded),
@@ -310,7 +309,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'Company',
                               style: TextStyle(
@@ -328,7 +328,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         children: const [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 'Flutterflow',
                                 style: TextStyle(
@@ -354,7 +355,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'User Bio',
                               style: TextStyle(
@@ -372,7 +374,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         children: const [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 'I have a proven track record of working with clients, coming up with project briefs, solving existing problems and offering solutions that increase revenue & user engagement. My focus is in Product & User Experience Design, I have worked on over 120 projects over the last 8 years.',
                                 style: TextStyle(
@@ -398,7 +401,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'Local Time',
                               style: TextStyle(
@@ -416,7 +420,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         children: const [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 '4:20pm',
                                 style: TextStyle(
@@ -442,7 +447,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'Address',
                               style: TextStyle(
@@ -460,7 +466,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         children: const [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 '1492 West Sential Way, \nSan Mateo CA 928101',
                                 style: TextStyle(
@@ -481,7 +488,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }

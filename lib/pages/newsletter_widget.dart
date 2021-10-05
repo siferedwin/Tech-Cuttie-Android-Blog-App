@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +11,7 @@ class Newsletter extends StatefulWidget {
 class _ServicesState extends State<Newsletter> {
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
           appBar: AppBar(
             // backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
@@ -78,7 +76,7 @@ class _ServicesState extends State<Newsletter> {
                 ),
               ),
             ),
-          ])))),
+          ]))),
     );
   }
 }

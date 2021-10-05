@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +11,7 @@ class Abbreviations extends StatefulWidget {
 class _ServicesState extends State<Abbreviations> {
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return Scaffold(
           appBar: AppBar(
             // backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
@@ -32,7 +30,6 @@ class _ServicesState extends State<Abbreviations> {
             ),
             title: const Text(
               'Abbreviations',
-              
             ),
             actions: const [],
             centerTitle: false,
@@ -41,9 +38,9 @@ class _ServicesState extends State<Abbreviations> {
           // backgroundColor: const Color(0xFFF1F4F8),
           body: SafeArea(
               child: Scrollbar(
-                child: SingleChildScrollView(
-                    child: Column(mainAxisSize: MainAxisSize.max, children: [
-                        Container(
+            child: SingleChildScrollView(
+                child: Column(mainAxisSize: MainAxisSize.max, children: [
+              Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   // color: Colors.white,
@@ -64,14 +61,18 @@ class _ServicesState extends State<Abbreviations> {
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')],
+                        children: [
+                          CachedNetworkImage(
+                              imageUrl:
+                                  'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')
+                        ],
                       ),
                     ],
                   ),
                 ),
-                        ),
-                      ])),
-              ))),
-    );
+              ),
+            ])),
+          )));
+    
   }
 }

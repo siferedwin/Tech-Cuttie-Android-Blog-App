@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -14,8 +13,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
           // backgroundColor: Colors.white,
@@ -66,7 +64,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -107,8 +106,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: const [
                                   Padding(
-                                    padding:
-                                        EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 0, 12),
                                     child: Text(
                                       '4.6',
                                       style: TextStyle(
@@ -120,8 +119,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        EdgeInsetsDirectional.fromSTEB(4, 0, 0, 12),
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        4, 0, 0, 12),
                                     child: Icon(
                                       Icons.star_rounded,
                                       color: Color(0xFFFFA130),
@@ -150,7 +149,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.96,
                           decoration: BoxDecoration(
@@ -165,16 +165,17 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                2, 2, 2, 2),
                             child: Scrollbar(
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16, 12, 16, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -195,11 +196,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(0, 4, 0, 4),
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(0, 4, 0, 4),
                                                 child: RatingBarIndicator(
-                                                  itemBuilder: (context, index) =>
-                                                      const Icon(
+                                                  itemBuilder:
+                                                      (context, index) =>
+                                                          const Icon(
                                                     Icons.star_rounded,
                                                     color: Color(0xFFFFA130),
                                                   ),
@@ -214,14 +217,17 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             ],
                                           ),
                                           Card(
-                                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                                            clipBehavior:
+                                                Clip.antiAliasWithSaveLayer,
                                             // color: const Color(0xFFDBE2E7),
                                             shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(40),
+                                              borderRadius:
+                                                  BorderRadius.circular(40),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(2, 2, 2, 2),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(2, 2, 2, 2),
                                               child: Container(
                                                 width: 50,
                                                 height: 50,
@@ -239,8 +245,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16, 4, 16, 12),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16, 4, 16, 12),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: const [
@@ -272,7 +279,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.96,
                           decoration: BoxDecoration(
@@ -287,16 +295,17 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                2, 2, 2, 2),
                             child: Scrollbar(
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16, 12, 16, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16, 12, 16, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -317,11 +326,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(0, 4, 0, 4),
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(0, 4, 0, 4),
                                                 child: RatingBarIndicator(
-                                                  itemBuilder: (context, index) =>
-                                                      const Icon(
+                                                  itemBuilder:
+                                                      (context, index) =>
+                                                          const Icon(
                                                     Icons.star_rounded,
                                                     color: Color(0xFFFFA130),
                                                   ),
@@ -337,13 +348,16 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           ),
                                           Card(
                                             // color: const Color(0xFFDBE2E7),
-                                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                                            clipBehavior:
+                                                Clip.antiAliasWithSaveLayer,
                                             shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(40),
+                                              borderRadius:
+                                                  BorderRadius.circular(40),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(2, 2, 2, 2),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(2, 2, 2, 2),
                                               child: Container(
                                                 width: 50,
                                                 height: 50,
@@ -361,8 +375,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16, 4, 16, 12),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16, 4, 16, 12),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: const [
@@ -405,7 +420,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                         child: Scrollbar(
                           child: SingleChildScrollView(
                             child: Column(
@@ -416,11 +432,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       16, 12, 16, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           const Text(
                                             'Vacation Home',
@@ -432,9 +450,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 4),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0, 4, 0, 4),
                                             child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   const Icon(
@@ -443,7 +460,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                               ),
                                               direction: Axis.horizontal,
                                               rating: 5,
-                                              unratedColor: const Color(0xFF95A1AC),
+                                              unratedColor:
+                                                  const Color(0xFF95A1AC),
                                               itemCount: 5,
                                               itemSize: 24,
                                             ),
@@ -451,15 +469,16 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                         ],
                                       ),
                                       Card(
-                                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
                                         // color: const Color(0xFFDBE2E7),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(40),
+                                          borderRadius:
+                                              BorderRadius.circular(40),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  2, 2, 2, 2),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(2, 2, 2, 2),
                                           child: Container(
                                             width: 50,
                                             height: 50,
@@ -519,7 +538,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                         child: Scrollbar(
                           child: SingleChildScrollView(
                             child: Column(
@@ -530,11 +550,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                       16, 12, 16, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           const Text(
                                             'Vacation Home',
@@ -546,9 +568,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 4),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0, 4, 0, 4),
                                             child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   const Icon(
@@ -557,7 +578,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                               ),
                                               direction: Axis.horizontal,
                                               rating: 5,
-                                              unratedColor: const Color(0xFF95A1AC),
+                                              unratedColor:
+                                                  const Color(0xFF95A1AC),
                                               itemCount: 5,
                                               itemSize: 24,
                                             ),
@@ -565,15 +587,16 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                         ],
                                       ),
                                       Card(
-                                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
                                         // color: const Color(0xFFDBE2E7),
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(40),
+                                          borderRadius:
+                                              BorderRadius.circular(40),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  2, 2, 2, 2),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(2, 2, 2, 2),
                                           child: Container(
                                             width: 50,
                                             height: 50,
@@ -622,7 +645,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 
 class PostWidget extends StatefulWidget {
@@ -15,8 +14,7 @@ class _PostWidgetState extends State<PostWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         // appBar: AppBar(
         //   backgroundColor: Colors.white,
@@ -39,7 +37,7 @@ class _PostWidgetState extends State<PostWidget> {
         //   centerTitle: false,
         //   elevation: 0,
         // ),
-    
+
         backgroundColor: Colors.white,
         body: Stack(
           children: [
@@ -79,7 +77,8 @@ class _PostWidgetState extends State<PostWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(20, 4, 20, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(20, 4, 20, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: const [
@@ -118,7 +117,8 @@ class _PostWidgetState extends State<PostWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(20, 8, 20, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(20, 8, 20, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: const [
@@ -144,7 +144,8 @@ class _PostWidgetState extends State<PostWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                           )
                         ],
                       ),
@@ -174,7 +175,8 @@ class _PostWidgetState extends State<PostWidget> {
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                       child: ElevatedButton(
                         onPressed: () async {},
                         child: const Text('Purchase Product'),
@@ -207,7 +209,7 @@ class _PostWidgetState extends State<PostWidget> {
             )
           ],
         ),
-      ),
+      
     );
   }
 }

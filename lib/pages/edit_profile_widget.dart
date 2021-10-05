@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 
 class EditprofileWidget extends StatefulWidget {
@@ -29,8 +28,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -307,7 +305,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

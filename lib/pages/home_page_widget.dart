@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -206,8 +205,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: ThemeSwitchingArea(
-        child: Scaffold(
+      child: Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
             // backgroundColor: Colors.deepPurple,
@@ -215,8 +213,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             title: Center(
                 child: Text(
               'Tech Cuttie',
-              style:
-                  GoogleFonts.lobster(fontSize: 42, fontWeight: FontWeight.bold),
+              style: GoogleFonts.lobster(
+                  fontSize: 42, fontWeight: FontWeight.bold),
             )),
             actions: [
               InkWell(
@@ -295,7 +293,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ],
           ),
         ),
-      ),
+      
     );
   }
 

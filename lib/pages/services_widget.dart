@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/consultancy_widget.dart';
@@ -18,8 +17,7 @@ class ServicesWidget extends StatefulWidget {
 class _ServicesState extends State<ServicesWidget> {
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
           appBar: AppBar(
             // backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
@@ -52,9 +50,9 @@ class _ServicesState extends State<ServicesWidget> {
           // backgroundColor: const Color(0xFFF1F4F8),
           body: SafeArea(
               child: Scrollbar(
-                child: SingleChildScrollView(
-                    child: Column(mainAxisSize: MainAxisSize.max, children: [
-                        SizedBox(
+            child: SingleChildScrollView(
+                child: Column(mainAxisSize: MainAxisSize.max, children: [
+              SizedBox(
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
@@ -74,14 +72,14 @@ class _ServicesState extends State<ServicesWidget> {
                     ],
                   ),
                 ),
-                        ),
-                        const Padding(
+              ),
+              const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'The platform further offers a variety of in-house and site-linked programs or services to its users. The users can be assured to have the best results and delivery of whatever tasks that they may require help doing. A brief listing of the services is such as:',
                 ),
-                        ),
-                        ElevatedButton(
+              ),
+              ElevatedButton(
                   onPressed: () async {
                     await Navigator.push(
                         context,
@@ -89,25 +87,29 @@ class _ServicesState extends State<ServicesWidget> {
                             builder: (context) => const Development()));
                   },
                   child: const Text('Cross-platform app development')),
-                        ElevatedButton(
+              ElevatedButton(
                   onPressed: () async {
-                    await Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const WebDesign()));
+                    await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WebDesign()));
                   },
                   child: const Text('Website design and Implementation')),
-                        ElevatedButton(
+              ElevatedButton(
                   onPressed: () async {
-                    await Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Content()));
+                    await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Content()));
                   },
                   child: const Text('Content Writing and Copywriting')),
-                        ElevatedButton(
+              ElevatedButton(
                   onPressed: () async {
                     await Navigator.push(context,
                         MaterialPageRoute(builder: (context) => const Excel()));
                   },
                   child: const Text('Excel Data analysis and manipulation')),
-                        ElevatedButton(
+              ElevatedButton(
                   onPressed: () async {
                     await Navigator.push(
                         context,
@@ -115,7 +117,7 @@ class _ServicesState extends State<ServicesWidget> {
                             builder: (context) => const Retouching()));
                   },
                   child: const Text('Image Retouching and Editing')),
-                        ElevatedButton(
+              ElevatedButton(
                   onPressed: () async {
                     await Navigator.push(
                         context,
@@ -123,8 +125,8 @@ class _ServicesState extends State<ServicesWidget> {
                             builder: (context) => const Consultancy()));
                   },
                   child: const Text('Tech Consultancy')),
-                      ])),
-              ))),
+            ])),
+          )),
     );
   }
 }

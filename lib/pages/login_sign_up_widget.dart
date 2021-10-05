@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -48,8 +47,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
         _focusEmail.unfocus();
         _focusPassword.unfocus();
       },
-      child: ThemeSwitchingArea(
-        child: Scaffold(
+      child: Scaffold(
           body: Scrollbar(
             child: SingleChildScrollView(
               child: FutureBuilder(
@@ -82,11 +80,13 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0, 24, 0, 20),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0, 24, 0, 20),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           CachedNetworkImage(
                                               imageUrl:
@@ -124,7 +124,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.normal,
                                                 ),
-                                                enabledBorder: OutlineInputBorder(
+                                                enabledBorder:
+                                                    OutlineInputBorder(
                                                   borderSide: const BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
@@ -132,7 +133,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(8),
                                                 ),
-                                                focusedBorder: OutlineInputBorder(
+                                                focusedBorder:
+                                                    OutlineInputBorder(
                                                   borderSide: const BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
@@ -141,12 +143,14 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                       BorderRadius.circular(8),
                                                 ),
                                                 filled: true,
-                                                fillColor: const Color(0xFF4334C9),
-                                                prefixIcon:
-                                                    const Icon(Icons.email_rounded),
+                                                fillColor:
+                                                    const Color(0xFF4334C9),
+                                                prefixIcon: const Icon(
+                                                    Icons.email_rounded),
                                                 contentPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(20, 24, 20, 24),
+                                                            .fromSTEB(
+                                                        20, 24, 20, 24),
                                               ),
                                               style: const TextStyle(
                                                 // fontFamily: 'Lexend Deca',
@@ -160,8 +164,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          20, 12, 20, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20, 12, 20, 0),
                                       child: TextFormField(
                                         controller: _passwordTextController,
                                         focusNode: _focusPassword,
@@ -190,20 +195,22 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                               color: Color(0x00000000),
                                               width: 1,
                                             ),
-                                            borderRadius: BorderRadius.circular(8),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: const BorderSide(
                                               color: Color(0x00000000),
                                               width: 1,
                                             ),
-                                            borderRadius: BorderRadius.circular(8),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
                                           ),
                                           filled: true,
                                           fillColor: const Color(0xFF3D30B4),
                                           contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20, 24, 20, 24),
+                                              const EdgeInsetsDirectional
+                                                  .fromSTEB(20, 24, 20, 24),
                                           prefixIcon:
                                               const Icon(Icons.lock_rounded),
                                           suffixIcon: InkWell(
@@ -214,7 +221,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                             child: Icon(
                                               passwordVisibility
                                                   ? Icons.visibility_outlined
-                                                  : Icons.visibility_off_outlined,
+                                                  : Icons
+                                                      .visibility_off_outlined,
                                               // color: const Color(0x98FFFFFF),
                                               size: 20,
                                             ),
@@ -229,8 +237,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 20, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20, 0, 20, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -251,7 +260,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                     User? user = await FireAuth
                                                         .signInUsingEmailPassword(
                                                       email:
-                                                          _emailTextController.text,
+                                                          _emailTextController
+                                                              .text,
                                                       password:
                                                           _passwordTextController
                                                               .text,
@@ -291,15 +301,17 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                 child: const Text('Sign In'),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(0, 12, 0, 0),
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(0, 12, 0, 0),
                                                 child: Container(
                                                   width: 90,
                                                   height: 3,
                                                   decoration: BoxDecoration(
                                                     // color: Colors.white,
                                                     borderRadius:
-                                                        BorderRadius.circular(2),
+                                                        BorderRadius.circular(
+                                                            2),
                                                   ),
                                                 ),
                                               )
@@ -311,7 +323,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                               ElevatedButton(
                                                 onPressed: () async {
                                                   // _register();
-          
+
                                                   setState(() {
                                                     _isProcessing = true;
                                                   });
@@ -321,7 +333,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         .registerUsingEmailPassword(
                                                       name: 'user',
                                                       email:
-                                                          _emailTextController.text,
+                                                          _emailTextController
+                                                              .text,
                                                       password:
                                                           _passwordTextController
                                                               .text,
@@ -336,7 +349,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                           builder: (context) =>
                                                               const WelcomeWidget(),
                                                         ),
-                                                        ModalRoute.withName('/'),
+                                                        ModalRoute.withName(
+                                                            '/'),
                                                       );
                                                     }
                                                   }
@@ -367,9 +381,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                               //   ),
                                               // ),
                                               const Padding(
-                                                padding:
-                                                    EdgeInsetsDirectional.fromSTEB(
-                                                        0, 12, 0, 0),
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 12, 0, 0),
                                                 child: SizedBox(
                                                   width: 90,
                                                   height: 3,
@@ -386,8 +399,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
                                       child: ElevatedButton(
                                         onPressed: () async {},
                                         child: const Text('Forgot Password'),
@@ -418,15 +432,18 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       // ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 20, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20, 0, 20, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: const [
                                           Padding(
-                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 12, 0, 0),
                                             child: Text(
                                               'Here are other ways to Login:',
                                               style: TextStyle(
@@ -441,11 +458,13 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          20, 16, 20, 20),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20, 16, 20, 20),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
                                             padding: const EdgeInsetsDirectional
@@ -460,13 +479,15 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                     BorderRadius.circular(50),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(2, 2, 2, 2),
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(2, 2, 2, 2),
                                                 child: Container(
                                                   width: 50,
                                                   height: 50,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration:
+                                                      const BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: CachedNetworkImage(
@@ -485,8 +506,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                   BorderRadius.circular(50),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(2, 2, 2, 2),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(2, 2, 2, 2),
                                               child: Container(
                                                 width: 50,
                                                 height: 50,
@@ -512,13 +534,15 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                     BorderRadius.circular(50),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(2, 2, 2, 2),
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(2, 2, 2, 2),
                                                 child: Container(
                                                   width: 50,
                                                   height: 50,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration:
+                                                      const BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: CachedNetworkImage(
@@ -540,9 +564,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                     BorderRadius.circular(50),
                                               ),
                                               child: const Padding(
-                                                padding:
-                                                    EdgeInsetsDirectional.fromSTEB(
-                                                        18, 18, 18, 18),
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(18, 18, 18, 18),
                                                 child: Icon(
                                                   Icons.phone,
                                                   color: Colors.white,
@@ -563,7 +586,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                       ],
                     );
                   }
-          
+
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
@@ -572,7 +595,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 

@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +11,7 @@ class About extends StatefulWidget {
 class _ServicesState extends State<About> {
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
           appBar: AppBar(
             // backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
@@ -32,7 +30,6 @@ class _ServicesState extends State<About> {
             ),
             title: const Text(
               'About',
-              
             ),
             actions: const [],
             centerTitle: false,
@@ -63,13 +60,17 @@ class _ServicesState extends State<About> {
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')],
+                      children: [
+                        CachedNetworkImage(
+                            imageUrl:
+                                'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')
+                      ],
                     ),
                   ],
                 ),
               ),
             ),
-          ])))),
-    );
+          ]))));
+    
   }
 }

@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/abbreviations.dart';
@@ -16,8 +15,6 @@ import 'package:tech_cuttie/pages/services_widget.dart';
 import 'package:tech_cuttie/pages/terms_widget.dart';
 import 'package:tech_cuttie/pages/tips_widget.dart';
 
-
-
 class MoreWidget extends StatefulWidget {
   const MoreWidget({Key? key}) : super(key: key);
 
@@ -30,8 +27,7 @@ class _MoreWidgetState extends State<MoreWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         // appBar: AppBar(
         //   backgroundColor: Colors.deepPurple,
@@ -49,8 +45,6 @@ class _MoreWidgetState extends State<MoreWidget> {
                 Column(
                   children: [
                     Card(
-                      
-                      
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -70,12 +64,12 @@ class _MoreWidgetState extends State<MoreWidget> {
                           await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const ServicesWidget()));
+                                  builder: (context) =>
+                                      const ServicesWidget()));
                         },
                       ),
                     ),
                     Card(
-                      
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -101,9 +95,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -129,9 +123,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -157,9 +151,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -213,9 +207,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     // ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -241,9 +235,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -269,9 +263,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -297,9 +291,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -312,8 +306,8 @@ class _MoreWidgetState extends State<MoreWidget> {
                           ),
                         ),
                         title: const Text('Disclaimer'),
-                        subtitle: const Text(
-                            'View our Disclaimer Notice here '),
+                        subtitle:
+                            const Text('View our Disclaimer Notice here '),
                         isThreeLine: false,
                         onTap: () async {
                           await Navigator.push(
@@ -325,9 +319,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -340,8 +334,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                           ),
                         ),
                         title: const Text('Privacy Policy'),
-                        subtitle: const Text(
-                            'View our Privacy Policy here'),
+                        subtitle: const Text('View our Privacy Policy here'),
                         isThreeLine: false,
                         onTap: () async {
                           await Navigator.push(
@@ -353,9 +346,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -381,9 +374,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -409,9 +402,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -437,9 +430,9 @@ class _MoreWidgetState extends State<MoreWidget> {
                     ),
                     Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(40),
-                                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
                       child: ListTile(
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -469,7 +462,7 @@ class _MoreWidgetState extends State<MoreWidget> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }

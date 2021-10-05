@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatefulWidget {
@@ -13,12 +12,14 @@ class _SearchWidgetState extends State<SearchWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         body: const Center(
           child: Padding(
             padding: EdgeInsets.all(20.0),
-            child: Center(child: Text('The search functionality is still underconstruction. We will notify you as soon as it is complete. \n Thank you!'),),
+            child: Center(
+              child: Text(
+                  'The search functionality is still underconstruction. We will notify you as soon as it is complete. \n Thank you!'),
+            ),
           ),
         ),
         key: scaffoldKey,
@@ -30,7 +31,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         //   elevation: 4,
         // ),
         // backgroundColor: Color(0xFFF5F5F5),
-      ),
+      
     );
   }
 }

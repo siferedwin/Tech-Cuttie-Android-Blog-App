@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -17,8 +16,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xFF230448),
         body: Column(
@@ -62,9 +60,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 20),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 0, 0, 20),
                                         child: Image.network(
                                           'https://picsum.photos/seed/825/600',
                                           width: 350,
@@ -75,8 +72,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 20, 8),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 20, 8),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
@@ -96,8 +94,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 20, 8),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 20, 8),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
@@ -132,9 +131,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 20),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 0, 0, 20),
                                         child: Image.network(
                                           'https://picsum.photos/seed/837/600',
                                           width: 300,
@@ -145,8 +143,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 20, 8),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 20, 8),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
@@ -166,8 +165,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 20, 8),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 20, 8),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
@@ -202,9 +202,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0, 20, 0, 20),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 20, 0, 20),
                                         child: Image.network(
                                           'https://picsum.photos/seed/839/600',
                                           width: 300,
@@ -215,8 +214,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 10, 8),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 10, 8),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
@@ -236,8 +236,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 10, 8),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 10, 8),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
@@ -264,8 +265,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                         Align(
                           alignment: const AlignmentDirectional(0, 1),
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0, 0, 0, 5),
                             child: SmoothPageIndicator(
                               controller: pageViewController,
                               count: 3,
@@ -350,7 +351,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
             )
           ],
         ),
-      ),
+      
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 
 class AppSettingWidget extends StatefulWidget {
@@ -16,8 +15,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
     bool switchListTileValue1 = true;
     bool switchListTileValue2 = true;
     bool switchListTileValue3 = true;
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
           // backgroundColor: const Color(0xFF090F13),
@@ -147,7 +145,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
             )
           ],
         ),
-      ),
+      
     );
   }
 }

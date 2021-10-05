@@ -1,10 +1,9 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Posts extends StatefulWidget {
-  final String imageurl, title, content, htmlContent,link;
+  final String imageurl, title, content, htmlContent, link;
 
   const Posts({
     Key? key,
@@ -23,8 +22,7 @@ class _PostState extends State<Posts> {
   bool like = false;
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           title: const Text('Knowledge Base'),
           actions: [
@@ -47,8 +45,9 @@ class _PostState extends State<Posts> {
                     icon: const Icon(Icons.favorite)),
             IconButton(
                 onPressed: () {
-                  launch(widget.link,);
-                  
+                  launch(
+                    widget.link,
+                  );
                 },
                 icon: const Icon(Icons.share_rounded))
           ],
@@ -78,7 +77,7 @@ class _PostState extends State<Posts> {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

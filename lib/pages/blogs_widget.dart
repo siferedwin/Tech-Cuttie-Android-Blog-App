@@ -1,5 +1,5 @@
 // ignore: unused_import
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tech_cuttie/pages/posts_widget.dart';
@@ -24,9 +24,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: ThemeSwitchingArea(
-        child: Scaffold(
+    return  Scaffold(
             key: scaffoldKey,
             // appBar: AppBar(
             //   backgroundColor: Colors.deepPurple,
@@ -48,11 +46,12 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                         var imageurl = wppost["featured_image_src"];
                         var title = wppost['title']['rendered'];
                         var link = wppost['link'];
-                        var content = parse((wppost['excerpt']['rendered']).toString())
-                            .documentElement!
-                            .text;
-                        var htmlContent=wppost['content']['rendered'];
-                  
+                        var content =
+                            parse((wppost['excerpt']['rendered']).toString())
+                                .documentElement!
+                                .text;
+                        var htmlContent = wppost['content']['rendered'];
+
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(
@@ -62,22 +61,24 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                           content: content,
                                           link: link,
                                           imageurl: imageurl,
-                                          title: title, htmlContent: htmlContent,
+                                          title: title,
+                                          htmlContent: htmlContent,
                                         )));
                           },
                           child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(40),
-                                            ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40),
+                                ),
                                 child: Padding(
                                   padding: const EdgeInsets.all(16.0),
                                   child: Column(
                                     children: [
                                       FadeInImage.assetNetwork(
-                                        placeholder: 'assets/images/loading.gif',
+                                        placeholder:
+                                            'assets/images/loading.gif',
                                         image: imageurl,
                                       ),
                                       Text(wppost['title']['rendered'],
@@ -87,7 +88,10 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                       Text(parse((wppost['excerpt']['rendered'])
                                               .toString())
                                           .documentElement!
-                                          .text.replaceAll('Click Your preferred platform to share:TweetPocketTelegramWhatsAppPrintShare on Tumblr', ""))
+                                          .text
+                                          .replaceAll(
+                                              'Click Your preferred platform to share:TweetPocketTelegramWhatsAppPrintShare on Tumblr',
+                                              ""))
                                     ],
                                   ),
                                 ),
@@ -105,15 +109,16 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                         Image.asset('assets/images/loading.gif'),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: Text('Please wait as the latest posts update...'),
+                          child:
+                              Text('Please wait as the latest posts update...'),
                         )
                       ],
                     ),
                   ),
                 );
               },
-            )),
-      ),
+            )
+      
     );
   }
 }
@@ -139,9 +144,9 @@ class _PostTileState extends State<PostTile> {
       children: [
         Card(
           clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
