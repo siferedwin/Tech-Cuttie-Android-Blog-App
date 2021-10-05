@@ -11,7 +11,6 @@ import 'package:tech_cuttie/pages/glossary_widget.dart';
 import 'package:tech_cuttie/pages/newsletter_widget.dart';
 import 'package:tech_cuttie/pages/privacy_widget.dart';
 import 'package:tech_cuttie/pages/quiz.dart';
-import 'package:tech_cuttie/pages/reviews_widget.dart';
 import 'package:tech_cuttie/pages/services_widget.dart';
 import 'package:tech_cuttie/pages/terms_widget.dart';
 import 'package:tech_cuttie/pages/tips_widget.dart';
@@ -187,34 +186,34 @@ class _MoreWidgetState extends State<MoreWidget> {
                     },
                   ),
                 ),
-                Card(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                  child: ListTile(
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: CachedNetworkImage(
-                        imageUrl:
-                            'https://i0.wp.com/brightpropertymanagement.com/wp-content/uploads/2019/04/yelp-reviews-wordpress.png?w=740&ssl=1',
-                        width: 70,
-                        height: 100,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    title: const Text('Our Reviews'),
-                    subtitle: const Text(
-                        'View a list of recent reviews that Tech Cuttie has got from it users.'),
-                    isThreeLine: false,
-                    onTap: () async {
-                      await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ReviewsWidget()));
-                    },
-                  ),
-                ),
+                // Card(
+                //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                //                       shape: RoundedRectangleBorder(
+                //                         borderRadius: BorderRadius.circular(40),
+                //                       ),
+                //   child: ListTile(
+                //     leading: ClipRRect(
+                //       borderRadius: BorderRadius.circular(20),
+                //       child: CachedNetworkImage(
+                //         imageUrl:
+                //             'https://i0.wp.com/brightpropertymanagement.com/wp-content/uploads/2019/04/yelp-reviews-wordpress.png?w=740&ssl=1',
+                //         width: 70,
+                //         height: 100,
+                //         fit: BoxFit.fill,
+                //       ),
+                //     ),
+                //     title: const Text('Our Reviews'),
+                //     subtitle: const Text(
+                //         'View a list of recent reviews that Tech Cuttie has got from it users.'),
+                //     isThreeLine: false,
+                //     onTap: () async {
+                //       await Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const ReviewsWidget()));
+                //     },
+                //   ),
+                // ),
                 Card(
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                       shape: RoundedRectangleBorder(

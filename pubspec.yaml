@@ -50,6 +50,10 @@ dependencies:
   html: ^0.15.0
   flutter_html: ^2.1.4
   contactus: ^1.2.0
+  feedback: ^2.0.0
+  custom_refresh_indicator: ^1.0.0
+  about: ^2.0.1
+  material_floating_search_bar: ^0.3.4
 
 dev_dependencies:
   flutter_test:
