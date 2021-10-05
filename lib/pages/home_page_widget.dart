@@ -1,3 +1,4 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -205,91 +206,94 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        key: scaffoldKey,
-        appBar: AppBar(
-          // backgroundColor: Colors.deepPurple,
-          automaticallyImplyLeading: true,
-          title:  Center(child: Text('Tech Cuttie',
-style: GoogleFonts.lobster(
-                  fontSize: 42, fontWeight: FontWeight.bold
+      child: ThemeSwitchingArea(
+        child: Scaffold(
+          key: scaffoldKey,
+          appBar: AppBar(
+            // backgroundColor: Colors.deepPurple,
+            // automaticallyImplyLeading: true,
+            title: Center(
+                child: Text(
+              'Tech Cuttie',
+              style:
+                  GoogleFonts.lobster(fontSize: 42, fontWeight: FontWeight.bold),
+            )),
+            actions: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AppSettingWidget()));
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: const [
+                    Icon(
+                      Icons.settings_sharp,
+                      // color: Colors.black,
+                      size: 30,
+                    ),
+                  ],
                 ),
-          )),
-          actions: [
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AppSettingWidget()));
-              },
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: const [
-                  Icon(
-                    Icons.settings_sharp,
-                    // color: Colors.black,
-                    size: 30,
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfileWidget()));
+                },
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfileWidget()));
-              },
-              child: Container(
-                width: 50,
-                height: 50,
-                clipBehavior: Clip.antiAlias,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
+                  // ignore: unrelated_type_equality_checks
+                  child: Image.asset('assets/images/user_loading.gif'),
                 ),
-                // ignore: unrelated_type_equality_checks
-                child: Image.asset('assets/images/user_loading.gif'),
               ),
-            ),
-            const SizedBox(
-              width: 5,
-            )
-          ],
-          centerTitle: false,
-          elevation: 4,
-        ),
-        body: _children[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          // backgroundColor: Colors.deepPurple,
-          type: BottomNavigationBarType.fixed,
-          onTap: onTabTapped,
-          currentIndex:
-              _currentIndex, // this will be set when a new tab is tapped
-          // ignore: prefer_const_literals_to_create_immutables
-          items: [
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: 'Home',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.ballot),
-              label: 'Blogs',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.search_sharp),
-              label: 'Search',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.read_more_sharp),
-              label: 'More',
-            ),
-          ],
+              const SizedBox(
+                width: 5,
+              )
+            ],
+            centerTitle: true,
+            elevation: 4,
+          ),
+          body: _children[_currentIndex],
+          bottomNavigationBar: BottomNavigationBar(
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            // backgroundColor: Colors.deepPurple,
+            type: BottomNavigationBarType.fixed,
+            onTap: onTabTapped,
+            currentIndex:
+                _currentIndex, // this will be set when a new tab is tapped
+            // ignore: prefer_const_literals_to_create_immutables
+            items: [
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined),
+                label: 'Home',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.ballot),
+                label: 'Blogs',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.search_sharp),
+                label: 'Search',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.read_more_sharp),
+                label: 'More',
+              ),
+            ],
+          ),
         ),
       ),
     );

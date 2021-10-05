@@ -54,6 +54,7 @@ dependencies:
   custom_refresh_indicator: ^1.0.0
   about: ^2.0.1
   material_floating_search_bar: ^0.3.4
+  animated_theme_switcher: ^2.0.1
 
 dev_dependencies:
   flutter_test:
