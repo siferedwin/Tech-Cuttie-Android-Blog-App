@@ -21,9 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.deepPurple,
         brightness: Brightness.light,
-        // primaryColor: Colors.deepPurple,
-        backgroundColor: const Color(0xFFE5E5E5),
-        dividerColor: Colors.white54,
+        backgroundColor: Colors.white,
+        dividerColor: Colors.deepPurple,
         colorScheme: const ColorScheme.light(
           primary: Colors.deepPurple,
         ),
@@ -53,6 +52,7 @@ class MyApp extends StatelessWidget {
           textTheme: ButtonTextTheme.accent,
         ),
         cardTheme: CardTheme(
+          color: Colors.white,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
@@ -68,15 +68,15 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: const ElevatedButtonThemeData(),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(),
         fontFamily: 'Montserrat',
-        highlightColor: Colors.purpleAccent,
+        highlightColor: Colors.deepPurple[700],
         iconTheme: const IconThemeData(
           color: Colors.white,
           size: 16,
         ),
         inputDecorationTheme: const InputDecorationTheme(),
         progressIndicatorTheme: ProgressIndicatorThemeData(
-          circularTrackColor: Colors.purple[300],
-          color: Colors.purple,
+          circularTrackColor: Colors.deepPurple[700],
+          color: Colors.deepPurple,
         ),
         popupMenuTheme: const PopupMenuThemeData(),
         scaffoldBackgroundColor: Colors.white,
@@ -97,12 +97,11 @@ class MyApp extends StatelessWidget {
             900: Color(0xff936F3E)
           },
         ),
-
         primaryColorBrightness: Brightness.light,
-        primaryColorLight: const Color(0x1aF5E0C3),
-        canvasColor: const Color(0xffE09E45),
+        primaryColorLight: Colors.white,
+        canvasColor: Colors.white,
         bottomAppBarColor: Colors.deepPurple,
-        focusColor: const Color(0x1aF5E0C3),
+        focusColor: Colors.deepPurple[700],
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,

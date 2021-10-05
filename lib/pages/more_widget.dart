@@ -38,7 +38,7 @@ class _MoreWidgetState extends State<MoreWidget> {
       //   centerTitle: true,
       //   elevation: 4,
       // ),
-      // backgroundColor: Color(0xFFF5F5F5),
+      // backgroundColor: Color(# ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Scrollbar(
