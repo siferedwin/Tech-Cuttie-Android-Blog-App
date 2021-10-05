@@ -11,7 +11,7 @@ class WelcomeWidget extends StatefulWidget {
 }
 
 class _WelcomeWidgetState extends State<WelcomeWidget> {
-    PageController pageViewController=PageController(initialPage: 0);
+  PageController pageViewController = PageController(initialPage: 0);
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -28,7 +28,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CachedNetworkImage(imageUrl: 'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/cropped-Tech-Cuttie-2-2.png?fit=150%2C150&ssl=1')
+                CachedNetworkImage(
+                    imageUrl:
+                        'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/cropped-Tech-Cuttie-2-2.png?fit=150%2C150&ssl=1')
               ],
             ),
           ),
@@ -81,7 +83,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                           'Search for Books',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                            fontFamily: 'Lexend Deca',
+                                            // fontFamily: 'Lexend Deca',
                                             color: Colors.white,
                                             fontSize: 32,
                                             fontWeight: FontWeight.bold,
@@ -101,13 +103,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         child: Text(
                                           'Find amazing classic books in our library.',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle
-                                            (
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0x99FFFFFF),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                            ),
+                                          style: TextStyle(
+                                            // fontFamily: 'Lexend Deca',
+                                            color: Color(0x99FFFFFF),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       )
                                     ],
@@ -152,7 +153,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                           'Purchase Books',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                            fontFamily: 'Lexend Deca',
+                                            // fontFamily: 'Lexend Deca',
                                             // color: Colors.white,
                                             fontSize: 32,
                                             fontWeight: FontWeight.bold,
@@ -172,13 +173,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         child: Text(
                                           'Buy and view all your favorite books you find in this library.',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle
-                                            (
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0x99FFFFFF),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                            ),
+                                          style: TextStyle(
+                                            // fontFamily: 'Lexend Deca',
+                                            color: Color(0x99FFFFFF),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       )
                                     ],
@@ -223,7 +223,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                           'Review Purchases',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                            fontFamily: 'Lexend Deca',
+                                            // fontFamily: 'Lexend Deca',
                                             // color: Colors.white,
                                             fontSize: 32,
                                             fontWeight: FontWeight.bold,
@@ -243,13 +243,12 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         child: Text(
                                           'Keep track of all your purchases that you have made, want to trade books in? Go ahead and list them for exchange.',
                                           textAlign: TextAlign.center,
-                                          style: TextStyle
-                                            (
-                                              fontFamily: 'Lexend Deca',
-                                              color: Color(0xFF82878C),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                            ),
+                                          style: TextStyle(
+                                            // fontFamily: 'Lexend Deca',
+                                            color: Color(0xFF82878C),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       )
                                     ],
@@ -303,20 +302,17 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
               children: [
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                  child: 
-                  ElevatedButton(
-              onPressed: () async {
-                Navigator.of(context)
-                                                  .pushAndRemoveUntil(
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                    const  HomePageWidget(),
-                                                ),
-                                                ModalRoute.withName('/'),
-                                              );
-              },
-              child: const Text('Continue'),
-            ),
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(
+                          builder: (context) => const HomePageWidget(),
+                        ),
+                        ModalRoute.withName('/'),
+                      );
+                    },
+                    child: const Text('Continue'),
+                  ),
                   // FFButtonWidget(
                   //   onPressed: () async {
                   //     await Navigator.push(
@@ -333,7 +329,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                   //     height: 50,
                   //     color: const Color(0xFF262D34),
                   //     textStyle:const TextStyle(
-                  //       fontFamily: 'Lexend Deca',
+                  //       // fontFamily: 'Lexend Deca',
                   //       color:  Color(0xFF39D2C0),
                   //       fontSize: 18,
                   //       fontWeight: FontWeight.w500,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_cuttie/pages/home_page_widget.dart';
 import 'package:wordpress_api/wordpress_api.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           color: Colors.deepPurple,
           elevation: 0,
+          
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.deepPurple,
@@ -67,7 +69,7 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: const ElevatedButtonThemeData(),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(),
-        fontFamily: 'Montserrat',
+        fontFamily: GoogleFonts.varela().fontFamily,
         highlightColor: Colors.deepPurple[700],
         iconTheme: const IconThemeData(
           color: Colors.white,

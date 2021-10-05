@@ -46,7 +46,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
         title: const Text(
           'Edit Profile',
           style: TextStyle(
-            fontFamily: 'Lexend Deca',
+            // fontFamily: 'Lexend Deca',
             color: Color(0xFF14181B),
             fontSize: 14,
             fontWeight: FontWeight.w500,
@@ -97,9 +97,9 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-              onPressed: () async {},
-              child: const Text('Change Photo'),
-            ),
+                    onPressed: () async {},
+                    child: const Text('Change Photo'),
+                  ),
                   // FFButtonWidget(
                   //   onPressed: () {
                   //     // print('Button pressed ...');
@@ -110,7 +110,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                   //     height: 40,
                   //     color: Colors.white,
                   //     textStyle: const TextStyle(
-                  //       fontFamily: 'Lexend Deca',
+                  //       // fontFamily: 'Lexend Deca',
                   //       color: Color(0xFF39D2C0),
                   //       fontSize: 14,
                   //       fontWeight: FontWeight.normal,
@@ -134,14 +134,14 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                 decoration: InputDecoration(
                   labelText: 'Full Name',
                   labelStyle: const TextStyle(
-                    fontFamily: 'Lexend Deca',
+                    // fontFamily: 'Lexend Deca',
                     color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
                   hintText: 'Your full name...',
                   hintStyle: const TextStyle(
-                    fontFamily: 'Lexend Deca',
+                    // fontFamily: 'Lexend Deca',
                     color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
@@ -166,7 +166,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                       const EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
                 style: const TextStyle(
-                  fontFamily: 'Lexend Deca',
+                  // fontFamily: 'Lexend Deca',
                   color: Color(0xFF14181B),
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
@@ -181,14 +181,14 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                 decoration: InputDecoration(
                   labelText: 'Email Address',
                   labelStyle: const TextStyle(
-                    fontFamily: 'Lexend Deca',
+                    // fontFamily: 'Lexend Deca',
                     color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
                   hintText: 'Your email..',
                   hintStyle: const TextStyle(
-                    fontFamily: 'Lexend Deca',
+                    // fontFamily: 'Lexend Deca',
                     color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
@@ -213,7 +213,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                       const EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
                 style: const TextStyle(
-                  fontFamily: 'Lexend Deca',
+                  // fontFamily: 'Lexend Deca',
                   color: Color(0xFF14181B),
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
@@ -228,14 +228,14 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                 decoration: InputDecoration(
                   labelText: 'Bio',
                   labelStyle: const TextStyle(
-                    fontFamily: 'Lexend Deca',
+                    // fontFamily: 'Lexend Deca',
                     color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
                   hintText: 'A little about you...',
                   hintStyle: const TextStyle(
-                    fontFamily: 'Lexend Deca',
+                    // fontFamily: 'Lexend Deca',
                     color: Color(0xFF95A1AC),
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
@@ -260,7 +260,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                       const EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
                 style: const TextStyle(
-                  fontFamily: 'Lexend Deca',
+                  // fontFamily: 'Lexend Deca',
                   color: Color(0xFF14181B),
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
@@ -273,11 +273,10 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
               alignment: const AlignmentDirectional(0, 0.05),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-                child: 
-                ElevatedButton(
-              onPressed: () async {},
-              child: const Text('Save Changes'),
-            ),
+                child: ElevatedButton(
+                  onPressed: () async {},
+                  child: const Text('Save Changes'),
+                ),
                 // FFButtonWidget(
                 //   onPressed: () async {
                 //     Navigator.pop(context);
@@ -288,7 +287,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                 //     height: 60,
                 //     color:const Color(0xFF39D2C0),
                 //     textStyle: const TextStyle(
-                //       fontFamily: 'Lexend Deca',
+                //       // fontFamily: 'Lexend Deca',
                 //       color: Colors.white,
                 //       fontSize: 16,
                 //       fontWeight: FontWeight.normal,

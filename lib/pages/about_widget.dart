@@ -30,12 +30,7 @@ class _ServicesState extends State<About> {
           ),
           title: const Text(
             'About',
-            style: TextStyle(
-              fontFamily: 'Lexend Deca',
-              // color: Color(0xFF151B1E),
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
+            
           ),
           actions: const [],
           centerTitle: false,

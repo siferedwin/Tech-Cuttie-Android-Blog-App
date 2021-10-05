@@ -35,12 +35,6 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
         ),
         title: const Text(
           'Settings Page',
-          style: TextStyle(
-            fontFamily: 'Lexend Deca',
-            // color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.normal,
-          ),
         ),
         actions: const [],
         centerTitle: false,
@@ -58,12 +52,6 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                 Expanded(
                   child: Text(
                     'Choose what notifcations you want to recieve below and we will update the settings.',
-                    style: TextStyle(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF8B97A2),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
                   ),
                 )
               ],
@@ -77,21 +65,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                   setState(() => switchListTileValue1 = newValue),
               title: const Text(
                 'Push Notifications',
-                style: TextStyle(
-                  fontFamily: 'Lexend Deca',
-                  // color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
               ),
               subtitle: const Text(
                 'Receive Push notifications from our application on a semi regular basis.',
-                style: TextStyle(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF8B97A2),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
               ),
               activeColor: const Color(0xFF4B39EF),
               activeTrackColor: const Color(0xFF3B2DB6),
@@ -107,21 +83,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                 setState(() => switchListTileValue2 = newValue),
             title: const Text(
               'Email Notifications',
-              style: TextStyle(
-                fontFamily: 'Lexend Deca',
-                // color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
             ),
             subtitle: const Text(
               'Receive email notifications from our marketing team about new features.',
-              style: TextStyle(
-                fontFamily: 'Lexend Deca',
-                color: Color(0xFF8B97A2),
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-              ),
             ),
             activeColor: const Color(0xFF4B39EF),
             activeTrackColor: const Color(0xFF3B2DB6),
@@ -136,21 +100,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                 setState(() => switchListTileValue3 = newValue),
             title: const Text(
               'Location Services',
-              style: TextStyle(
-                fontFamily: 'Lexend Deca',
-                // color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
             ),
             subtitle: const Text(
               'Allow us to track your location, this helps keep track of spending and keeps you safe.',
-              style: TextStyle(
-                fontFamily: 'Lexend Deca',
-                color: Color(0xFF8B97A2),
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-              ),
             ),
             activeColor: const Color(0xFF4B39EF),
             activeTrackColor: const Color(0xFF3B2DB6),
@@ -177,7 +129,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
             //     color: const Color(0xFF4B39EF),
             //     // ignore: prefer_const_constructors
             //     textStyle: TextStyle(
-            //       fontFamily: 'Lexend Deca',
+            //       // fontFamily: 'Lexend Deca',
             //       color: Colors.white,
             //       fontSize: 16,
             //       fontWeight: FontWeight.w500,

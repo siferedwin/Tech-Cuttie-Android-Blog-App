@@ -31,7 +31,7 @@ class _ServicesState extends State<Newsletter> {
           title: const Text(
             'Newsletter',
             style: TextStyle(
-              fontFamily: 'Lexend Deca',
+              // fontFamily: 'Lexend Deca',
               // color: Color(0xFF151B1E),
               fontSize: 18,
               fontWeight: FontWeight.w500,
@@ -66,7 +66,11 @@ class _ServicesState extends State<Newsletter> {
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')],
+                    children: [
+                      CachedNetworkImage(
+                          imageUrl:
+                              'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')
+                    ],
                   ),
                 ],
               ),

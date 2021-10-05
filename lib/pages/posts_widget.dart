@@ -51,28 +51,30 @@ class _PostState extends State<Posts> {
               icon: const Icon(Icons.share_rounded))
         ],
       ),
-      body: ListView(
-        children: [
-          FadeInImage.assetNetwork(
-            placeholder: 'assets/images/loading.gif',
-            image: widget.imageurl,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(widget.title,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const SizedBox(
-                  height: 5,
-                ),
-                Html(data: widget.htmlContent)
-              ],
+      body: Scrollbar(
+        child: ListView(
+          children: [
+            FadeInImage.assetNetwork(
+              placeholder: 'assets/images/loading.gif',
+              image: widget.imageurl,
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(widget.title,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Html(data: widget.htmlContent)
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

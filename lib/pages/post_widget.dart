@@ -27,7 +27,7 @@ class _PostWidgetState extends State<PostWidget> {
       //   title: Text(
       //     'Product Name',
       //     style: TextStyle.subtitle1.override(
-      //       fontFamily: 'Lexend Deca',
+      //       // fontFamily: 'Lexend Deca',
       //       color: Color(0xFF151B1E),
       //       fontSize: 18,
       //       fontWeight: FontWeight.w500,
@@ -67,7 +67,7 @@ class _PostWidgetState extends State<PostWidget> {
                         Text(
                           '[Product Name]',
                           style: TextStyle(
-                            fontFamily: 'Lexend Deca',
+                            // fontFamily: 'Lexend Deca',
                             color: Color(0xFF151B1E),
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -84,7 +84,7 @@ class _PostWidgetState extends State<PostWidget> {
                         Text(
                           '[\$0.00]',
                           style: TextStyle(
-                            fontFamily: 'Lexend Deca',
+                            // fontFamily: 'Lexend Deca',
                             color: Color(0xFF8B97A2),
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
@@ -104,7 +104,7 @@ class _PostWidgetState extends State<PostWidget> {
                           child: Text(
                             'A VINTAGE-LOOK JACKET CRAFTED FOR STYLE OFF THE FIELD.',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              // fontFamily: 'Lexend Deca',
                               color: Color(0xFF151B1E),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -124,7 +124,7 @@ class _PostWidgetState extends State<PostWidget> {
                           child: Text(
                             'Sporty style from the archives inspires this iconic track top. A stand-up collar and the signature sheen of tricot give it a retro vibe. Made for relaxing between sessions, the full-zip jacket has a recycled polyester build.',
                             style: TextStyle(
-                              fontFamily: 'Lexend Deca',
+                              // fontFamily: 'Lexend Deca',
                               color: Color(0xFF090F13),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -173,11 +173,10 @@ class _PostWidgetState extends State<PostWidget> {
                   ),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
-                    child:
-                    ElevatedButton(
-              onPressed: () async {},
-              child: const Text('Purchase Product'),
-            ),
+                    child: ElevatedButton(
+                      onPressed: () async {},
+                      child: const Text('Purchase Product'),
+                    ),
                     //  FFButtonWidget(
                     //   onPressed: () {},
                     //   text: 'Purchase Product',
@@ -186,7 +185,7 @@ class _PostWidgetState extends State<PostWidget> {
                     //     height: 40,
                     //     color:const Color(0xFF090F13),
                     //     textStyle: const TextStyle(
-                    //       fontFamily: 'Lexend Deca',
+                    //       // fontFamily: 'Lexend Deca',
                     //       color: Colors.white,
                     //       fontSize: 18,
                     //       fontWeight: FontWeight.w500,

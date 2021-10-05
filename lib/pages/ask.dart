@@ -30,12 +30,7 @@ class _ServicesState extends State<Ask> {
           ),
           title: const Text(
             'Ask',
-            style: TextStyle(
-              fontFamily: 'Lexend Deca',
-              // color: Color(0xFF151B1E),
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
+            
           ),
           actions: const [],
           centerTitle: false,
@@ -43,35 +38,37 @@ class _ServicesState extends State<Ask> {
         ),
         // backgroundColor: const Color(0xFFF1F4F8),
         body: SafeArea(
-            child: SingleChildScrollView(
-                child: Column(mainAxisSize: MainAxisSize.max, children: [
-          Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              // color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 3,
-                  // color: Color(0x39000000),
-                  offset: Offset(0, 1),
-                )
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')],
-                  ),
+            child: Scrollbar(
+              child: SingleChildScrollView(
+                  child: Column(mainAxisSize: MainAxisSize.max, children: [
+                      Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                // color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 3,
+                    // color: Color(0x39000000),
+                    offset: Offset(0, 1),
+                  )
                 ],
               ),
-            ),
-          ),
-        ]))));
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [CachedNetworkImage(imageUrl: 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')],
+                    ),
+                  ],
+                ),
+              ),
+                      ),
+                    ])),
+            )));
   }
 }

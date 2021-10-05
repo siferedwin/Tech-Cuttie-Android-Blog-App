@@ -37,7 +37,7 @@ class _ServicesState extends State<ServicesWidget> {
           title: const Text(
             'Services',
             style: TextStyle(
-              fontFamily: 'Lexend Deca',
+              // fontFamily: 'Lexend Deca',
               // color: Color(0xFF151B1E),
               fontSize: 18,
               fontWeight: FontWeight.w500,
@@ -49,72 +49,79 @@ class _ServicesState extends State<ServicesWidget> {
         ),
         // backgroundColor: const Color(0xFFF1F4F8),
         body: SafeArea(
-            child: SingleChildScrollView(
-                child: Column(mainAxisSize: MainAxisSize.max, children: [
-          SizedBox(
-            width: double.infinity,
-            
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CachedNetworkImage(
-                          imageUrl:
-                              'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1')
-                    ],
-                  ),
-                ],
+            child: Scrollbar(
+              child: SingleChildScrollView(
+                  child: Column(mainAxisSize: MainAxisSize.max, children: [
+                      SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CachedNetworkImage(
+                            imageUrl:
+                                'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1')
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              'The platform further offers a variety of in-house and site-linked programs or services to its users. The users can be assured to have the best results and delivery of whatever tasks that they may require help doing. A brief listing of the services is such as:',
-            ),
-          ),
-          ElevatedButton(
-              onPressed: () async {
-                await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Development()));
-              },
-              child: const Text('Cross-platform app development')),
-          ElevatedButton(
-              onPressed: () async {
-                await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const WebDesign()));
-              },
-              child: const Text('Website design and Implementation')),
-          ElevatedButton(
-              onPressed: () async {
-                await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Content()));
-              },
-              child: const Text('Content Writing and Copywriting')),
-          ElevatedButton(
-              onPressed: () async {
-                await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Excel()));
-              },
-              child: const Text('Excel Data analysis and manipulation')),
-          ElevatedButton(
-              onPressed: () async {
-                await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Retouching()));
-              },
-              child: const Text('Image Retouching and Editing')),
-          ElevatedButton(
-              onPressed: () async {
-                await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Consultancy()));
-              },
-              child: const Text('Tech Consultancy')),
-        ]))));
+                      ),
+                      const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'The platform further offers a variety of in-house and site-linked programs or services to its users. The users can be assured to have the best results and delivery of whatever tasks that they may require help doing. A brief listing of the services is such as:',
+              ),
+                      ),
+                      ElevatedButton(
+                onPressed: () async {
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Development()));
+                },
+                child: const Text('Cross-platform app development')),
+                      ElevatedButton(
+                onPressed: () async {
+                  await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const WebDesign()));
+                },
+                child: const Text('Website design and Implementation')),
+                      ElevatedButton(
+                onPressed: () async {
+                  await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Content()));
+                },
+                child: const Text('Content Writing and Copywriting')),
+                      ElevatedButton(
+                onPressed: () async {
+                  await Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Excel()));
+                },
+                child: const Text('Excel Data analysis and manipulation')),
+                      ElevatedButton(
+                onPressed: () async {
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Retouching()));
+                },
+                child: const Text('Image Retouching and Editing')),
+                      ElevatedButton(
+                onPressed: () async {
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Consultancy()));
+                },
+                child: const Text('Tech Consultancy')),
+                    ])),
+            )));
   }
 }
