@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/home_page_widget.dart';
 import 'package:wordpress_api/wordpress_api.dart';
+
 WordPressAPI api = WordPressAPI('techuttie.com');
 
 void main() {
@@ -17,9 +18,19 @@ class MyApp extends StatelessWidget {
       title: 'Tech Cuttie',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: Colors.white,
+        brightness: Brightness.light,
+        primaryColor: Colors.deepPurple,
+        backgroundColor: const Color(0xFFE5E5E5),
+        dividerColor: Colors.white54,
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Colors.purpleAccent),
       ),
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.black,
+        backgroundColor: const Color(0xFF212121),
+        dividerColor: Colors.black12,
+      ),
       themeMode: ThemeMode.system,
       home: const HomePageWidget(),
     );
