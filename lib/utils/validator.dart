@@ -29,7 +29,7 @@ class Validator {
   }
 
   static String? validatePassword({required String? password}) {
-    if (password == null) {
+     if (password == null) {
       return null;
     }
 

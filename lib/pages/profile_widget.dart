@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tech_cuttie/pages/home_page_widget.dart';
 
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({Key? key}) : super(key: key);
@@ -13,7 +15,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return SafeArea(
+      child: Scaffold(
         key: scaffoldKey,
         // backgroundColor: const Color(0xFF262D34),
         body: Scrollbar(
@@ -21,11 +24,45 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(onPressed: () async {
+                      await FirebaseAuth.instance.signOut();
+                      Navigator.of(context)
+                                                    .pushAndRemoveUntil(
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const HomePageWidget(),
+                                                  ),
+                                                  ModalRoute.withName('/'),
+                                                  
+                                                );
+                    }, child:const Text('Sign Out',style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepPurple
+                    ))),InkWell(onTap: () async {
+                      await FirebaseAuth.instance.signOut();
+                      Navigator.of(context)
+                                                    .pushAndRemoveUntil(
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const HomePageWidget(),
+                                                  ),
+                                                  ModalRoute.withName('/'),
+                                                  
+                                                );
+                    },child: const Icon(Icons.exit_to_app_rounded,color: Colors.deepPurple,size: 30,)),const SizedBox(width: 10,)
+                    
+    
+                  ],
+                ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: const Color(0xFF4B39EF),
+                    // color: const Color(0xFF4B39EF),
                     elevation: 2,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -55,8 +92,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -65,8 +101,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 8, 0, 0),
+                                  padding:
+                                      EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                                   child: Text(
                                     '[User Name]',
                                     style: TextStyle(
@@ -84,8 +120,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 4, 0, 0),
+                                  padding:
+                                      EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                                   child: Text(
                                     'User.name@domainname.com',
                                     style: TextStyle(
@@ -132,7 +168,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               //   buttonSize: 46,
                               //   icon: Icon(
                               //     Icons.chat_bubble,
-                              //     color: Colors.white,
+                              //   // color: Colors.white,
                               //     size: 24,
                               //   ),
                               //   onPressed: () {
@@ -177,7 +213,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               //   buttonSize: 46,
                               //   icon: Icon(
                               //     Icons.videocam_rounded,
-                              //     color: Colors.white,
+                              //   // color: Colors.white,
                               //     size: 24,
                               //   ),
                               //   onPressed: () {
@@ -222,7 +258,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               //   buttonSize: 46,
                               //   icon: Icon(
                               //     Icons.call_rounded,
-                              //     color: Colors.white,
+                              //   // color: Colors.white,
                               //     size: 24,
                               //   ),
                               //   onPressed: () {
@@ -267,7 +303,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               //   buttonSize: 46,
                               //   icon: Icon(
                               //     Icons.add_rounded,
-                              //     color: Colors.white,
+                              //   // color: Colors.white,
                               //     size: 24,
                               //   ),
                               //   onPressed: () {
@@ -309,8 +345,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'Company',
                               style: TextStyle(
@@ -355,8 +390,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'User Bio',
                               style: TextStyle(
@@ -401,8 +435,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'Local Time',
                               style: TextStyle(
@@ -447,8 +480,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: const [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
+                            padding: EdgeInsetsDirectional.fromSTEB(24, 4, 0, 8),
                             child: Text(
                               'Address',
                               style: TextStyle(
@@ -488,7 +520,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             ),
           ),
         ),
-      
+      ),
     );
   }
 }
