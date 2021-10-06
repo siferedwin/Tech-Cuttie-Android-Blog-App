@@ -24,7 +24,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference loggedUser = FirebaseFirestore.instance.collection("TechCuttieUsers");
+    CollectionReference loggedUser =
+        FirebaseFirestore.instance.collection("TechCuttieUsers");
     String imageUrl = '';
     return SafeArea(
         child: Scaffold(
@@ -50,6 +51,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       Map<String, dynamic> data =
                           snapshot.data!.data() as Map<String, dynamic>;
                       imageUrl = "${data['pic_link']}";
+                      String userName = "${data['name']}";
+                      String userEmail = "${data['email']}";
                       return Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -151,14 +154,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
-                                        children: const [
+                                        children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 8, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0, 8, 0, 0),
                                             child: Text(
-                                              '[User Name]',
-                                              style: TextStyle(
+                                              userName,
+                                              style: const TextStyle(
                                                 // fontFamily: 'Lexend Deca',
                                                 // color: Colors.white,
                                                 fontSize: 20,
@@ -172,14 +174,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
-                                        children: const [
+                                        children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0, 4, 0, 0),
                                             child: Text(
-                                              'User.name@domainname.com',
-                                              style: TextStyle(
+                                              userEmail,
+                                              style: const TextStyle(
                                                 // fontFamily: 'Lexend Deca',
                                                 // color: Color(0xFF95A1AC),
                                                 fontSize: 14,
