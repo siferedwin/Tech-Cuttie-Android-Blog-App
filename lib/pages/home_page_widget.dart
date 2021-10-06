@@ -22,13 +22,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         padding: EdgeInsets.zero,
         scrollDirection: Axis.vertical,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
+           Padding(
+            padding:const EdgeInsets.all(8.0),
             child: Text(
               'Tech is just a click if you have the time',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  // fontFamily: 'Poppins',
+                  fontFamily: GoogleFonts.lobster().fontFamily,
                   ),
             ),
           ),

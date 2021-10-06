@@ -90,7 +90,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                           .documentElement!
                                           .text
                                           .replaceAll(
-                                              'Click Your preferred platform to share:TweetPocketTelegramWhatsAppPrintShare on Tumblr',
+                                              'Click Your preferred platform to share:PocketTelegramWhatsAppTweetPrintShare on Tumblr',
                                               ""))
                                     ],
                                   ),

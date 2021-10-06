@@ -141,7 +141,7 @@ class MyApp extends StatelessWidget {
               textTheme: ButtonTextTheme.accent,
             ),
             cardTheme: CardTheme(
-              color: Colors.black,
+              color: Colors.grey[900],
               clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(40),
@@ -169,7 +169,9 @@ class MyApp extends StatelessWidget {
             ),
             popupMenuTheme: const PopupMenuThemeData(),
             scaffoldBackgroundColor: Colors.black,
-            scrollbarTheme: const ScrollbarThemeData(),
+            scrollbarTheme: const ScrollbarThemeData(
+              
+            ),
             visualDensity: const VisualDensity(vertical: 0.5, horizontal: 0.5),
             primarySwatch: const MaterialColor(
               0xFFF5E0C3,
