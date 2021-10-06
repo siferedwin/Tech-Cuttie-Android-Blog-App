@@ -10,6 +10,7 @@ WordPressAPI api = WordPressAPI('techuttie.com');
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  
   runApp(const MyApp());
 }
 
@@ -36,9 +37,19 @@ class MyApp extends StatelessWidget {
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
-          primary: Colors.deepPurple,
-          backgroundColor: Colors.transparent,
-          elevation: 10,
+               
+  
+          primary: Colors.deepPurple,shadowColor: Colors.red,
+          backgroundColor: Colors.transparent,textStyle:const TextStyle(
+            fontWeight: FontWeight.bold
+          ),shape:const StadiumBorder(),
+          side: const BorderSide(
+            color: Colors.deepPurple,
+            width: 3,
+            style: BorderStyle.solid
+          ),
+
+          elevation: 0,
         )),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.deepPurple,
@@ -197,6 +208,22 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.black,
         bottomAppBarColor: Colors.deepPurple,
         focusColor: Colors.deepPurple[700],
+        outlinedButtonTheme: OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+               
+  
+          primary: Colors.deepPurple,
+          backgroundColor: Colors.transparent,textStyle:const TextStyle(
+            fontWeight: FontWeight.bold
+          ),shape:const StadiumBorder(),
+          side: const BorderSide(
+            color: Colors.deepPurple,
+            width: 3,
+            style: BorderStyle.solid
+          ),
+
+          elevation: 0,
+        )),
       ),
       themeMode: ThemeMode.system,
       home: const HomePageWidget(),

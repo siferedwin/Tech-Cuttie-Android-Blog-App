@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:tech_cuttie/pages/home_page_widget.dart';
 import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/utils/fire_auth.dart';
 import 'package:tech_cuttie/utils/validator.dart';
@@ -233,11 +232,10 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       children: [
                                         ElevatedButton(
                                           onPressed: () async {
-                                            print(1);
                                             setState(() {
                                               _isProcessing = true;
                                             });
-                                            print(2);
+
                                             if (_formKey.currentState!
                                                 .validate()) {
                                               User? user = await FireAuth
@@ -246,11 +244,28 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                 email: emailTextController.text,
                                                 password:
                                                     passwordTextController.text,
+                                                    
                                               );
-                                              print(3);
+                                              
+                                              var userId=user!.uid;
+                                              FirebaseFirestore.instance
+                                                  .collection('TechCuttieUsers')
+                                                  .doc(
+                                                    userId
+                                                  )
+                                                  .set({
+                                                "bio": '',
+                                                "email": email,
+                                                "name": name,
+                                                "skills": '',
+                                                "pic_link": '',
+                                              });
+                                              
+
                                               setState(() {
                                                 _isProcessing = false;
                                               });
+                                              // ignore: unnecessary_null_comparison
                                               if (user != null) {
                                                 Navigator.of(context)
                                                     .pushAndRemoveUntil(
@@ -259,9 +274,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         const ProfileWidget(),
                                                   ),
                                                   ModalRoute.withName('/'),
-                                                  
                                                 );
-                                                print(4);
                                               }
                                             }
                                           },
@@ -415,21 +428,19 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                       children: [
                                         ElevatedButton(
                                           onPressed: () async {
-                                            print(1);
                                             setState(() {
                                               _isProcessing = true;
                                             });
-                                            print(2);
+
                                             if (_formKey.currentState!
                                                 .validate()) {
                                               User? user = await FireAuth
                                                   .signInUsingEmailPassword(
-                                                
                                                 email: emailTextController.text,
                                                 password:
                                                     passwordTextController.text,
                                               );
-                                              print(3);
+
                                               setState(() {
                                                 _isProcessing = false;
                                               });
@@ -441,9 +452,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         const ProfileWidget(),
                                                   ),
                                                   ModalRoute.withName('/'),
-                                                  
                                                 );
-                                                print(4);
                                               }
                                             }
                                           },

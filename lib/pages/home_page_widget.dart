@@ -8,7 +8,6 @@ import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
 import 'package:tech_cuttie/pages/more_widget.dart';
 import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
-import 'package:tech_cuttie/utils/fire_auth.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
