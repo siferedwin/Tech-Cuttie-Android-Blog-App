@@ -11,6 +11,9 @@ bool isReady = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.deepPurple,
+      systemNavigationBarColor: Colors.deepPurple));
 
   runApp(const MyApp());
 }
@@ -25,6 +28,10 @@ class MyApp extends StatelessWidget {
       title: 'Tech Cuttie',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        //
+        //     DARK THEME
+        //
+
         primaryColor: Colors.deepPurple,
         brightness: Brightness.light,
         backgroundColor: Colors.white,
@@ -127,6 +134,10 @@ class MyApp extends StatelessWidget {
           style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
         ),
       ),
+      //
+      //     DARK THEME
+      //
+
       darkTheme: ThemeData(
         primaryColor: Colors.deepPurple,
         brightness: Brightness.dark,
