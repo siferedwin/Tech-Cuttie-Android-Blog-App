@@ -1,5 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PostWidget extends StatefulWidget {
   final String category,
@@ -118,12 +121,27 @@ class _PostWidgetState extends State<PostWidget> {
                                     alignment: const AlignmentDirectional(0, 0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
-                                      child: Image.asset(
-                                        'assets/images/user_loading.gif',
-                                        width: double.infinity,
-                                        height: double.infinity,
-                                        fit: BoxFit.cover,
-                                      ),
+                                      child: widget.featuredMedia != ''
+                                          ? ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(16),
+                                              child: CachedNetworkImage(
+                                                  // width: double.infinity,
+                                                  // height: double.infinity,
+                                                  // fit: BoxFit.contain,
+                                                  imageUrl:
+                                                      widget.featuredMedia),
+                                            )
+                                          : ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(16),
+                                              child: Image.asset(
+                                                'assets/images/user_loading.gif',
+                                                // width: double.infinity,
+                                                // height: double.infinity,
+                                                // fit: BoxFit.contain,
+                                              ),
+                                            ),
                                     ),
                                   ),
                                   Padding(
@@ -152,7 +170,9 @@ class _PostWidgetState extends State<PostWidget> {
                                                   // color: Colors.deepPurple,
                                                   // size: 24,
                                                 ),
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
                                               ),
                                             ),
                                             Card(
@@ -188,14 +208,16 @@ class _PostWidgetState extends State<PostWidget> {
                             const EdgeInsetsDirectional.fromSTEB(24, 20, 24, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Text(
-                              'Vacation Home',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF090F13),
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                widget.name,
+                                style: const TextStyle(
+                                  // fontFamily: 'Lexend Deca',
+                                  // color: Color(0xFF090F13),
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             )
                           ],
@@ -364,7 +386,26 @@ class _PostWidgetState extends State<PostWidget> {
                         ],
                       ),
                       TextButton(
-                          onPressed: () {}, child: const Text('Book Now'))
+                          onPressed: () {
+                            launch(widget.link);
+                          },
+                          child: Row(
+                            children: [
+                              const Text('Share',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.share_rounded,
+                                  // color: Colors.deepPurple,
+                                  // size: 24,
+                                ),
+                                onPressed: () {
+                                  launch(widget.link);
+                                },
+                              ),
+                            ],
+                          ))
                     ],
                   ),
                 ),
