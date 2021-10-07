@@ -20,59 +20,118 @@ class _BlogsWidgetState extends State<BlogsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      body: StreamBuilder<QuerySnapshot>(
-        stream: _usersStream,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.builder(
-                itemCount: snapshot.data!.docs.length,
-                itemBuilder: (context, index) {
-                  DocumentSnapshot doc = snapshot.data!.docs[index];
-                  return Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+    return Center(
+      child: SafeArea(
+        child: Center(
+          child: Scaffold(
+            key: scaffoldKey,
+            body: Center(
+              child: StreamBuilder<QuerySnapshot>(
+                stream: _usersStream,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Scrollbar(
+                      child: Center(
+                        child: ListView.builder(
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              DocumentSnapshot doc = snapshot.data!.docs[index];
+                              return Card(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 7,
+                                      ),
+                                      CachedNetworkImage(
+                                          imageUrl: doc['featured_media']),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(doc['name'],
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18,
+                                            )),
+                                      ),
+                                      Text(doc['excerpt'],
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: 14,
+                                          )),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Row(
+                                                children: [
+                                                  IconButton(
+                                                    onPressed: () {},
+                                                    icon: const Icon(
+                                                      Icons.favorite,
+                                                      color: Colors.deepPurple,
+                                                    ),
+                                                  ),
+                                                  Text(doc['likes'].toString()),
+                                                ],
+                                              )),
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Row(
+                                                children: [
+                                                  IconButton(
+                                                    onPressed: () {},
+                                                    icon: const Icon(
+                                                      Icons
+                                                          .remove_red_eye_rounded,
+                                                      color: Colors.deepPurple,
+                                                    ),
+                                                  ),
+                                                  Text(doc['views'].toString()),
+                                                ],
+                                              )),
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Row(
+                                                children: [
+                                                  IconButton(
+                                                    onPressed: () {},
+                                                    icon: const Icon(
+                                                      Icons.chat,
+                                                      color: Colors.deepPurple,
+                                                    ),
+                                                  ),
+                                                  Text(doc['comments'][0]),
+                                                ],
+                                              )),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            }),
+                      ),
+                    );
+                  } else {
+                    return Center(
                       child: Column(
-                        children: [
-                          CachedNetworkImage(imageUrl: doc['featured_media']),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(doc['name'],
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                )),
-                          ),
-                          Text(doc['excerpt'],
-                              style: const TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14,
-                              )),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(doc['likes'].toString())),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(doc['views'].toString())),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(doc['comment_status'])),
-                            ],
-                          )
+                        children: const [
+                          CircularProgressIndicator(),
+                          Text('Fetching the latest Posts...')
                         ],
                       ),
-                    ),
-                  );
-                });
-          } else {
-            return const Text("No data");
-          }
-        },
+                    );
+                  }
+                },
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
