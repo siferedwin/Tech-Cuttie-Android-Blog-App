@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,20 +19,24 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageWidgetState extends State<HomePageWidget> {
   int _currentIndex = 0;
+  final String id = FirebaseAuth.instance.currentUser!.uid;
+  CollectionReference loggedUser =
+      FirebaseFirestore.instance.collection("TechCuttieUsers");
+  String imageUrl = '';
   final List<Widget> _children = [
     Scrollbar(
       child: ListView(
         padding: EdgeInsets.zero,
         scrollDirection: Axis.vertical,
         children: [
-           Padding(
-            padding:const EdgeInsets.all(8.0),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Text(
               'Tech is just a click if you have the time',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontFamily: GoogleFonts.lobster().fontFamily,
-                  ),
+                fontFamily: GoogleFonts.lobster().fontFamily,
+              ),
             ),
           ),
           const Padding(
@@ -208,104 +213,122 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          key: scaffoldKey,
-          appBar: AppBar(
-            // backgroundColor: Colors.deepPurple,
-            // automaticallyImplyLeading: true,
-            title: Center(
-                child: Text(
-              'Tech Cuttie',
-              style: GoogleFonts.lobster(
-                  fontSize: 42, fontWeight: FontWeight.bold),
-            )),
-            actions: [
-              InkWell(
-                onTap: () {
-
+        key: scaffoldKey,
+        appBar: AppBar(
+          // backgroundColor: Colors.deepPurple,
+          // automaticallyImplyLeading: true,
+          title: Center(
+              child: Text(
+            'Tech Cuttie',
+            style:
+                GoogleFonts.lobster(fontSize: 42, fontWeight: FontWeight.bold),
+          )),
+          actions: [
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AppSettingWidget()));
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: const [
+                  Icon(
+                    Icons.settings_sharp,
+                    // color: Colors.black,
+                    size: 30,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            InkWell(
+              onTap: () {
+                if (FirebaseAuth.instance.currentUser == null) {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AppSettingWidget()));
-                },
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: const [
-                    Icon(
-                      Icons.settings_sharp,
-                      // color: Colors.black,
-                      size: 30,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              InkWell(
-                onTap: () {
-                  if (FirebaseAuth.instance.currentUser==null) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
                           builder: (context) => const LoginSignUpWidget()));
-                    
-                  } else {
-                    
-                    Navigator.push(
+                } else {
+                  Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ProfileWidget()));
-                  }
-                },
-                child: Container(
-                  width: 50,
-                  height: 50,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  // ignore: unrelated_type_equality_checks
-                  child: Image.asset('assets/images/user_loading.gif'),
-                ),
-              ),
-              const SizedBox(
-                width: 5,
-              )
-            ],
-            centerTitle: true,
-            elevation: 4,
-          ),
-          body: _children[_currentIndex],
-          bottomNavigationBar: BottomNavigationBar(
-            showSelectedLabels: true,
-            showUnselectedLabels: true,
-            // backgroundColor: Colors.deepPurple,
-            type: BottomNavigationBarType.fixed,
-            onTap: onTabTapped,
-            currentIndex:
-                _currentIndex, // this will be set when a new tab is tapped
-            // ignore: prefer_const_literals_to_create_immutables
-            items: [
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                label: 'Home',
-              ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.ballot),
-                label: 'Blogs',
-              ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.search_sharp),
-                label: 'Search',
-              ),
-              const BottomNavigationBarItem(
-                icon: Icon(Icons.read_more_sharp),
-                label: 'More',
-              ),
-            ],
-          ),
+                          builder: (context) =>
+                              const Center(child: ProfileWidget())));
+                }
+              },
+              child: FutureBuilder<DocumentSnapshot>(
+                  future: loggedUser.doc(id).get(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<DocumentSnapshot> snapshot) {
+                    if (snapshot.hasError) {
+                      return const Text("`");
+                    }
+                    if (snapshot.hasData && !snapshot.data!.exists) {
+                      return const Text('\'');
+                    }
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      Map<String, dynamic> data =
+                          snapshot.data!.data() as Map<String, dynamic>;
+                      imageUrl = "${data['pic_link']}";
+                      return Container(
+                        width: 50,
+                        height: 50,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        // ignore: unrelated_type_equality_checks
+                        child: imageUrl != ''
+                            ? CachedNetworkImage(imageUrl: imageUrl)
+                            : Image.asset('assets/images/user_loading.gif'),
+                      );
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }),
+            ),
+            const SizedBox(
+              width: 5,
+            )
+          ],
+          centerTitle: true,
+          elevation: 4,
         ),
-      
+        body: _children[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          // backgroundColor: Colors.deepPurple,
+          type: BottomNavigationBarType.fixed,
+          onTap: onTabTapped,
+          currentIndex:
+              _currentIndex, // this will be set when a new tab is tapped
+          // ignore: prefer_const_literals_to_create_immutables
+          items: [
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.ballot),
+              label: 'Blogs',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.search_sharp),
+              label: 'Search',
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(Icons.read_more_sharp),
+              label: 'More',
+            ),
+          ],
+        ),
+      ),
     );
   }
 

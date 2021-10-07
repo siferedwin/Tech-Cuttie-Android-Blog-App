@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tech_cuttie/pages/home_page_widget.dart';
+import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
 import 'package:wordpress_api/wordpress_api.dart';
 
 WordPressAPI api = WordPressAPI('techuttie.com');
@@ -35,6 +35,12 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           color: Colors.deepPurple,
           elevation: 0,
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.all(
+          //     Radius.circular(30),
+          //   ),
+          // ),
+          // toolbarHeight: 17,
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
@@ -62,10 +68,9 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.grey[400],
           showUnselectedLabels: true,
         ),
-        buttonTheme:const ButtonThemeData(
+        buttonTheme: const ButtonThemeData(
           buttonColor: Colors.deepPurple,
-          shape:
-               StadiumBorder(),
+          shape: StadiumBorder(),
           textTheme: ButtonTextTheme.accent,
         ),
         cardTheme: CardTheme(
@@ -82,7 +87,6 @@ class MyApp extends StatelessWidget {
         dividerTheme: const DividerThemeData(
           color: Colors.deepPurple,
         ),
-        elevatedButtonTheme: const ElevatedButtonThemeData(),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(),
         fontFamily: GoogleFonts.varela().fontFamily,
         highlightColor: Colors.deepPurple[700],
@@ -92,7 +96,7 @@ class MyApp extends StatelessWidget {
         ),
         inputDecorationTheme: const InputDecorationTheme(),
         progressIndicatorTheme: ProgressIndicatorThemeData(
-          circularTrackColor: Colors.deepPurple[700],
+          circularTrackColor: Colors.deepPurple[300],
           color: Colors.deepPurple,
         ),
         popupMenuTheme: const PopupMenuThemeData(),
@@ -119,6 +123,9 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.white,
         bottomAppBarColor: Colors.deepPurple,
         focusColor: Colors.deepPurple[700],
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
+        ),
       ),
       darkTheme: ThemeData(
         primaryColor: Colors.deepPurple,
@@ -147,10 +154,9 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.grey[400],
           showUnselectedLabels: true,
         ),
-        buttonTheme:const ButtonThemeData(
+        buttonTheme: const ButtonThemeData(
           buttonColor: Colors.deepPurple,
-          shape:
-               StadiumBorder(),
+          shape: StadiumBorder(),
           textTheme: ButtonTextTheme.accent,
         ),
         cardTheme: CardTheme(
@@ -167,7 +173,9 @@ class MyApp extends StatelessWidget {
         dividerTheme: const DividerThemeData(
           color: Colors.deepPurple,
         ),
-        elevatedButtonTheme: const ElevatedButtonThemeData(),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
+        ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(),
         fontFamily: GoogleFonts.varela().fontFamily,
         highlightColor: Colors.deepPurple[700],
@@ -216,7 +224,7 @@ class MyApp extends StatelessWidget {
         )),
       ),
       themeMode: ThemeMode.system,
-      home: const HomePageWidget(),
+      home: const LoginSignUpWidget(),
     );
   }
 }
