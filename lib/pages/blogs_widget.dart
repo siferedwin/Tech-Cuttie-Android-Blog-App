@@ -129,6 +129,16 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                           borderRadius:
                                               BorderRadius.circular(16),
                                           child: CachedNetworkImage(
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      const Icon(Icons.error),
+                                              progressIndicatorBuilder:
+                                                  (context, url,
+                                                          downloadProgress) =>
+                                                      CircularProgressIndicator(
+                                                        value: downloadProgress
+                                                            .progress,
+                                                      ),
                                               fit: BoxFit.scaleDown,
                                               imageUrl: doc['featured_media']),
                                         ),

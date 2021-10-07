@@ -56,6 +56,8 @@ dependencies:
   material_floating_search_bar: ^0.3.4
   cloud_firestore: ^2.5.3
   intl: ^0.17.0
+  get: ^4.3.8
+  animations: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +85,7 @@ flutter:
   assets:
     - assets/images/loading.gif
     - assets/images/user_loading.gif
+    - assets/images/tech_cuttie_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

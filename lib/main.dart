@@ -13,6 +13,7 @@ void main() async {
   await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.deepPurple,
+      systemNavigationBarIconBrightness: Brightness.light,
       systemNavigationBarColor: Colors.deepPurple));
 
   runApp(const MyApp());
@@ -39,9 +40,14 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(
           primary: Colors.deepPurple,
         ),
-        appBarTheme: const AppBarTheme(
+        appBarTheme: AppBarTheme(
           color: Colors.deepPurple,
-          elevation: 0,
+          elevation: 0, centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: GoogleFonts.lobster().fontFamily,
+            fontSize: 42,
+          ),
           // shape: RoundedRectangleBorder(
           //   borderRadius: BorderRadius.all(
           //     Radius.circular(30),
