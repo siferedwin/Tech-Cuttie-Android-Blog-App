@@ -6,11 +6,12 @@ import 'package:tech_cuttie/pages/home_page_widget.dart';
 import 'package:wordpress_api/wordpress_api.dart';
 
 WordPressAPI api = WordPressAPI('techuttie.com');
+bool isReady = false;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  
+
   runApp(const MyApp());
 }
 
@@ -37,18 +38,13 @@ class MyApp extends StatelessWidget {
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
-               
-  
-          primary: Colors.deepPurple,shadowColor: Colors.red,
-          backgroundColor: Colors.transparent,textStyle:const TextStyle(
-            fontWeight: FontWeight.bold
-          ),shape:const StadiumBorder(),
+          primary: Colors.deepPurple,
+          shadowColor: Colors.red,
+          backgroundColor: Colors.transparent,
+          textStyle: const TextStyle(fontWeight: FontWeight.bold),
+          shape: const StadiumBorder(),
           side: const BorderSide(
-            color: Colors.deepPurple,
-            width: 3,
-            style: BorderStyle.solid
-          ),
-
+              color: Colors.deepPurple, width: 3, style: BorderStyle.solid),
           elevation: 0,
         )),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -66,10 +62,10 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.grey[400],
           showUnselectedLabels: true,
         ),
-        buttonTheme: ButtonThemeData(
+        buttonTheme:const ButtonThemeData(
           buttonColor: Colors.deepPurple,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+               StadiumBorder(),
           textTheme: ButtonTextTheme.accent,
         ),
         cardTheme: CardTheme(
@@ -151,10 +147,10 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.grey[400],
           showUnselectedLabels: true,
         ),
-        buttonTheme: ButtonThemeData(
+        buttonTheme:const ButtonThemeData(
           buttonColor: Colors.deepPurple,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+               StadiumBorder(),
           textTheme: ButtonTextTheme.accent,
         ),
         cardTheme: CardTheme(
@@ -210,18 +206,12 @@ class MyApp extends StatelessWidget {
         focusColor: Colors.deepPurple[700],
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
-               
-  
           primary: Colors.deepPurple,
-          backgroundColor: Colors.transparent,textStyle:const TextStyle(
-            fontWeight: FontWeight.bold
-          ),shape:const StadiumBorder(),
+          backgroundColor: Colors.transparent,
+          textStyle: const TextStyle(fontWeight: FontWeight.bold),
+          shape: const StadiumBorder(),
           side: const BorderSide(
-            color: Colors.deepPurple,
-            width: 3,
-            style: BorderStyle.solid
-          ),
-
+              color: Colors.deepPurple, width: 3, style: BorderStyle.solid),
           elevation: 0,
         )),
       ),

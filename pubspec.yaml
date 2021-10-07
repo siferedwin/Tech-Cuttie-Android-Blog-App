@@ -55,6 +55,7 @@ dependencies:
   about: ^2.0.1
   material_floating_search_bar: ^0.3.4
   cloud_firestore: ^2.5.3
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

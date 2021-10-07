@@ -250,6 +250,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           builder: (context) => const LoginSignUpWidget()));
                     
                   } else {
+                    
                     Navigator.push(
                       context,
                       MaterialPageRoute(

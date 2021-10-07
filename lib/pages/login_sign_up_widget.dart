@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 import 'package:tech_cuttie/pages/home_page_widget.dart';
 import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/utils/fire_auth.dart';
@@ -245,23 +247,36 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                 email: emailTextController.text,
                                                 password:
                                                     passwordTextController.text,
-                                                    
                                               );
-                                              
-                                              var userId=user!.uid;
+                                              final DateFormat formatter =
+                                                  DateFormat('dd/MM/yyyy');
+                                              String createDate = formatter
+                                                  .format(DateTime.now());
+
+                                              var userId = user!.uid;
                                               FirebaseFirestore.instance
                                                   .collection('TechCuttieUsers')
-                                                  .doc(
-                                                    userId
-                                                  )
+                                                  .doc(userId)
                                                   .set({
-                                                "bio": '',
+                                                "bio": 'A new Tech Cuttie User',
                                                 "email": email,
                                                 "name": name,
+                                                "middle_name": '',
+                                                "first_name": '',
+                                                "last_name": '',
                                                 "skills": '',
+                                                "work_status": '',
+                                                "educational_background":'',
                                                 "pic_link": '',
+                                                "address": '',
+                                                "phone_number": '',
+                                                "online_status":true,
+                                                "company": '',
+                                                "register_date": createDate,
+                                                "job_title": '',
+                                                "location": '',
+                                               
                                               });
-                                              
 
                                               setState(() {
                                                 _isProcessing = false;
@@ -294,7 +309,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 12, 0, 0),
                                           child: Text(
-                                            'Here are other ways you can create an account:',
+                                            'Use a social platform to create an account:',
                                             style: TextStyle(
                                               // fontFamily: 'Lexend Deca',
                                               // color: Color(0x98FFFFFF),
@@ -461,6 +476,15 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                         ),
                                         TextButton(
                                             onPressed: () {
+                                              setState(() {});
+                                            },
+                                            child: const Text(
+                                              'Forgot password',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            )),
+                                        TextButton(
+                                            onPressed: () {
                                               setState(() {
                                                 isLogin = false;
                                               });
@@ -470,9 +494,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                         const Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 12, 0, 0),
+                                                  0, 10, 0, 0),
                                           child: Text(
-                                            'Here are other ways you can Login:',
+                                            'Use a social platform to Login:',
                                             style: TextStyle(
                                               // fontFamily: 'Lexend Deca',
                                               // color: Color(0x98FFFFFF),

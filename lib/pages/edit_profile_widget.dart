@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:tech_cuttie/pages/change_photo_widget.dart';
 
 class EditprofileWidget extends StatefulWidget {
   const EditprofileWidget({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leading: InkWell(
           onTap: () async {
@@ -56,7 +57,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -97,7 +98,13 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () async {},
+                    onPressed: () {
+                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const ChangeProfile()));
+                    },
                     child: const Text('Change Photo'),
                   ),
                   // FFButtonWidget(
@@ -161,7 +168,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Colors.white,
+                  // fillColor: Colors.white,
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
@@ -208,7 +215,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Colors.white,
+                  // fillColor: Colors.white,
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
@@ -255,7 +262,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: Colors.white,
+                  // fillColor: Colors.white,
                   contentPadding:
                       const EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
                 ),
@@ -274,7 +281,9 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                 child: ElevatedButton(
-                  onPressed: () async {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   child: const Text('Save Changes'),
                 ),
                 // FFButtonWidget(
