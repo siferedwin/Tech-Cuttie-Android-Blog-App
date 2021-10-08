@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/change_photo_widget.dart';
+import 'package:tech_cuttie/pages/picker.dart';
 import 'package:tech_cuttie/utils/validator.dart';
 
 class EditprofileWidget extends StatefulWidget {
@@ -157,21 +158,24 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: imageUrl != ''
-                                              ? ClipRRect(borderRadius:
-                                              BorderRadius.circular(16),
-                                                child: CachedNetworkImage(
-                                                  errorWidget:
-                                                    (context, url, error) =>
-                                                        const Icon(Icons.error),
-                                                progressIndicatorBuilder:
-                                                    (context, url,
-                                                            downloadProgress) =>
-                                                        CircularProgressIndicator(
-                                                          value: downloadProgress
-                                                              .progress,
-                                                        ),
-                                                    imageUrl: imageUrl),
-                                              )
+                                              ? ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(16),
+                                                  child: CachedNetworkImage(
+                                                      errorWidget: (context,
+                                                              url, error) =>
+                                                          const Icon(
+                                                              Icons.error),
+                                                      progressIndicatorBuilder:
+                                                          (context, url,
+                                                                  downloadProgress) =>
+                                                              CircularProgressIndicator(
+                                                                value:
+                                                                    downloadProgress
+                                                                        .progress,
+                                                              ),
+                                                      imageUrl: imageUrl),
+                                                )
                                               : Image.asset(
                                                   'assets/images/user_loading.gif'),
                                         ),
@@ -192,7 +196,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      const ChangeProfile()));
+                                                      HomePage()));
                                         },
                                         child: const Text('Change Photo'),
                                       ),
