@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.light(
           primary: Colors.deepPurple,
         ),
+
         appBarTheme: AppBarTheme(
           color: Colors.deepPurple,
           elevation: 0, centerTitle: true,
