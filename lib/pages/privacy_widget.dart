@@ -68,9 +68,21 @@ class _ServicesState extends State<Privacy> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CachedNetworkImage(
-                              imageUrl:
-                                  'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1')
+                          ClipRRect(
+                            child: CachedNetworkImage(
+                              errorWidget:
+                                                    (context, url, error) =>
+                                                        const Icon(Icons.error),
+                                                progressIndicatorBuilder:
+                                                    (context, url,
+                                                            downloadProgress) =>
+                                                        CircularProgressIndicator(
+                                                          value: downloadProgress
+                                                              .progress,
+                                                        ),
+                                imageUrl:
+                                    'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1'),
+                          )
                         ],
                       ),
                     ],

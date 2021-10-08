@@ -91,9 +91,23 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                CachedNetworkImage(
-                                                    imageUrl:
-                                                        'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/cropped-Tech-Cuttie-2-2.png?fit=150%2C150&ssl=1')
+                                                ClipRRect(
+                                                  child: CachedNetworkImage(
+                                                      errorWidget: (context,
+                                                              url, error) =>
+                                                          const Icon(
+                                                              Icons.error),
+                                                      progressIndicatorBuilder:
+                                                          (context, url,
+                                                                  downloadProgress) =>
+                                                              CircularProgressIndicator(
+                                                                value:
+                                                                    downloadProgress
+                                                                        .progress,
+                                                              ),
+                                                      imageUrl:
+                                                          'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/cropped-Tech-Cuttie-2-2.png?fit=150%2C150&ssl=1'),
+                                                )
                                               ],
                                             ),
                                           ),
@@ -438,9 +452,18 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
-                                                                    child: CachedNetworkImage(
-                                                                        imageUrl:
-                                                                            'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              16),
+                                                                      child: CachedNetworkImage(
+                                                                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
+                                                                                value: downloadProgress.progress,
+                                                                              ),
+                                                                          imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -475,9 +498,18 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
-                                                                  child: CachedNetworkImage(
-                                                                      imageUrl:
-                                                                          'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            16),
+                                                                    child: CachedNetworkImage(
+                                                                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                        progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
+                                                                              value: downloadProgress.progress,
+                                                                            ),
+                                                                        imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
@@ -519,9 +551,18 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
-                                                                    child: CachedNetworkImage(
-                                                                        imageUrl:
-                                                                            'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              16),
+                                                                      child: CachedNetworkImage(
+                                                                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
+                                                                                value: downloadProgress.progress,
+                                                                              ),
+                                                                          imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -692,9 +733,17 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                         shape: BoxShape
                                                                             .circle,
                                                                       ),
-                                                                      child: CachedNetworkImage(
-                                                                          imageUrl:
-                                                                              'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16),
+                                                                        child: CachedNetworkImage(
+                                                                            errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
+                                                                                  value: downloadProgress.progress,
+                                                                                ),
+                                                                            imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -729,9 +778,18 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
-                                                                    child: CachedNetworkImage(
-                                                                        imageUrl:
-                                                                            'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              16),
+                                                                      child: CachedNetworkImage(
+                                                                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
+                                                                                value: downloadProgress.progress,
+                                                                              ),
+                                                                          imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -773,9 +831,12 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                         shape: BoxShape
                                                                             .circle,
                                                                       ),
-                                                                      child: CachedNetworkImage(
-                                                                          imageUrl:
-                                                                              'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        child: CachedNetworkImage(
+                                                                            imageUrl:
+                                                                                'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),

@@ -158,8 +158,21 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 )
-                                              : CachedNetworkImage(
-                                                  imageUrl: imageUrl)),
+                                              : ClipRRect(borderRadius:
+                                              BorderRadius.circular(16),
+                                                child: CachedNetworkImage(
+                                                  errorWidget:
+                                                    (context, url, error) =>
+                                                        const Icon(Icons.error),
+                                                progressIndicatorBuilder:
+                                                    (context, url,
+                                                            downloadProgress) =>
+                                                        CircularProgressIndicator(
+                                                          value: downloadProgress
+                                                              .progress,
+                                                        ),
+                                                    imageUrl: imageUrl),
+                                              )),
                                     ),
                                   ),
                                   Padding(

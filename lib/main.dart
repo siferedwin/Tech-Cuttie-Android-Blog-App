@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
@@ -7,6 +8,9 @@ import 'package:wordpress_api/wordpress_api.dart';
 
 WordPressAPI api = WordPressAPI('techuttie.com');
 bool isReady = false;
+var brightness = SchedulerBinding.instance!.window.platformBrightness;
+bool isDarkMode = brightness == Brightness.dark;
+bool isBrightMode = brightness != Brightness.dark;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

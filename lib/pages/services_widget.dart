@@ -64,9 +64,22 @@ class _ServicesState extends State<ServicesWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CachedNetworkImage(
-                              imageUrl:
-                                  'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1')
+                          ClipRRect(borderRadius:
+                                              BorderRadius.circular(16),
+                            child: CachedNetworkImage(
+                              errorWidget:
+                                                    (context, url, error) =>
+                                                        const Icon(Icons.error),
+                                                progressIndicatorBuilder:
+                                                    (context, url,
+                                                            downloadProgress) =>
+                                                        CircularProgressIndicator(
+                                                          value: downloadProgress
+                                                              .progress,
+                                                        ),
+                                imageUrl:
+                                    'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1'),
+                          )
                         ],
                       ),
                     ],

@@ -157,8 +157,21 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: imageUrl != ''
-                                              ? CachedNetworkImage(
-                                                  imageUrl: imageUrl)
+                                              ? ClipRRect(borderRadius:
+                                              BorderRadius.circular(16),
+                                                child: CachedNetworkImage(
+                                                  errorWidget:
+                                                    (context, url, error) =>
+                                                        const Icon(Icons.error),
+                                                progressIndicatorBuilder:
+                                                    (context, url,
+                                                            downloadProgress) =>
+                                                        CircularProgressIndicator(
+                                                          value: downloadProgress
+                                                              .progress,
+                                                        ),
+                                                    imageUrl: imageUrl),
+                                              )
                                               : Image.asset(
                                                   'assets/images/user_loading.gif'),
                                         ),

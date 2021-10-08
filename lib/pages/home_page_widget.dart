@@ -3,12 +3,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tech_cuttie/pages/app_setting_widget.dart';
 import 'package:tech_cuttie/pages/blogs_widget.dart';
 import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
 import 'package:tech_cuttie/pages/more_widget.dart';
 import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
+import 'package:tech_cuttie/pages/welcome_widget.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -62,9 +62,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ),
           ),
           Center(
-              child: CachedNetworkImage(
-                  imageUrl:
-                      'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-3.png?resize=299%2C169&ssl=1')),
+              child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: CachedNetworkImage(
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    CircularProgressIndicator(
+                      value: downloadProgress.progress,
+                    ),
+                imageUrl:
+                    'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-3.png?resize=299%2C169&ssl=1'),
+          )),
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
@@ -88,9 +96,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ),
           ),
           Center(
-              child: CachedNetworkImage(
-                  imageUrl:
-                      'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1')),
+              child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: CachedNetworkImage(
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    CircularProgressIndicator(
+                      value: downloadProgress.progress,
+                    ),
+                imageUrl:
+                    'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1'),
+          )),
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
@@ -231,7 +247,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const AppSettingWidget()));
+                            builder: (context) => const WelcomeWidget()));
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
@@ -285,8 +301,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             // ignore: unrelated_type_equality_checks
                             child: imageUrl != ''
-                                ? CachedNetworkImage(imageUrl: imageUrl)
-                                : Image.asset('assets/images/user_loading.gif'),
+                                ? ClipRRect(borderRadius:
+                                              BorderRadius.circular(16),
+                                  child: CachedNetworkImage(
+                                      errorWidget: (context, url, error) =>
+                                          const Icon(Icons.error),
+                                      progressIndicatorBuilder:
+                                          (context, url, downloadProgress) =>
+                                              CircularProgressIndicator(
+                                                value: downloadProgress.progress,
+                                              ),
+                                      imageUrl: imageUrl),
+                                )
+                                : ClipRRect(borderRadius:
+                                              BorderRadius.circular(16),child: Image.asset('assets/images/user_loading.gif')),
                           );
                         }
                         return const Center(

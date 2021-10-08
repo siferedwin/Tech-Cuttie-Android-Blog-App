@@ -92,6 +92,7 @@ class _SearchWidgetState extends State<SearchWidget> {
       body: FloatingSearchBar(
         borderRadius: BorderRadius.circular(20),
         iconColor: Colors.deepPurple,
+        openWidth: MediaQuery.of(context).size.width,
         progress: isSearching,
         onQueryChanged: (query) {
           setState(() {
@@ -128,7 +129,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                       controller.query.isEmpty) {
                     return Container(
                       // color: Colors.deepPurple,
-                      height: 56,
+                      height: double.infinity,
 
                       width: double.infinity,
                       alignment: Alignment.center,
@@ -261,7 +262,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         scrollPadding: const EdgeInsets.only(top: 16, bottom: 56),
         axisAlignment: isPortrait ? 0.0 : -1.0,
         transitionDuration: const Duration(milliseconds: 800),
-        transitionCurve: Curves.easeInOutCubic, width: isPortrait ? 600 : 500,
+        transitionCurve: Curves.easeInOutCubic, width: isPortrait ? 600 : 800,
         debounceDelay: const Duration(milliseconds: 500),
         accentColor: Colors.purpleAccent,
         automaticallyImplyBackButton: true,
