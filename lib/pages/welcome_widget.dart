@@ -13,6 +13,7 @@ class WelcomeWidget extends StatefulWidget {
 class _WelcomeWidgetState extends State<WelcomeWidget> {
   PageController pageViewController = PageController(initialPage: 0);
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  int intro = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +24,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: CachedNetworkImage(
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) =>
-                                CircularProgressIndicator(
-                                  value: downloadProgress.progress,
-                                ),
-                        imageUrl:
-                            'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/cropped-Tech-Cuttie-2-2.png?fit=150%2C150&ssl=1'),
-                  )
-                ],
-              ),
-            ),
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -62,75 +41,97 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               width: 100,
                               height: 100,
                               decoration: const BoxDecoration(),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(0, 0, 0, 20),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(16),
-                                          child: Image.network(
-                                            'https://picsum.photos/seed/825/600',
-                                            width: 350,
-                                            height: 300,
-                                            fit: BoxFit.fitWidth,
+                              child: Scrollbar(
+                                child: SingleChildScrollView(
+                                  child: Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              child: CachedNetworkImage(
+                                                errorWidget:
+                                                    (context, url, error) =>
+                                                        const Icon(Icons.error),
+                                                progressIndicatorBuilder:
+                                                    (context, url,
+                                                            downloadProgress) =>
+                                                        Center(
+                                                  child: SizedBox(
+                                                    height: 100,
+                                                    width: 100,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      value: downloadProgress
+                                                          .progress,
+                                                    ),
+                                                  ),
+                                                ),
+                                                imageUrl:
+                                                    'https://techcuttie.com/wp-content/uploads/2021/10/How-you-can-Find-New-Technology-Articles-735x400-1.jpg',
+                                                // width: 350,
+                                                // height: 300,
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 8),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: const [
-                                        Expanded(
-                                          child: Text(
-                                            'Search for Books',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              // fontFamily: 'Lexend Deca',
-                                              // color: Colors.white,
-                                              fontSize: 32,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(20, 0, 20, 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: const [
+                                              Expanded(
+                                                child: Text(
+                                                  'Read the most informative',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    // fontFamily: 'Lexend Deca',
+                                                    // color: Colors.white,
+                                                    fontSize: 32,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(20, 0, 20, 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: const [
+                                              Expanded(
+                                                child: Text(
+                                                  'Find amazing classic books in our library.',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    // fontFamily: 'Lexend Deca',
+                                                    // color: Color(0x99FFFFFF),
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
                                           ),
                                         )
                                       ],
                                     ),
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 8),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: const [
-                                        Expanded(
-                                          child: Text(
-                                            'Find amazing classic books in our library.',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              // fontFamily: 'Lexend Deca',
-                                              // color: Color(0x99FFFFFF),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
+                                ),
                               ),
                             ),
                             Container(
@@ -285,40 +286,34 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                             )
                           ],
                         ),
-                        Align(
-                          alignment: const AlignmentDirectional(0, 1),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 5),
-                            child: SmoothPageIndicator(
-                              controller: pageViewController,
-                              count: 3,
-                              axisDirection: Axis.horizontal,
-                              onDotClicked: (i) {
-                                pageViewController.animateToPage(
-                                  i,
-                                  duration: const Duration(milliseconds: 500),
-                                  curve: Curves.ease,
-                                );
-                              },
-                              effect: const ExpandingDotsEffect(
-                                expansionFactor: 2,
-                                spacing: 8,
-                                radius: 16,
-                                dotWidth: 16,
-                                dotHeight: 4,
-                                dotColor: Color(0x8AC6CAD4),
-                                activeDotColor: Colors.white,
-                                paintStyle: PaintingStyle.fill,
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
                 )
               ],
+            ),
+            const Spacer(),
+            SmoothPageIndicator(
+              controller: pageViewController,
+              count: 3,
+              axisDirection: Axis.horizontal,
+              onDotClicked: (intro) {
+                pageViewController.animateToPage(
+                  intro,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.ease,
+                );
+              },
+              effect: const ExpandingDotsEffect(
+                expansionFactor: 2,
+                spacing: 8,
+                radius: 16,
+                dotWidth: 16,
+                dotHeight: 4,
+                dotColor: Colors.deepPurple,
+                activeDotColor: Colors.purple,
+                paintStyle: PaintingStyle.fill,
+              ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
@@ -326,23 +321,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(
-                            builder: (context) => const HomePageWidget(),
-                          ),
-                          ModalRoute.withName('/'),
-                        );
-                      },
-                      child: const Text('Continue'),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                     child: OutlinedButton(

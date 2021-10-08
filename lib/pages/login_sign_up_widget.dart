@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import 'package:tech_cuttie/main.dart';
 import 'package:tech_cuttie/pages/home_page_widget.dart';
+import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/utils/fire_auth.dart';
 import 'package:tech_cuttie/utils/validator.dart';
 
@@ -367,12 +368,15 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                   null) {
                                                                 Navigator.of(
                                                                         context)
-                                                                    .pushReplacement(
+                                                                    .pushAndRemoveUntil(
                                                                   MaterialPageRoute(
                                                                     builder:
                                                                         (context) =>
-                                                                            const HomePageWidget(),
+                                                                            const ProfileWidget(),
                                                                   ),
+                                                                  ModalRoute
+                                                                      .withName(
+                                                                          '/'),
                                                                 );
                                                               }
                                                             }
@@ -636,12 +640,15 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                   null) {
                                                                 Navigator.of(
                                                                         context)
-                                                                    .pushReplacement(
+                                                                    .pushAndRemoveUntil(
                                                                   MaterialPageRoute(
                                                                     builder:
                                                                         (context) =>
                                                                             const HomePageWidget(),
                                                                   ),
+                                                                  ModalRoute
+                                                                      .withName(
+                                                                          '/'),
                                                                 );
                                                               }
                                                             }
@@ -830,8 +837,11 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                       child:
                                                                           ClipRRect(
                                                                         child: CachedNetworkImage(
-                                                                            imageUrl:
-                                                                                'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                                            errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
+                                                                                  value: downloadProgress.progress,
+                                                                                ),
+                                                                            imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
                                                                       ),
                                                                     ),
                                                                   ),
