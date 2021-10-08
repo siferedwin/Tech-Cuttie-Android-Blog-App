@@ -11,6 +11,7 @@ bool isReady = false;
 var brightness = SchedulerBinding.instance!.window.platformBrightness;
 bool isDarkMode = brightness == Brightness.dark;
 bool isBrightMode = brightness != Brightness.dark;
+bool isProcessing = false;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

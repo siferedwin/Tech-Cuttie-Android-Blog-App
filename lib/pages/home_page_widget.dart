@@ -292,29 +292,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           Map<String, dynamic> data =
                               snapshot.data!.data() as Map<String, dynamic>;
                           imageUrl = "${data['pic_link']}";
-                          return Container(
-                            width: 50,
-                            height: 50,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            // ignore: unrelated_type_equality_checks
-                            child: imageUrl != ''
-                                ? ClipRRect(borderRadius:
-                                              BorderRadius.circular(16),
-                                  child: CachedNetworkImage(
-                                      errorWidget: (context, url, error) =>
-                                          const Icon(Icons.error),
-                                      progressIndicatorBuilder:
-                                          (context, url, downloadProgress) =>
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 5),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              // ignore: unrelated_type_equality_checks
+                              child: imageUrl != ''
+                                  ? ClipRRect(
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: CachedNetworkImage(
+                                          errorWidget: (context, url, error) =>
+                                              const Icon(Icons.error),
+                                          progressIndicatorBuilder: (context,
+                                                  url, downloadProgress) =>
                                               CircularProgressIndicator(
-                                                value: downloadProgress.progress,
+                                                value:
+                                                    downloadProgress.progress,
                                               ),
-                                      imageUrl: imageUrl),
-                                )
-                                : ClipRRect(borderRadius:
-                                              BorderRadius.circular(16),child: Image.asset('assets/images/user_loading.gif')),
+                                          imageUrl: imageUrl),
+                                    )
+                                  : ClipRRect(
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: Image.asset(
+                                          'assets/images/user_loading.gif')),
+                            ),
                           );
                         }
                         return const Center(

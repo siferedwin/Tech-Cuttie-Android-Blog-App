@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
+import 'package:tech_cuttie/main.dart';
 import 'package:tech_cuttie/pages/home_page_widget.dart';
 import 'package:tech_cuttie/utils/fire_auth.dart';
 import 'package:tech_cuttie/utils/validator.dart';
@@ -92,6 +93,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(16),
                                                   child: CachedNetworkImage(
                                                       errorWidget: (context,
                                                               url, error) =>
@@ -131,15 +134,6 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         Validator.validateEmail(
                                                       email: value,
                                                     ),
-                                                    // validator: (value) {
-                                                    //   if (!(value
-                                                    //       .toString()
-                                                    //       .contains('@'))) {
-                                                    //     return 'Invalid Email!';
-                                                    //   } else {
-                                                    //     return null;
-                                                    //   }
-                                                    // },
                                                     onSaved: (value) {
                                                       setState(() {
                                                         email = value!;
@@ -174,7 +168,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(8),
+                                                                .circular(50),
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
@@ -185,7 +179,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(8),
+                                                                .circular(50),
                                                       ),
                                                       filled: true,
                                                       // fillColor:
@@ -245,7 +239,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(30),
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
@@ -254,7 +248,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(50),
                                                 ),
                                                 filled: true,
                                                 // fillColor: const Color(0xFF3D30B4),
@@ -389,6 +383,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         TextButton(
                                                             onPressed: () {
                                                               setState(() {
+                                                                isProcessing =
+                                                                    true;
                                                                 isLogin = true;
                                                               });
                                                             },
@@ -918,11 +914,6 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                   child: SizedBox(
                                                     width: 90,
                                                     height: 3,
-                                                    // decoration: BoxDecoration(
-                                                    // // color: const Color(0xFFFFFFFF),
-                                                    //   borderRadius:
-                                                    //       BorderRadius.circular(2),
-                                                    // ),
                                                   ),
                                                 )
                                               ],
@@ -932,31 +923,6 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0, 0, 0, 0),
-
-                                            // FFButtonWidget(
-                                            //   onPressed: () {
-                                            //     // ignore: avoid_print
-                                            //     //
-                                            //   },
-                                            //   text: 'Forgot Password?',
-                                            //   options: FFButtonOptions(
-                                            //     width: 170,
-                                            //     height: 40,
-                                            //   // color: const Color(0xFF4B39EF),
-                                            //     textStyle: const TextStyle(
-                                            //       // fontFamily: 'Lexend Deca',
-                                            //     // color: Colors.white,
-                                            //       fontSize: 16,
-                                            //       fontWeight: FontWeight.w500,
-                                            //     ),
-                                            //     elevation: 0,
-                                            //     borderSide: const BorderSide(
-                                            //     // color: Colors.transparent,
-                                            //       width: 1,
-                                            //     ),
-                                            //     borderRadius: 8,
-                                            //   ),
-                                            // ),
                                           ),
                                           Padding(
                                             padding: const EdgeInsetsDirectional
@@ -989,6 +955,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                           return Center(
                               child: Column(
                             children: const [
+                              SizedBox(
+                                height: 200,
+                              ),
                               CircularProgressIndicator(),
                               Text('Connecting... please wait!')
                             ],
