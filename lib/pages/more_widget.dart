@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/abbreviations.dart';
 import 'package:tech_cuttie/pages/about_widget.dart';
+import 'package:tech_cuttie/pages/affiliate.dart';
 import 'package:tech_cuttie/pages/ask.dart';
 import 'package:tech_cuttie/pages/contact_widget.dart';
 import 'package:tech_cuttie/pages/disclaimer_widget.dart';
@@ -544,10 +545,10 @@ class _MoreWidgetState extends State<MoreWidget> {
                           'Become a Tech Cuttie affiliate and help others learn about Tech Cuttie'),
                       isThreeLine: false,
                       onTap: () async {
-                        // await Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => const Affiliate()));
+                        await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Affiliate()));
                       },
                     ),
                   ),

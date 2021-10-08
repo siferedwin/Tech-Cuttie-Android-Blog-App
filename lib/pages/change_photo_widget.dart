@@ -10,9 +10,11 @@ class ChangeProfile extends StatefulWidget {
 class _ChangeProfileState extends State<ChangeProfile> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
-      appBar: AppBar(title: const Text('Change Photo'),),
-      
+    return SafeArea(
+        child: Scaffold(
+      appBar: AppBar(
+        title: const Text('Change Photo'),
+      ),
     ));
   }
 }
