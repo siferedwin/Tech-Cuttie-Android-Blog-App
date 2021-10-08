@@ -9,6 +9,8 @@ class Affiliate extends StatefulWidget {
 }
 
 class _ServicesState extends State<Affiliate> {
+  bool enabled = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,50 +40,99 @@ class _ServicesState extends State<Affiliate> {
         // backgroundColor: const Color(0xFFF1F4F8),
         body: SafeArea(
             child: Scrollbar(
-          child: SingleChildScrollView(
-              child: Column(mainAxisSize: MainAxisSize.max, children: [
-            Container(
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                // color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 3,
-                    // color: Color(0x39000000),
-                    offset: Offset(0, 1),
-                  )
-                ],
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(16),
-                          child: CachedNetworkImage(
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) =>
-                                      CircularProgressIndicator(
-                                        value: downloadProgress.progress,
-                                      ),
-                              imageUrl:
-                                  'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1'),
-                        )
-                      ],
-                    ),
-                  ],
+                child:
+                    // Generated code for this ListView Widget...
+                    Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/affiliate-word-written-wooden-blocks-refferals-marketing-business-concept-207854257-1.jpg?resize=768%2C117&ssl=1',
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-            ),
-          ])),
-        )));
+              const Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                child: Text(
+                  'Your affiliate link:',
+                  // style: FlutterFlowTheme.bodyText1.override(
+                  //   fontFamily: 'Poppins',
+                  // ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                child: Text(
+                  'https://techcuttie.com/?affiliates=3',
+                  // style: FlutterFlowTheme.bodyText1.override(
+                  //   fontFamily: 'Poppins',
+                  // ),
+                ),
+              ),
+              const Align(
+                alignment: AlignmentDirectional(0, 0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  child: Text(
+                    'Your referrals so far',
+                    // style: FlutterFlowTheme.bodyText1.override(
+                    //   fontFamily: 'Poppins',
+                    // ),
+                  ),
+                ),
+              ),
+              Container(
+                width: 160,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                  shape: BoxShape.rectangle,
+                  border: Border.all(
+                    color: const Color(0xFF9E9E9E),
+                    width: 1,
+                  ),
+                ),
+                child:
+                    //  CountController(
+                    //   decrementIconBuilder: (enabled) =>
+                    Icon(
+                  Icons.format_line_spacing_sharp,
+                  color: enabled
+                      ? const Color(0xFF1D043F)
+                      : const Color(0xFFEEEEEE),
+                  size: 20,
+                ),
+                // incrementIconBuilder: (enabled) => Icon(
+                //  Icons.add,
+                //   color: enabled ? Colors.blue : const Color(0xFFEEEEEE),
+                //   size: 20,
+                // ),
+                // countBuilder: (count) => Text(
+                //   count.toString(),
+                //   // style: GoogleFonts.getFont(
+                //   //   'Roboto',
+                //   //   color: Colors.black,
+                //   //   fontWeight: FontWeight.w600,
+                //   //   fontSize: 16,
+                //   // ),
+                // ),
+                // count: countControllerValue ??= 0,
+                // updateCount: (count) =>
+                //     setState(() => countControllerValue = count),
+                // stepSize: 1,
+              )
+            ],
+          ),
+        ))));
   }
 }

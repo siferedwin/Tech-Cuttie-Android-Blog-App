@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/abbreviations.dart';
 import 'package:tech_cuttie/pages/about_widget.dart';
-import 'package:tech_cuttie/pages/affiliate.dart';
 import 'package:tech_cuttie/pages/ask.dart';
 import 'package:tech_cuttie/pages/contact_widget.dart';
 import 'package:tech_cuttie/pages/disclaimer_widget.dart';
@@ -129,7 +128,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                           fit: BoxFit.contain,
                         ),
                       ),
-                      title: const Text('Tech Cuttie Quizes'),
+                      title: const Text('Tech Cuttie Quizzes'),
                       subtitle: const Text(
                           'View available quizes and test yourself with any that youmay prefer.'),
                       isThreeLine: false,
@@ -526,16 +525,13 @@ class _MoreWidgetState extends State<MoreWidget> {
                       leading: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: CachedNetworkImage(
-                          errorWidget:
-                                                  (context, url, error) =>
-                                                      const Icon(Icons.error),
-                                              progressIndicatorBuilder:
-                                                  (context, url,
-                                                          downloadProgress) =>
-                                                      CircularProgressIndicator(
-                                                        value: downloadProgress
-                                                            .progress,
-                                                      ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  CircularProgressIndicator(
+                            value: downloadProgress.progress,
+                          ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/affiliate-word-written-wooden-blocks-refferals-marketing-business-concept-207854257-1.jpg?resize=1024%2C156&ssl=1',
                           width: 70,
@@ -548,10 +544,10 @@ class _MoreWidgetState extends State<MoreWidget> {
                           'Become a Tech Cuttie affiliate and help others learn about Tech Cuttie'),
                       isThreeLine: false,
                       onTap: () async {
-                        await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Affiliate()));
+                        // await Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => const Affiliate()));
                       },
                     ),
                   ),

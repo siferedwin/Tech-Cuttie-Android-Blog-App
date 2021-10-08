@@ -44,51 +44,76 @@ class _ServicesState extends State<Tips> {
       // backgroundColor: const Color(0xFFF1F4F8),
       body: SafeArea(
           child: Scrollbar(
-        child: SingleChildScrollView(
-            child: Column(mainAxisSize: MainAxisSize.max, children: [
-          Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              // color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 3,
-                  // color: Color(0x39000000),
-                  offset: Offset(0, 1),
-                )
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(borderRadius:
-                                              BorderRadius.circular(16),
-                        child: CachedNetworkImage(
-                            errorWidget: (context, url, error) =>
-                                const Icon(Icons.error),
-                            progressIndicatorBuilder:
-                                (context, url, downloadProgress) =>
-                                    CircularProgressIndicator(
-                                      value: downloadProgress.progress,
-                                    ),
-                            imageUrl:
-                                'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1'),
-                      )
-                    ],
-                  ),
-                ],
+              child:
+
+                  // Generated code for this ListView Widget...
+                  Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          shrinkWrap: true,
+          scrollDirection: Axis.vertical,
+          children: [
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: CachedNetworkImage(
+                imageUrl:
+                    'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-5.png?w=225&ssl=1',
+                fit: BoxFit.contain,
               ),
             ),
-          ),
-        ])),
-      )),
+            const Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: Text(
+                'It takes a lot of effort to be consistent and as perfect as possible. We appreciate any kind of encouragement you want to give us. Here at Tech Cuttie, we are family and we take care of each other with any support.\n\nDo not hesitate to submit your contributions by the following means:',
+                // style: FlutterFlowTheme.bodyText1.override(
+                //   fontFamily: 'Poppins',
+                // ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: CachedNetworkImage(
+                  imageUrl:
+                      'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.png?w=318&ssl=1',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: Text(
+                'Paypal email: edwinsifer00@gmail.com',
+                // style: FlutterFlowTheme.bodyText1.override(
+                //   fontFamily: 'Poppins',
+                // ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: CachedNetworkImage(
+                  imageUrl:
+                      'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-9-edited.jpeg?resize=768%2C554&ssl=1',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: Text(
+                'Bitcoin wallet address: 35jJStKS4jTkp8Em4JxUkhnyFsYp26Xsch',
+                // style: FlutterFlowTheme.bodyText1.override(
+                //   fontFamily: 'Poppins',
+                // ),
+              ),
+            )
+          ],
+        ),
+      ))),
     );
   }
 }
