@@ -1,14 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_cuttie/pages/abbreviations.dart';
 import 'package:tech_cuttie/pages/about_widget.dart';
+// ignore: unused_import
 import 'package:tech_cuttie/pages/affiliate.dart';
-import 'package:tech_cuttie/pages/ask.dart';
 import 'package:tech_cuttie/pages/contact_widget.dart';
 import 'package:tech_cuttie/pages/disclaimer_widget.dart';
 import 'package:tech_cuttie/pages/faq.dart';
 import 'package:tech_cuttie/pages/glossary_widget.dart';
-import 'package:tech_cuttie/pages/newsletter_widget.dart';
+import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
 import 'package:tech_cuttie/pages/privacy_widget.dart';
 import 'package:tech_cuttie/pages/services_widget.dart';
 import 'package:tech_cuttie/pages/terms_widget.dart';
@@ -35,6 +36,17 @@ class _MoreWidgetState extends State<MoreWidget> {
             children: [
               Column(
                 children: [
+                  TextButton(
+                    onPressed: () async {
+                      await FirebaseAuth.instance.signOut();
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const LoginSignUpWidget(),
+                        ),
+                      );
+                    },
+                    child: const Text('Sign Out'),
+                  ),
                   Card(
                     child: ListTile(
                       leading: ClipRRect(
@@ -76,44 +88,45 @@ class _MoreWidgetState extends State<MoreWidget> {
                       },
                     ),
                   ),
-                  Card(
-                    child: ListTile(
-                      leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: CachedNetworkImage(
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) => SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 15),
-                              child: CircularProgressIndicator(
-                                value: downloadProgress.progress,
-                              ),
-                            ),
-                          ),
-                          imageUrl:
-                              'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-1.jpeg?resize=269%2C187&ssl=1',
-                          width: 90,
-                          height: 90,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      title: const Text('Ask A Tech Question'),
-                      subtitle: const Text(
-                          'View commonly asked questions or ask any that you may have. '),
-                      isThreeLine: false,
-                      onTap: () async {
-                        await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Ask()));
-                      },
-                    ),
-                  ),
+                  // Card(
+                  //   child: ListTile(
+                  //     leading: ClipRRect(
+                  //       borderRadius: BorderRadius.circular(20),
+                  //       child: CachedNetworkImage(
+                  //         errorWidget: (context, url, error) =>
+                  //             const Icon(Icons.error),
+                  //         progressIndicatorBuilder:
+                  //             (context, url, downloadProgress) => SizedBox(
+                  //           height: 20,
+                  //           width: 20,
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.symmetric(
+                  //                 horizontal: 30, vertical: 15),
+                  //             child: CircularProgressIndicator(
+                  //               value: downloadProgress.progress,
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         imageUrl:
+                  //             'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-1.jpeg?resize=269%2C187&ssl=1',
+                  //         width: 90,
+                  //         height: 90,
+                  //         fit: BoxFit.contain,
+                  //       ),
+                  //     ),
+                  //     title: const Text('Ask A Tech Question'),
+                  //     subtitle: const Text(
+                  //         'View commonly asked questions or ask any that you may have. '),
+                  //     isThreeLine: false,
+                  //     onTap: () async {
+                  //       await Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) => const Ask()));
+                  //     },
+                  //   ),
+                  // ),
+
                   // Card(
                   //   clipBehavior: Clip.antiAliasWithSaveLayer,
                   //   shape: RoundedRectangleBorder(
@@ -516,48 +529,49 @@ class _MoreWidgetState extends State<MoreWidget> {
                       },
                     ),
                   ),
-                  Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: ListTile(
-                      leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: CachedNetworkImage(
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) => SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 15),
-                              child: CircularProgressIndicator(
-                                value: downloadProgress.progress,
-                              ),
-                            ),
-                          ),
-                          imageUrl:
-                              'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-3.jpeg?resize=234%2C215&ssl=1',
-                          width: 90,
-                          height: 90,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      title: const Text('Subscribe to our Newsletters'),
-                      subtitle: const Text(
-                          'Enter your communication details on this page and stay informed thorugh our newsletter service. '),
-                      isThreeLine: false,
-                      onTap: () async {
-                        await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Newsletter()));
-                      },
-                    ),
-                  ),
+                  // Card(
+                  //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(40),
+                  //   ),
+                  //   child: ListTile(
+                  //     leading: ClipRRect(
+                  //       borderRadius: BorderRadius.circular(20),
+                  //       child: CachedNetworkImage(
+                  //         errorWidget: (context, url, error) =>
+                  //             const Icon(Icons.error),
+                  //         progressIndicatorBuilder:
+                  //             (context, url, downloadProgress) => SizedBox(
+                  //           height: 20,
+                  //           width: 20,
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.symmetric(
+                  //                 horizontal: 30, vertical: 15),
+                  //             child: CircularProgressIndicator(
+                  //               value: downloadProgress.progress,
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         imageUrl:
+                  //             'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-3.jpeg?resize=234%2C215&ssl=1',
+                  //         width: 90,
+                  //         height: 90,
+                  //         fit: BoxFit.contain,
+                  //       ),
+                  //     ),
+                  //     title: const Text('Subscribe to our Newsletters'),
+                  //     subtitle: const Text(
+                  //         'Enter your communication details on this page and stay informed thorugh our newsletter service. '),
+                  //     isThreeLine: false,
+                  //     onTap: () async {
+                  //       await Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) => const Newsletter()));
+                  //     },
+                  //   ),
+                  // ),
+
                   Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: RoundedRectangleBorder(
@@ -600,48 +614,49 @@ class _MoreWidgetState extends State<MoreWidget> {
                       },
                     ),
                   ),
-                  Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: ListTile(
-                      leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: CachedNetworkImage(
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) => SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 15),
-                              child: CircularProgressIndicator(
-                                value: downloadProgress.progress,
-                              ),
-                            ),
-                          ),
-                          imageUrl:
-                              'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/affiliate-word-written-wooden-blocks-refferals-marketing-business-concept-207854257-1.jpg?resize=1024%2C156&ssl=1',
-                          width: 90,
-                          height: 90,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      title: const Text('Affiliate'),
-                      subtitle: const Text(
-                          'Become a Tech Cuttie affiliate and help others learn about Tech Cuttie'),
-                      isThreeLine: false,
-                      onTap: () async {
-                        await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Affiliate()));
-                      },
-                    ),
-                  ),
+
+                  // Card(
+                  //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(40),
+                  //   ),
+                  //   child: ListTile(
+                  //     leading: ClipRRect(
+                  //       borderRadius: BorderRadius.circular(20),
+                  //       child: CachedNetworkImage(
+                  //         errorWidget: (context, url, error) =>
+                  //             const Icon(Icons.error),
+                  //         progressIndicatorBuilder:
+                  //             (context, url, downloadProgress) => SizedBox(
+                  //           height: 20,
+                  //           width: 20,
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.symmetric(
+                  //                 horizontal: 30, vertical: 15),
+                  //             child: CircularProgressIndicator(
+                  //               value: downloadProgress.progress,
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         imageUrl:
+                  //             'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/affiliate-word-written-wooden-blocks-refferals-marketing-business-concept-207854257-1.jpg?resize=1024%2C156&ssl=1',
+                  //         width: 90,
+                  //         height: 90,
+                  //         fit: BoxFit.contain,
+                  //       ),
+                  //     ),
+                  //     title: const Text('Affiliate'),
+                  //     subtitle: const Text(
+                  //         'Become a Tech Cuttie affiliate and help others learn about Tech Cuttie'),
+                  //     isThreeLine: false,
+                  //     onTap: () async {
+                  //       await Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) => const Affiliate()));
+                  //     },
+                  //   ),
+                  // ),
                 ],
               )
             ],

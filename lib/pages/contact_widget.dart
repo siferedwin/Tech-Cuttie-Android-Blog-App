@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:contactus/contactus.dart';
 import 'package:flutter/material.dart';
 
@@ -54,16 +55,19 @@ class _ServicesState extends State<Contact> {
                       phoneNumber: '+254708603973',
                       phoneNumberText: 'Call Us',
                       website: 'https://www.techcuttie.com',
-                      avatarRadius: 30,
+                      // avatarRadius: 100,
                       textColor: Colors.white,
                       cardColor: Colors.deepPurple,
                       companyColor: Colors.deepPurpleAccent,
                       linkedinURL:
                           'https://www.linkedin.com/in/tech-cuttie-649b67221/',
                       tagLine: 'Tech is just a click if you have the time',
-                      logo: const AssetImage(
-                          'assets/images/tech_cuttie_logo.png'),
+                      // logo: const AssetImage(                          'assets/images/tech_cuttie_logo.png'),
                       githubUserName: 'SiferAdmin',
+                      image: const Image(
+                          image: CachedNetworkImageProvider(
+                        'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/Tech-Cuttie-2-2-e1632334780978.png?resize=300%2C276&ssl=1',
+                      )),
                       facebookHandle:
                           'https://web.facebook.com/TechCuttie-100189425766212/',
                       twitterHandle: '@techcuttie',

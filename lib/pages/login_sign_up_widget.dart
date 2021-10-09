@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
+import 'package:share/share.dart';
 import 'package:tech_cuttie/main.dart';
 import 'package:tech_cuttie/pages/home_page_widget.dart';
-import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/utils/fire_auth.dart';
 import 'package:tech_cuttie/utils/validator.dart';
 
@@ -376,7 +376,7 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                   MaterialPageRoute(
                                                                     builder:
                                                                         (context) =>
-                                                                            const ProfileWidget(),
+                                                                            const HomePageWidget(),
                                                                   ),
                                                                   ModalRoute
                                                                       .withName(
@@ -405,231 +405,231 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                   TextOverflow
                                                                       .clip,
                                                             )),
-                                                        const Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      12, 0, 0),
-                                                          child: Text(
-                                                            'Use a social platform to create an account:',
-                                                            style: TextStyle(
-                                                              // fontFamily: 'Lexend Deca',
-                                                              // color: Color(0x98FFFFFF),
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Row(
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                      0,
-                                                                      0,
-                                                                      8,
-                                                                      0),
-                                                              child: Card(
-                                                                clipBehavior: Clip
-                                                                    .antiAliasWithSaveLayer,
-                                                                // color: const Color(0xFF090F13),
-                                                                elevation: 3,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              50),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      const EdgeInsetsDirectional
-                                                                              .fromSTEB(
-                                                                          2,
-                                                                          2,
-                                                                          2,
-                                                                          2),
-                                                                  child:
-                                                                      Container(
-                                                                    width: 60,
-                                                                    height: 60,
-                                                                    clipBehavior:
-                                                                        Clip.antiAlias,
-                                                                    decoration:
-                                                                        const BoxDecoration(
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              16),
-                                                                      child: CachedNetworkImage(
-                                                                          errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
-                                                                                height: 20,
-                                                                                width: 20,
-                                                                                child: CircularProgressIndicator(
-                                                                                  value: downloadProgress.progress,
-                                                                                ),
-                                                                              ),
-                                                                          imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Card(
-                                                              clipBehavior: Clip
-                                                                  .antiAliasWithSaveLayer,
-                                                              // color: const Color(0xFF090F13),
-                                                              shape:
-                                                                  RoundedRectangleBorder(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            50),
-                                                              ),
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                            .fromSTEB(
-                                                                        2,
-                                                                        2,
-                                                                        2,
-                                                                        2),
-                                                                child:
-                                                                    Container(
-                                                                  width: 60,
-                                                                  height: 60,
-                                                                  clipBehavior:
-                                                                      Clip.antiAlias,
-                                                                  decoration:
-                                                                      const BoxDecoration(
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                  ),
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            16),
-                                                                    child: CachedNetworkImage(
-                                                                        errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                        progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
-                                                                              height: 20,
-                                                                              width: 20,
-                                                                              child: CircularProgressIndicator(
-                                                                                value: downloadProgress.progress,
-                                                                              ),
-                                                                            ),
-                                                                        imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                      8,
-                                                                      0,
-                                                                      0,
-                                                                      0),
-                                                              child: Card(
-                                                                clipBehavior: Clip
-                                                                    .antiAliasWithSaveLayer,
-                                                                // color: const Color(0xFF090F13),
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              50),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      const EdgeInsetsDirectional
-                                                                              .fromSTEB(
-                                                                          2,
-                                                                          2,
-                                                                          2,
-                                                                          2),
-                                                                  child:
-                                                                      Container(
-                                                                    width: 60,
-                                                                    height: 60,
-                                                                    clipBehavior:
-                                                                        Clip.antiAlias,
-                                                                    decoration:
-                                                                        const BoxDecoration(
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                    ),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              16),
-                                                                      child: CachedNetworkImage(
-                                                                          errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
-                                                                                height: 20,
-                                                                                width: 20,
-                                                                                child: CircularProgressIndicator(
-                                                                                  value: downloadProgress.progress,
-                                                                                ),
-                                                                              ),
-                                                                          imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                      8,
-                                                                      0,
-                                                                      0,
-                                                                      0),
-                                                              child: Card(
-                                                                clipBehavior: Clip
-                                                                    .antiAliasWithSaveLayer,
-                                                                // color: const Color(0xFF090F13),
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              50),
-                                                                ),
-                                                                child:
-                                                                    const Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          18,
-                                                                          18,
-                                                                          18,
-                                                                          18),
-                                                                  child: Icon(
-                                                                    Icons.phone,
-                                                                    // color: Colors.white,
-                                                                    size: 20,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            )
-                                                          ],
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                        )
+                                                        // const Padding(
+                                                        //   padding:
+                                                        //       EdgeInsetsDirectional
+                                                        //           .fromSTEB(0,
+                                                        //               12, 0, 0),
+                                                        //   child: Text(
+                                                        //     'Use a social platform to create an account:',
+                                                        //     style: TextStyle(
+                                                        //       // fontFamily: 'Lexend Deca',
+                                                        //       // color: Color(0x98FFFFFF),
+                                                        //       fontSize: 14,
+                                                        //       fontWeight:
+                                                        //           FontWeight
+                                                        //               .normal,
+                                                        //     ),
+                                                        //   ),
+                                                        // ),
+                                                        // Row(
+                                                        //   children: [
+                                                        //     Padding(
+                                                        //       padding:
+                                                        //           const EdgeInsetsDirectional
+                                                        //                   .fromSTEB(
+                                                        //               0,
+                                                        //               0,
+                                                        //               8,
+                                                        //               0),
+                                                        //       child: Card(
+                                                        //         clipBehavior: Clip
+                                                        //             .antiAliasWithSaveLayer,
+                                                        //         // color: const Color(0xFF090F13),
+                                                        //         elevation: 3,
+                                                        //         shape:
+                                                        //             RoundedRectangleBorder(
+                                                        //           borderRadius:
+                                                        //               BorderRadius
+                                                        //                   .circular(
+                                                        //                       50),
+                                                        //         ),
+                                                        //         child: Padding(
+                                                        //           padding:
+                                                        //               const EdgeInsetsDirectional
+                                                        //                       .fromSTEB(
+                                                        //                   2,
+                                                        //                   2,
+                                                        //                   2,
+                                                        //                   2),
+                                                        //           child:
+                                                        //               Container(
+                                                        //             width: 60,
+                                                        //             height: 60,
+                                                        //             clipBehavior:
+                                                        //                 Clip.antiAlias,
+                                                        //             decoration:
+                                                        //                 const BoxDecoration(
+                                                        //               shape: BoxShape
+                                                        //                   .circle,
+                                                        //             ),
+                                                        //             child:
+                                                        //                 ClipRRect(
+                                                        //               borderRadius:
+                                                        //                   BorderRadius.circular(
+                                                        //                       16),
+                                                        //               child: CachedNetworkImage(
+                                                        //                   errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                        //                   progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                        //                         height: 20,
+                                                        //                         width: 20,
+                                                        //                         child: CircularProgressIndicator(
+                                                        //                           value: downloadProgress.progress,
+                                                        //                         ),
+                                                        //                       ),
+                                                        //                   imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
+                                                        //             ),
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //     ),
+                                                        //     Card(
+                                                        //       clipBehavior: Clip
+                                                        //           .antiAliasWithSaveLayer,
+                                                        //       // color: const Color(0xFF090F13),
+                                                        //       shape:
+                                                        //           RoundedRectangleBorder(
+                                                        //         borderRadius:
+                                                        //             BorderRadius
+                                                        //                 .circular(
+                                                        //                     50),
+                                                        //       ),
+                                                        //       child: Padding(
+                                                        //         padding:
+                                                        //             const EdgeInsetsDirectional
+                                                        //                     .fromSTEB(
+                                                        //                 2,
+                                                        //                 2,
+                                                        //                 2,
+                                                        //                 2),
+                                                        //         child:
+                                                        //             Container(
+                                                        //           width: 60,
+                                                        //           height: 60,
+                                                        //           clipBehavior:
+                                                        //               Clip.antiAlias,
+                                                        //           decoration:
+                                                        //               const BoxDecoration(
+                                                        //             shape: BoxShape
+                                                        //                 .circle,
+                                                        //           ),
+                                                        //           child:
+                                                        //               ClipRRect(
+                                                        //             borderRadius:
+                                                        //                 BorderRadius.circular(
+                                                        //                     16),
+                                                        //             child: CachedNetworkImage(
+                                                        //                 errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                        //                 progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                        //                       height: 20,
+                                                        //                       width: 20,
+                                                        //                       child: CircularProgressIndicator(
+                                                        //                         value: downloadProgress.progress,
+                                                        //                       ),
+                                                        //                     ),
+                                                        //                 imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //     ),
+                                                        //     Padding(
+                                                        //       padding:
+                                                        //           const EdgeInsetsDirectional
+                                                        //                   .fromSTEB(
+                                                        //               8,
+                                                        //               0,
+                                                        //               0,
+                                                        //               0),
+                                                        //       child: Card(
+                                                        //         clipBehavior: Clip
+                                                        //             .antiAliasWithSaveLayer,
+                                                        //         // color: const Color(0xFF090F13),
+                                                        //         shape:
+                                                        //             RoundedRectangleBorder(
+                                                        //           borderRadius:
+                                                        //               BorderRadius
+                                                        //                   .circular(
+                                                        //                       50),
+                                                        //         ),
+                                                        //         child: Padding(
+                                                        //           padding:
+                                                        //               const EdgeInsetsDirectional
+                                                        //                       .fromSTEB(
+                                                        //                   2,
+                                                        //                   2,
+                                                        //                   2,
+                                                        //                   2),
+                                                        //           child:
+                                                        //               Container(
+                                                        //             width: 60,
+                                                        //             height: 60,
+                                                        //             clipBehavior:
+                                                        //                 Clip.antiAlias,
+                                                        //             decoration:
+                                                        //                 const BoxDecoration(
+                                                        //               shape: BoxShape
+                                                        //                   .circle,
+                                                        //             ),
+                                                        //             child:
+                                                        //                 ClipRRect(
+                                                        //               borderRadius:
+                                                        //                   BorderRadius.circular(
+                                                        //                       16),
+                                                        //               child: CachedNetworkImage(
+                                                        //                   errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                        //                   progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                        //                         height: 20,
+                                                        //                         width: 20,
+                                                        //                         child: CircularProgressIndicator(
+                                                        //                           value: downloadProgress.progress,
+                                                        //                         ),
+                                                        //                       ),
+                                                        //                   imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                        //             ),
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //     ),
+                                                        //     Padding(
+                                                        //       padding:
+                                                        //           const EdgeInsetsDirectional
+                                                        //                   .fromSTEB(
+                                                        //               8,
+                                                        //               0,
+                                                        //               0,
+                                                        //               0),
+                                                        //       child: Card(
+                                                        //         clipBehavior: Clip
+                                                        //             .antiAliasWithSaveLayer,
+                                                        //         // color: const Color(0xFF090F13),
+                                                        //         shape:
+                                                        //             RoundedRectangleBorder(
+                                                        //           borderRadius:
+                                                        //               BorderRadius
+                                                        //                   .circular(
+                                                        //                       50),
+                                                        //         ),
+                                                        //         child:
+                                                        //             const Padding(
+                                                        //           padding: EdgeInsetsDirectional
+                                                        //               .fromSTEB(
+                                                        //                   18,
+                                                        //                   18,
+                                                        //                   18,
+                                                        //                   18),
+                                                        //           child: Icon(
+                                                        //             Icons.phone,
+                                                        //             // color: Colors.white,
+                                                        //             size: 20,
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //     )
+                                                        //   ],
+                                                        //   mainAxisAlignment:
+                                                        //       MainAxisAlignment
+                                                        //           .center,
+                                                        // )
                                                       ],
                                                     )
                                                   : Column(
@@ -673,6 +673,29 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                       .withName(
                                                                           '/'),
                                                                 );
+                                                              } else {
+                                                                showDialog(
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (alertDialogContext) {
+                                                                    return AlertDialog(
+                                                                      title: const Text(
+                                                                          'Your Sign In failed'),
+                                                                      content:
+                                                                          const Text(
+                                                                              'Please enter your correct password and email again or Sign Up for a new account if you dont have one.'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () =>
+                                                                              Navigator.pop(alertDialogContext),
+                                                                          child:
+                                                                              const Text('Try Again'),
+                                                                        ),
+                                                                      ],
+                                                                    );
+                                                                  },
+                                                                );
                                                               }
                                                             }
                                                           },
@@ -681,7 +704,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                         ),
                                                         TextButton(
                                                             onPressed: () {
-                                                              setState(() {});
+                                                              // setState(() {});
+                                                              Share.share(
+                                                                  'eddy@techcuttie.com');
                                                             },
                                                             child: const Text(
                                                               'Forgot password',
@@ -705,231 +730,231 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                   TextOverflow
                                                                       .clip,
                                                             )),
-                                                        const Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      10, 0, 0),
-                                                          child: Text(
-                                                            'Use a social platform to Login:',
-                                                            style: TextStyle(
-                                                              // fontFamily: 'Lexend Deca',
-                                                              // color: Color(0x98FFFFFF),
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                            .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        8,
-                                                                        0),
-                                                                child: Card(
-                                                                  clipBehavior:
-                                                                      Clip.antiAliasWithSaveLayer,
-                                                                  // color: const Color(0xFF090F13),
-                                                                  elevation: 3,
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            50),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            2,
-                                                                            2,
-                                                                            2),
-                                                                    child:
-                                                                        Container(
-                                                                      width: 60,
-                                                                      height:
-                                                                          60,
-                                                                      clipBehavior:
-                                                                          Clip.antiAlias,
-                                                                      decoration:
-                                                                          const BoxDecoration(
-                                                                        shape: BoxShape
-                                                                            .circle,
-                                                                      ),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(16),
-                                                                        child: CachedNetworkImage(
-                                                                            errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
-                                                                                  height: 20,
-                                                                                  width: 20,
-                                                                                  child: CircularProgressIndicator(
-                                                                                    value: downloadProgress.progress,
-                                                                                  ),
-                                                                                ),
-                                                                            imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                            .all(
-                                                                        8.0),
-                                                                child: Card(
-                                                                  clipBehavior:
-                                                                      Clip.antiAliasWithSaveLayer,
-                                                                  // color: const Color(0xFF090F13),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            50),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            2,
-                                                                            2,
-                                                                            2),
-                                                                    child:
-                                                                        Container(
-                                                                      width: 60,
-                                                                      height:
-                                                                          60,
-                                                                      clipBehavior:
-                                                                          Clip.antiAlias,
-                                                                      decoration:
-                                                                          const BoxDecoration(
-                                                                        shape: BoxShape
-                                                                            .circle,
-                                                                      ),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(16),
-                                                                        child: CachedNetworkImage(
-                                                                            errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
-                                                                                  height: 20,
-                                                                                  width: 20,
-                                                                                  child: CircularProgressIndicator(
-                                                                                    value: downloadProgress.progress,
-                                                                                  ),
-                                                                                ),
-                                                                            imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                            .fromSTEB(
-                                                                        8,
-                                                                        0,
-                                                                        0,
-                                                                        0),
-                                                                child: Card(
-                                                                  clipBehavior:
-                                                                      Clip.antiAliasWithSaveLayer,
-                                                                  // color: const Color(0xFF090F13),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            50),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            2,
-                                                                            2,
-                                                                            2),
-                                                                    child:
-                                                                        Container(
-                                                                      width: 60,
-                                                                      height:
-                                                                          60,
-                                                                      clipBehavior:
-                                                                          Clip.antiAlias,
-                                                                      decoration:
-                                                                          const BoxDecoration(
-                                                                        shape: BoxShape
-                                                                            .circle,
-                                                                      ),
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        child: CachedNetworkImage(
-                                                                            errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
-                                                                                  height: 20,
-                                                                                  width: 20,
-                                                                                  child: CircularProgressIndicator(
-                                                                                    value: downloadProgress.progress,
-                                                                                  ),
-                                                                                ),
-                                                                            imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                            .fromSTEB(
-                                                                        8,
-                                                                        0,
-                                                                        0,
-                                                                        0),
-                                                                child: Card(
-                                                                  clipBehavior:
-                                                                      Clip.antiAliasWithSaveLayer,
-                                                                  // color: const Color(0xFF090F13),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            50),
-                                                                  ),
-                                                                  child:
-                                                                      const Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            18,
-                                                                            18,
-                                                                            18,
-                                                                            18),
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .phone,
-                                                                      // color: Colors.white,
-                                                                      size: 20,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              )
-                                                            ]),
+                                                        // const Padding(
+                                                        //   padding:
+                                                        //       EdgeInsetsDirectional
+                                                        //           .fromSTEB(0,
+                                                        //               10, 0, 0),
+                                                        //   child: Text(
+                                                        //     'Use a social platform to Login:',
+                                                        //     style: TextStyle(
+                                                        //       // fontFamily: 'Lexend Deca',
+                                                        //       // color: Color(0x98FFFFFF),
+                                                        //       fontSize: 14,
+                                                        //       fontWeight:
+                                                        //           FontWeight
+                                                        //               .normal,
+                                                        //     ),
+                                                        //   ),
+                                                        // ),
+                                                        // Row(
+                                                        //     mainAxisAlignment:
+                                                        //         MainAxisAlignment
+                                                        //             .center,
+                                                        //     children: [
+                                                        //       Padding(
+                                                        //         padding:
+                                                        //             const EdgeInsetsDirectional
+                                                        //                     .fromSTEB(
+                                                        //                 0,
+                                                        //                 0,
+                                                        //                 8,
+                                                        //                 0),
+                                                        //         child: Card(
+                                                        //           clipBehavior:
+                                                        //               Clip.antiAliasWithSaveLayer,
+                                                        //           // color: const Color(0xFF090F13),
+                                                        //           elevation: 3,
+                                                        //           shape:
+                                                        //               RoundedRectangleBorder(
+                                                        //             borderRadius:
+                                                        //                 BorderRadius.circular(
+                                                        //                     50),
+                                                        //           ),
+                                                        //           child:
+                                                        //               Padding(
+                                                        //             padding:
+                                                        //                 const EdgeInsetsDirectional.fromSTEB(
+                                                        //                     2,
+                                                        //                     2,
+                                                        //                     2,
+                                                        //                     2),
+                                                        //             child:
+                                                        //                 Container(
+                                                        //               width: 60,
+                                                        //               height:
+                                                        //                   60,
+                                                        //               clipBehavior:
+                                                        //                   Clip.antiAlias,
+                                                        //               decoration:
+                                                        //                   const BoxDecoration(
+                                                        //                 shape: BoxShape
+                                                        //                     .circle,
+                                                        //               ),
+                                                        //               child:
+                                                        //                   ClipRRect(
+                                                        //                 borderRadius:
+                                                        //                     BorderRadius.circular(16),
+                                                        //                 child: CachedNetworkImage(
+                                                        //                     errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                        //                     progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                        //                           height: 20,
+                                                        //                           width: 20,
+                                                        //                           child: CircularProgressIndicator(
+                                                        //                             value: downloadProgress.progress,
+                                                        //                           ),
+                                                        //                         ),
+                                                        //                     imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
+                                                        //               ),
+                                                        //             ),
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //       Padding(
+                                                        //         padding:
+                                                        //             const EdgeInsets
+                                                        //                     .all(
+                                                        //                 8.0),
+                                                        //         child: Card(
+                                                        //           clipBehavior:
+                                                        //               Clip.antiAliasWithSaveLayer,
+                                                        //           // color: const Color(0xFF090F13),
+                                                        //           shape:
+                                                        //               RoundedRectangleBorder(
+                                                        //             borderRadius:
+                                                        //                 BorderRadius.circular(
+                                                        //                     50),
+                                                        //           ),
+                                                        //           child:
+                                                        //               Padding(
+                                                        //             padding:
+                                                        //                 const EdgeInsetsDirectional.fromSTEB(
+                                                        //                     2,
+                                                        //                     2,
+                                                        //                     2,
+                                                        //                     2),
+                                                        //             child:
+                                                        //                 Container(
+                                                        //               width: 60,
+                                                        //               height:
+                                                        //                   60,
+                                                        //               clipBehavior:
+                                                        //                   Clip.antiAlias,
+                                                        //               decoration:
+                                                        //                   const BoxDecoration(
+                                                        //                 shape: BoxShape
+                                                        //                     .circle,
+                                                        //               ),
+                                                        //               child:
+                                                        //                   ClipRRect(
+                                                        //                 borderRadius:
+                                                        //                     BorderRadius.circular(16),
+                                                        //                 child: CachedNetworkImage(
+                                                        //                     errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                        //                     progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                        //                           height: 20,
+                                                        //                           width: 20,
+                                                        //                           child: CircularProgressIndicator(
+                                                        //                             value: downloadProgress.progress,
+                                                        //                           ),
+                                                        //                         ),
+                                                        //                     imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                        //               ),
+                                                        //             ),
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //       Padding(
+                                                        //         padding:
+                                                        //             const EdgeInsetsDirectional
+                                                        //                     .fromSTEB(
+                                                        //                 8,
+                                                        //                 0,
+                                                        //                 0,
+                                                        //                 0),
+                                                        //         child: Card(
+                                                        //           clipBehavior:
+                                                        //               Clip.antiAliasWithSaveLayer,
+                                                        //           // color: const Color(0xFF090F13),
+                                                        //           shape:
+                                                        //               RoundedRectangleBorder(
+                                                        //             borderRadius:
+                                                        //                 BorderRadius.circular(
+                                                        //                     50),
+                                                        //           ),
+                                                        //           child:
+                                                        //               Padding(
+                                                        //             padding:
+                                                        //                 const EdgeInsetsDirectional.fromSTEB(
+                                                        //                     2,
+                                                        //                     2,
+                                                        //                     2,
+                                                        //                     2),
+                                                        //             child:
+                                                        //                 Container(
+                                                        //               width: 60,
+                                                        //               height:
+                                                        //                   60,
+                                                        //               clipBehavior:
+                                                        //                   Clip.antiAlias,
+                                                        //               decoration:
+                                                        //                   const BoxDecoration(
+                                                        //                 shape: BoxShape
+                                                        //                     .circle,
+                                                        //               ),
+                                                        //               child:
+                                                        //                   ClipRRect(
+                                                        //                 child: CachedNetworkImage(
+                                                        //                     errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                        //                     progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                        //                           height: 20,
+                                                        //                           width: 20,
+                                                        //                           child: CircularProgressIndicator(
+                                                        //                             value: downloadProgress.progress,
+                                                        //                           ),
+                                                        //                         ),
+                                                        //                     imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
+                                                        //               ),
+                                                        //             ),
+                                                        //           ),
+                                                        //         ),
+                                                        //       ),
+                                                        //       Padding(
+                                                        //         padding:
+                                                        //             const EdgeInsetsDirectional
+                                                        //                     .fromSTEB(
+                                                        //                 8,
+                                                        //                 0,
+                                                        //                 0,
+                                                        //                 0),
+                                                        //         child: Card(
+                                                        //           clipBehavior:
+                                                        //               Clip.antiAliasWithSaveLayer,
+                                                        //           // color: const Color(0xFF090F13),
+                                                        //           shape:
+                                                        //               RoundedRectangleBorder(
+                                                        //             borderRadius:
+                                                        //                 BorderRadius.circular(
+                                                        //                     50),
+                                                        //           ),
+                                                        //           child:
+                                                        //               const Padding(
+                                                        //             padding: EdgeInsetsDirectional
+                                                        //                 .fromSTEB(
+                                                        //                     18,
+                                                        //                     18,
+                                                        //                     18,
+                                                        //                     18),
+                                                        //             child: Icon(
+                                                        //               Icons
+                                                        //                   .phone,
+                                                        //               // color: Colors.white,
+                                                        //               size: 20,
+                                                        //             ),
+                                                        //           ),
+                                                        //         ),
+                                                        //       )
+                                                        //     ]),
                                                       ],
                                                     )
                                             ],

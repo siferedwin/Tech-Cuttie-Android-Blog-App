@@ -4,11 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_cuttie/pages/blogs_widget.dart';
-import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
 import 'package:tech_cuttie/pages/more_widget.dart';
-import 'package:tech_cuttie/pages/profile_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
-import 'package:tech_cuttie/pages/welcome_widget.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -256,16 +253,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               actions: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const WelcomeWidget()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => const WelcomeWidget()));
+                    showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: const Text('Need Help?'),
+                          content: const Text(
+                              'Click on the more page to view other features.'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: const Text('Alright'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: const [
                       Icon(
-                        Icons.settings_sharp,
+                        Icons.help_rounded,
                         // color: Colors.black,
                         size: 30,
                       ),
@@ -275,89 +289,100 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 const SizedBox(
                   width: 10,
                 ),
-                InkWell(
-                  onTap: () {
-                    if (FirebaseAuth.instance.currentUser == null) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginSignUpWidget()));
-                    } else {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const Center(child: ProfileWidget())));
-                    }
-                  },
-                  child: FutureBuilder<DocumentSnapshot>(
-                      future: loggedUser.doc(id).get(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<DocumentSnapshot> snapshot) {
-                        if (snapshot.hasError) {
-                          return const Text("`");
-                        }
-                        if (snapshot.hasData && !snapshot.data!.exists) {
-                          return const Text('\'');
-                        }
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          Map<String, dynamic> data =
-                              snapshot.data!.data() as Map<String, dynamic>;
-                          imageUrl = "${data['pic_link']}";
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 5),
-                            child: Container(
-                              // width: 100,
-                              // height: 100,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                              ),
-                              // ignore: unrelated_type_equality_checks
-                              child: imageUrl != ''
-                                  ? ClipRRect(
-                                      borderRadius: BorderRadius.circular(16),
-                                      child: CachedNetworkImage(
-                                          errorWidget: (context, url, error) =>
-                                              const Icon(Icons.error),
-                                          progressIndicatorBuilder: (context,
-                                                  url, downloadProgress) =>
-                                              SizedBox(
-                                                height: 20,
-                                                width: 20,
-                                                child: Padding(
-                                                  padding: const EdgeInsets
-                                                          .symmetric(
-                                                      horizontal: 10,
-                                                      vertical: 5),
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    value: downloadProgress
-                                                        .progress,
-                                                  ),
-                                                ),
-                                              ),
-                                          imageUrl: imageUrl),
-                                    )
-                                  : ClipRRect(
-                                      borderRadius: BorderRadius.circular(16),
-                                      child: Image.asset(
-                                          'assets/images/user_loading.gif')),
-                            ),
-                          );
-                        }
-                        return const Center(
-                          child: SizedBox(
-                              height: 20,
-                              width: 20,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 5),
-                                child: CircularProgressIndicator(),
-                              )),
-                        );
-                      }),
-                ),
+                // InkWell(
+                //   onTap: () {
+                //     if (FirebaseAuth.instance.currentUser == null) {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const LoginSignUpWidget()));
+                //     } else {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) =>
+                //                   const Center(child: ProfileWidget())));
+                //     }
+                //   },
+                //   child: isReady == false
+                //       ? FutureBuilder<DocumentSnapshot>(
+                //           future: loggedUser.doc(id).get(),
+                //           builder: (BuildContext context,
+                //               AsyncSnapshot<DocumentSnapshot> snapshot) {
+                //             if (snapshot.hasError) {
+                //               return const Text("`");
+                //             }
+                //             if (snapshot.hasData && !snapshot.data!.exists) {
+                //               return const Text('\'');
+                //             }
+                //             if (snapshot.connectionState ==
+                //                 ConnectionState.done) {
+                //               Map<String, dynamic> data =
+                //                   snapshot.data!.data() as Map<String, dynamic>;
+                //               imageUrl = "${data['pic_link']}";
+                //               return Padding(
+                //                 padding: const EdgeInsets.only(bottom: 5),
+                //                 child: Container(
+                //                   // width: 100,
+                //                   // height: 100,
+                //                   clipBehavior: Clip.antiAlias,
+                //                   decoration: const BoxDecoration(
+                //                     shape: BoxShape.circle,
+                //                   ),
+                //                   // ignore: unrelated_type_equality_checks
+                //                   child: imageUrl != ''
+                //                       ? ClipRRect(
+                //                           borderRadius:
+                //                               BorderRadius.circular(16),
+                //                           child: CachedNetworkImage(
+                //                               errorWidget:
+                //                                   (context, url, error) =>
+                //                                       const Icon(Icons.error),
+                //                               progressIndicatorBuilder:
+                //                                   (context, url,
+                //                                           downloadProgress) =>
+                //                                       SizedBox(
+                //                                         height: 20,
+                //                                         width: 20,
+                //                                         child: Padding(
+                //                                           padding:
+                //                                               const EdgeInsets
+                //                                                       .symmetric(
+                //                                                   horizontal:
+                //                                                       10,
+                //                                                   vertical: 5),
+                //                                           child:
+                //                                               CircularProgressIndicator(
+                //                                             value:
+                //                                                 downloadProgress
+                //                                                     .progress,
+                //                                           ),
+                //                                         ),
+                //                                       ),
+                //                               imageUrl: imageUrl),
+                //                         )
+                //                       : ClipRRect(
+                //                           borderRadius:
+                //                               BorderRadius.circular(16),
+                //                           child: Image.asset(
+                //                               'assets/images/user_loading.gif')),
+                //                 ),
+                //               );
+                //             }
+                //             return const Center(
+                //               child: SizedBox(
+                //                   height: 20,
+                //                   width: 20,
+                //                   child: Padding(
+                //                     padding: EdgeInsets.symmetric(
+                //                         horizontal: 10, vertical: 5),
+                //                     child: CircularProgressIndicator(),
+                //                   )),
+                //             );
+                //           })
+                //       : const SizedBox(width: 10, height: 10),
+                // ),
+
                 const SizedBox(
                   width: 5,
                 )

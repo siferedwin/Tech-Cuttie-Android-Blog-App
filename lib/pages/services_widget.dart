@@ -99,11 +99,8 @@ class _ServicesState extends State<ServicesWidget> {
                             ),
                           ),
                           InkWell(
-                            onTap: () async {
-                              await pageViewController.nextPage(
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.ease,
-                              );
+                            onTap: () {
+                              pageViewController.jumpToPage(3);
                             },
                             child: const ListTile(
                               title: Text(
@@ -120,117 +117,194 @@ class _ServicesState extends State<ServicesWidget> {
                               ),
                               trailing: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Color(0xFF1D043F),
+                                // color: Color(0xFF1D043F),
                                 size: 20,
                               ),
-                              tileColor: Color(0xFFF5F5F5),
+                              // tileColor: Color(0xFFF5F5F5),
                               dense: false,
                             ),
                           ),
-                          const ListTile(
-                            title: Text(
-                              'Web Development',
-                              // style: FlutterFlowTheme.title3.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(8);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'Web Development',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'WordPress Full stack website design and Implementation',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // color: Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            subtitle: Text(
-                              'WordPress Full stack website design and Implementation',
-                              // style: FlutterFlowTheme.subtitle2.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF1D043F),
-                              size: 20,
-                            ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
                           ),
-                          const ListTile(
-                            title: Text(
-                              'CopyWriting',
-                              // style: FlutterFlowTheme.title3.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(1);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'Advertising & Marketing',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'Get an affordable means of communicating with your consumers through our platform.',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // color: Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            subtitle: Text(
-                              'Professional Level Content Writing and Copywriting with SEO excellence and compliance',
-                              // style: FlutterFlowTheme.subtitle2.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF1D043F),
-                              size: 20,
-                            ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
                           ),
-                          const ListTile(
-                            title: Text(
-                              'Statistical Analysis',
-                              // style: FlutterFlowTheme.title3.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(2);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'CopyWriting',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'Professional Level Content Writing and Copywriting with SEO excellence and compliance',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // color: Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            subtitle: Text(
-                              'Microsoft Excel Data analysis and manipulation',
-                              // style: FlutterFlowTheme.subtitle2.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF1D043F),
-                              size: 20,
-                            ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
                           ),
-                          const ListTile(
-                            title: Text(
-                              'Image editing',
-                              // style: FlutterFlowTheme.title3.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(4);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'Statistical Analysis',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'Microsoft Excel Data analysis and manipulation',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // colorconst : Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            subtitle: Text(
-                              'Image Retouching and Editing to suite exceptional Imaging standards',
-                              // style: FlutterFlowTheme.subtitle2.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
-                            ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF1D043F),
-                              size: 20,
-                            ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
                           ),
-                          const ListTile(
-                            title: Text(
-                              'Tech Consultancy',
-                              // style: FlutterFlowTheme.title3.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(6);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'Powerpoint Presentations',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'Get first inline when projecting your ideas and project prsentations through the uniquely satisfying presentations that we help you build.',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // color: Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            subtitle: Text(
-                              'Tech Consultancy get informative direction for any project of your choices whe implementing different kinds of systems.',
-                              // style: FlutterFlowTheme.subtitle2.override(
-                              //   fontFamily: 'Poppins',
-                              // ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(5);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'Image editing',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'Image Retouching and Editing to suite exceptional Imaging standards',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // color: Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xFF1D043F),
-                              size: 20,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              pageViewController.jumpToPage(7);
+                            },
+                            child: const ListTile(
+                              title: Text(
+                                'Tech Consultancy',
+                                // style: FlutterFlowTheme.title3.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              subtitle: Text(
+                                'Tech Consultancy get informative direction for any project of your choices whe implementing different kinds of systems.',
+                                // style: FlutterFlowTheme.subtitle2.override(
+                                //   fontFamily: 'Poppins',
+                                // ),
+                              ),
+                              trailing: Icon(
+                                Icons.arrow_forward_ios,
+                                // color: Color(0xFF1D043F),
+                                size: 20,
+                              ),
+                              // tileColor: Color(0xFFF5F5F5),
+                              dense: false,
                             ),
-                            tileColor: Color(0xFFF5F5F5),
-                            dense: false,
                           )
                         ],
                       ),
@@ -1143,8 +1217,8 @@ class _ServicesState extends State<ServicesWidget> {
                         radius: 16,
                         dotWidth: 16,
                         dotHeight: 16,
-                        dotColor: Color(0xFF673AB7),
-                        activeDotColor: Color(0xFF250550),
+                        dotColor: Color(0xFF8346EC),
+                        activeDotColor: Color(0xFF290558),
                         paintStyle: PaintingStyle.fill,
                       ),
                     ),

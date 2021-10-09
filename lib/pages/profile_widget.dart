@@ -278,160 +278,161 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ],
                                     ),
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            16, 0, 16, 20),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(2, 2, 2, 2),
-                                              child: ElevatedButton(
-                                                onPressed: () async {},
-                                                child: const Icon(
-                                                    Icons.chat_bubble),
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 4, 0, 0),
-                                              child: Text(
-                                                'Chat',
-                                                style: TextStyle(
-                                                  // fontFamily: 'Lexend Deca',
-                                                  // color: Colors.white,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(2, 2, 2, 2),
-                                              child: ElevatedButton(
-                                                onPressed: () async {},
-                                                child: const Icon(
-                                                    Icons.videocam_rounded),
-                                              ),
-                                              // FlutterFlowIconButton(
-                                              //   borderColor: Colors.transparent,
-                                              //   borderRadius: 30,
-                                              //   buttonSize: 46,
-                                              //   icon: Icon(
-                                              //     Icons.videocam_rounded,
-                                              //   // color: Colors.white,
-                                              //     size: 24,
-                                              //   ),
-                                              //   onPressed: () {
-                                              //     print('IconButton pressed ...');
-                                              //   },
-                                              // ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 4, 0, 0),
-                                              child: Text(
-                                                'Video Call',
-                                                style: TextStyle(
-                                                  // fontFamily: 'Lexend Deca',
-                                                  // color: Colors.white,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(2, 2, 2, 2),
-                                              child: ElevatedButton(
-                                                onPressed: () async {},
-                                                child: const Icon(
-                                                    Icons.call_end_rounded),
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 4, 0, 0),
-                                              child: Text(
-                                                'Call',
-                                                style: TextStyle(
-                                                  // fontFamily: 'Lexend Deca',
-                                                  // color: Colors.white,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(2, 2, 2, 2),
-                                              child: ElevatedButton(
-                                                onPressed: () async {
-                                                  await FirebaseFirestore
-                                                      .instance
-                                                      .disableNetwork();
-                                                },
-                                                child: const Icon(
-                                                    Icons.add_alert_rounded),
-                                              ),
-                                              //  FlutterFlowIconButton(
-                                              //   borderColor: Colors.transparent,
-                                              //   borderRadius: 30,
-                                              //   buttonSize: 46,
-                                              //   icon: Icon(
-                                              //     Icons.add_rounded,
-                                              //   // color: Colors.white,
-                                              //     size: 24,
-                                              //   ),
-                                              //   onPressed: () {
-                                              //     print('IconButton pressed ...');
-                                              //   },
-                                              // ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 4, 0, 0),
-                                              child: Text(
-                                                'Follow',
-                                                style: TextStyle(
-                                                  // fontFamily: 'Lexend Deca',
-                                                  // color: Colors.white,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                  // Padding(
+                                  //   padding:
+                                  //       const EdgeInsetsDirectional.fromSTEB(
+                                  //           16, 0, 16, 20),
+                                  //   child: Row(
+                                  //     mainAxisSize: MainAxisSize.max,
+                                  //     mainAxisAlignment:
+                                  //         MainAxisAlignment.spaceEvenly,
+                                  //     children: [
+                                  //       Column(
+                                  //         mainAxisSize: MainAxisSize.max,
+                                  //         children: [
+                                  //           Padding(
+                                  //             padding:
+                                  //                 const EdgeInsetsDirectional
+                                  //                     .fromSTEB(2, 2, 2, 2),
+                                  //             child: ElevatedButton(
+                                  //               onPressed: () async {},
+                                  //               child: const Icon(
+                                  //                   Icons.chat_bubble),
+                                  //             ),
+                                  //           ),
+                                  //           const Padding(
+                                  //             padding: EdgeInsetsDirectional
+                                  //                 .fromSTEB(0, 4, 0, 0),
+                                  //             child: Text(
+                                  //               'Chat',
+                                  //               style: TextStyle(
+                                  //                 // fontFamily: 'Lexend Deca',
+                                  //                 // color: Colors.white,
+                                  //                 fontSize: 14,
+                                  //                 fontWeight: FontWeight.normal,
+                                  //               ),
+                                  //             ),
+                                  //           )
+                                  //         ],
+                                  //       ),
+                                  //       Column(
+                                  //         mainAxisSize: MainAxisSize.max,
+                                  //         children: [
+                                  //           Padding(
+                                  //             padding:
+                                  //                 const EdgeInsetsDirectional
+                                  //                     .fromSTEB(2, 2, 2, 2),
+                                  //             child: ElevatedButton(
+                                  //               onPressed: () async {},
+                                  //               child: const Icon(
+                                  //                   Icons.videocam_rounded),
+                                  //             ),
+                                  //             // FlutterFlowIconButton(
+                                  //             //   borderColor: Colors.transparent,
+                                  //             //   borderRadius: 30,
+                                  //             //   buttonSize: 46,
+                                  //             //   icon: Icon(
+                                  //             //     Icons.videocam_rounded,
+                                  //             //   // color: Colors.white,
+                                  //             //     size: 24,
+                                  //             //   ),
+                                  //             //   onPressed: () {
+                                  //             //     print('IconButton pressed ...');
+                                  //             //   },
+                                  //             // ),
+                                  //           ),
+                                  //           const Padding(
+                                  //             padding: EdgeInsetsDirectional
+                                  //                 .fromSTEB(0, 4, 0, 0),
+                                  //             child: Text(
+                                  //               'Video Call',
+                                  //               style: TextStyle(
+                                  //                 // fontFamily: 'Lexend Deca',
+                                  //                 // color: Colors.white,
+                                  //                 fontSize: 14,
+                                  //                 fontWeight: FontWeight.normal,
+                                  //               ),
+                                  //             ),
+                                  //           )
+                                  //         ],
+                                  //       ),
+                                  //       Column(
+                                  //         mainAxisSize: MainAxisSize.max,
+                                  //         children: [
+                                  //           Padding(
+                                  //             padding:
+                                  //                 const EdgeInsetsDirectional
+                                  //                     .fromSTEB(2, 2, 2, 2),
+                                  //             child: ElevatedButton(
+                                  //               onPressed: () async {},
+                                  //               child: const Icon(
+                                  //                   Icons.call_end_rounded),
+                                  //             ),
+                                  //           ),
+                                  //           const Padding(
+                                  //             padding: EdgeInsetsDirectional
+                                  //                 .fromSTEB(0, 4, 0, 0),
+                                  //             child: Text(
+                                  //               'Call',
+                                  //               style: TextStyle(
+                                  //                 // fontFamily: 'Lexend Deca',
+                                  //                 // color: Colors.white,
+                                  //                 fontSize: 14,
+                                  //                 fontWeight: FontWeight.normal,
+                                  //               ),
+                                  //             ),
+                                  //           )
+                                  //         ],
+                                  //       ),
+                                  //       Column(
+                                  //         mainAxisSize: MainAxisSize.max,
+                                  //         children: [
+                                  //           Padding(
+                                  //             padding:
+                                  //                 const EdgeInsetsDirectional
+                                  //                     .fromSTEB(2, 2, 2, 2),
+                                  //             child: ElevatedButton(
+                                  //               onPressed: () async {
+                                  //                 await FirebaseFirestore
+                                  //                     .instance
+                                  //                     .disableNetwork();
+                                  //               },
+                                  //               child: const Icon(
+                                  //                   Icons.add_alert_rounded),
+                                  //             ),
+                                  //             //  FlutterFlowIconButton(
+                                  //             //   borderColor: Colors.transparent,
+                                  //             //   borderRadius: 30,
+                                  //             //   buttonSize: 46,
+                                  //             //   icon: Icon(
+                                  //             //     Icons.add_rounded,
+                                  //             //   // color: Colors.white,
+                                  //             //     size: 24,
+                                  //             //   ),
+                                  //             //   onPressed: () {
+                                  //             //     print('IconButton pressed ...');
+                                  //             //   },
+                                  //             // ),
+                                  //           ),
+                                  //           const Padding(
+                                  //             padding: EdgeInsetsDirectional
+                                  //                 .fromSTEB(0, 4, 0, 0),
+                                  //             child: Text(
+                                  //               'Follow',
+                                  //               style: TextStyle(
+                                  //                 // fontFamily: 'Lexend Deca',
+                                  //                 // color: Colors.white,
+                                  //                 fontSize: 14,
+                                  //                 fontWeight: FontWeight.normal,
+                                  //               ),
+                                  //             ),
+                                  //           )
+                                  //         ],
+                                  //       )
+                                  //     ],
+                                  //   ),
+                                  // ),
+
                                   const Divider(
                                     height: 1,
                                     thickness: 2,

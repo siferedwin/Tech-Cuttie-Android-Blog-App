@@ -993,10 +993,16 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                     child: ElevatedButton(
                                       onPressed: () {
                                         setState(() {
-                                          userName = usernameController.text;
-                                          userEmail = usernameController.text;
-                                          userPassword =
-                                              passwordTextController.text;
+                                          if (usernameController.text != '') {
+                                            userName = usernameController.text;
+                                          } else {
+                                            userName = userName;
+                                          }
+
+                                          if (userPassword != '') {
+                                            userPassword =
+                                                passwordTextController.text;
+                                          }
                                           userAddress = usernameController.text;
                                           userLocation =
                                               usernameController.text;

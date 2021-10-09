@@ -107,6 +107,22 @@ class _SearchWidgetState extends State<SearchWidget> {
             addSearchTerm(query);
             selectedTerm = query;
             isFocused = false;
+            showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: const Text('Sorry, Search is Unavailable!'),
+                  content: const Text(
+                      'We will notify you once the seach functionality in online.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: const Text('I understand'),
+                    ),
+                  ],
+                );
+              },
+            );
           });
           // _searchHistory.add(selectedTerm);
           controller.close();
@@ -250,6 +266,24 @@ class _SearchWidgetState extends State<SearchWidget> {
                       setState(() {
                         putSearchTermFirst(term);
                         selectedTerm = term;
+                        showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title:
+                                  const Text('Sorry, Search is Unavailable!'),
+                              content: const Text(
+                                  'We will notify you once the seach functionality in online.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: const Text('I understand'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       });
                       controller.close();
                     },

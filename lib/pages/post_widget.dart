@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:share/share.dart';
 
 class PostWidget extends StatefulWidget {
@@ -93,340 +92,356 @@ class _PostWidgetState extends State<PostWidget> {
       // backgroundColor: Colors.white,
       body: SafeArea(
         child: Scrollbar(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: 320,
-                              decoration: BoxDecoration(
-                                // color: Color(0xFFDBE2E7),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Stack(
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0, 0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16),
-                                      child: widget.featuredMedia != ''
-                                          ? ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(16),
-                                              child: CachedNetworkImage(
-                                                  errorWidget: (context, url,
-                                                          error) =>
-                                                      const Icon(Icons.error),
-                                                  progressIndicatorBuilder:
-                                                      (context, url,
-                                                              downloadProgress) =>
-                                                          SizedBox(
-                                                            height: 20,
-                                                            width: 20,
-                                                            child:
-                                                                CircularProgressIndicator(
-                                                              value:
-                                                                  downloadProgress
-                                                                      .progress,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 320,
+                                decoration: BoxDecoration(
+                                  // color: Color(0xFFDBE2E7),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0, 0),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(16),
+                                        child: widget.featuredMedia != ''
+                                            ? ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(16),
+                                                child: CachedNetworkImage(
+                                                    errorWidget: (context, url,
+                                                            error) =>
+                                                        const Icon(Icons.error),
+                                                    progressIndicatorBuilder:
+                                                        (context, url,
+                                                                downloadProgress) =>
+                                                            SizedBox(
+                                                              height: 20,
+                                                              width: 20,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                value:
+                                                                    downloadProgress
+                                                                        .progress,
+                                                              ),
                                                             ),
-                                                          ),
+                                                    // width: double.infinity,
+                                                    // height: double.infinity,
+                                                    // fit: BoxFit.contain,
+                                                    imageUrl:
+                                                        widget.featuredMedia),
+                                              )
+                                            : ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(16),
+                                                child: Image.asset(
+                                                  'assets/images/user_loading.gif',
                                                   // width: double.infinity,
                                                   // height: double.infinity,
                                                   // fit: BoxFit.contain,
-                                                  imageUrl:
-                                                      widget.featuredMedia),
-                                            )
-                                          : ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(16),
-                                              child: Image.asset(
-                                                'assets/images/user_loading.gif',
-                                                // width: double.infinity,
-                                                // height: double.infinity,
-                                                // fit: BoxFit.contain,
-                                              ),
-                                            ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            16, 16, 16, 16),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Card(
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                              // color: Colors.deepPurple,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                              ),
-                                              child: IconButton(
-                                                icon: const Icon(
-                                                  Icons.arrow_back_rounded,
-                                                  // color: Colors.deepPurple,
-                                                  // size: 24,
                                                 ),
-                                                onPressed: () {
-                                                  Navigator.pop(context);
-                                                },
                                               ),
-                                            ),
-                                            Card(
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                              // color: Colors.deepPurple,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8),
-                                              ),
-                                              child: IconButton(
-                                                icon: const Icon(
-                                                  Icons.favorite_border,
-                                                  // color: Colors.deepPurple,
-                                                  // size: 24,
-                                                ),
-                                                onPressed: () {},
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                      ],
+                                      ),
                                     ),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 20, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                widget.name,
-                                style: const TextStyle(
-                                  // fontFamily: 'Lexend Deca',
-                                  // color: Color(0xFF090F13),
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
+                                    Padding(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16, 16, 16, 16),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                // color: Colors.deepPurple,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
+                                                child: IconButton(
+                                                  icon: const Icon(
+                                                    Icons.arrow_back_rounded,
+                                                    // color: Colors.deepPurple,
+                                                    // size: 24,
+                                                  ),
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                              ),
+                                              Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                // color: Colors.deepPurple,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
+                                                child: IconButton(
+                                                  icon: const Icon(
+                                                    Icons.favorite_border,
+                                                    // color: Colors.deepPurple,
+                                                    // size: 24,
+                                                  ),
+                                                  onPressed: () {},
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ),
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Text(
-                              '123 Disney Way, Willingmington, WV 24921',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF8B97A2),
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            RatingBarIndicator(
-                              itemBuilder: (context, index) => const Icon(
-                                Icons.star_rounded,
-                                color: Color(0xFF320585),
-                              ),
-                              direction: Axis.horizontal,
-                              rating: 5,
-                              unratedColor: const Color(0xFFC964F4),
-                              itemCount: 5,
-                              itemSize: 24,
-                            ),
-                            const Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                              child: Text(
-                                '4/5 Reviews',
-                                style: TextStyle(
-                                  // fontFamily: 'Lexend Deca',
-                                  // color: Color(0xFF8B97A2),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Text(
-                              'DESCRIPTION',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF262D34),
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Expanded(
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
-                                child: Text(
-                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.',
-                                  style: TextStyle(
-                                    // fontFamily: 'Lexend Deca',
-                                    // color: Color(0xFF8B97A2),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.9,
-                // decoration: BoxDecoration(
-                //   // color: Color(0xFF14181B),
-                //   // boxShadow: const [
-                //   //   BoxShadow(
-                //   //     blurRadius: 4,
-                //   //     // color: Color(0x55000000),
-                //   //     offset: Offset(0, 2),
-                //   //   )
-                //   ],
-                //   borderRadius: BorderRadius.circular(16),
-                // ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24, 20, 24, 0),
+                          child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            children: const [
-                              Text(
-                                '\$156',
-                                style: TextStyle(
-                                  // fontFamily: 'Lexend Deca',
-                                  // color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
+                            children: [
+                              Flexible(
                                 child: Text(
-                                  '+ taxes',
-                                  style: TextStyle(
+                                  widget.name,
+                                  style: const TextStyle(
                                     // fontFamily: 'Lexend Deca',
-                                    // color: Color(0xFF8B97A2),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
+                                    // color: Color(0xFF090F13),
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               )
                             ],
                           ),
-                          const Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
-                            child: Text(
-                              'per night',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF8B97A2),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Share.share(widget.link);
-                          },
-                          child: Row(
-                            children: [
-                              const Text('Share',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.share_rounded,
-                                  // color: Colors.deepPurple,
-                                  // size: 24,
+                        ),
+                        // Padding(
+                        //   padding:
+                        //       const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                        //   child: Row(
+                        //     mainAxisSize: MainAxisSize.max,
+                        //     children: const [
+                        //       Text(
+                        //         '123 Disney Way, Willingmington, WV 24921',
+                        //         style: TextStyle(
+                        //           // fontFamily: 'Lexend Deca',
+                        //           // color: Color(0xFF8B97A2),
+                        //           fontSize: 12,
+                        //           fontWeight: FontWeight.normal,
+                        //         ),
+                        //       )
+                        //     ],
+                        //   ),
+                        // ),
+                        TextButton(
+                            onPressed: () {
+                              Share.share(widget.link);
+                            },
+                            child: Row(
+                              children: [
+                                const Text('Share',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.share_rounded,
+                                    // color: Colors.deepPurple,
+                                    // size: 24,
+                                  ),
+                                  onPressed: () {
+                                    Share.share(widget.link);
+                                  },
                                 ),
-                                onPressed: () {
-                                  Share.share(widget.link);
-                                },
-                              ),
-                            ],
-                          ))
-                    ],
+                              ],
+                            )),
+                        OutlinedButton(
+                            onPressed: () {},
+                            child: Text(widget.category.replaceAll('[', ''))),
+                        OutlinedButton(
+                            onPressed: () {}, child: Text(widget.tag)),
+                        Text(widget.heading1),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                        height: 20,
+                                        width: 20,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 15),
+                                          child: CircularProgressIndicator(
+                                            value: downloadProgress.progress,
+                                          ),
+                                        ),
+                                      ),
+                              imageUrl: widget.image1),
+                        ),
+                        Text(widget.essay1),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(widget.heading2),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                        height: 20,
+                                        width: 20,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 15),
+                                          child: CircularProgressIndicator(
+                                            value: downloadProgress.progress,
+                                          ),
+                                        ),
+                                      ),
+                              imageUrl: widget.image2),
+                        ),
+                        Text(widget.essay2),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(widget.heading3),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                        height: 20,
+                                        width: 20,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 15),
+                                          child: CircularProgressIndicator(
+                                            value: downloadProgress.progress,
+                                          ),
+                                        ),
+                                      ),
+                              imageUrl: widget.image3),
+                        ),
+                        Text(widget.essay3),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(widget.heading4),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                        height: 20,
+                                        width: 20,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 15),
+                                          child: CircularProgressIndicator(
+                                            value: downloadProgress.progress,
+                                          ),
+                                        ),
+                                      ),
+                              imageUrl: widget.image4),
+                        ),
+                        Text(widget.essay4),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(widget.heading5),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                        height: 20,
+                                        width: 20,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 15),
+                                          child: CircularProgressIndicator(
+                                            value: downloadProgress.progress,
+                                          ),
+                                        ),
+                                      ),
+                              imageUrl: widget.image5),
+                        ),
+                        Text(widget.essay5),
+
+                        // Padding(
+                        //   padding:
+                        //       const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 0),
+                        //   child: Row(
+                        //     mainAxisSize: MainAxisSize.max,
+                        //     children: [
+                        //       // RatingBarIndicator(
+                        //       //   itemBuilder: (context, index) => const Icon(
+                        //       //     Icons.star_rounded,
+                        //       //     color: Color(0xFF320585),
+                        //       //   ),
+                        //       //   direction: Axis.horizontal,
+                        //       //   rating: 5,
+                        //       //   unratedColor: const Color(0xFFC964F4),
+                        //       //   itemCount: 5,
+                        //       //   itemSize: 24,
+                        //       // ),
+                        //       const Padding(
+                        //         padding:
+                        //             EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                        //         child: Text(
+                        //           '4/5 Reviews',
+                        //           style: TextStyle(
+                        //             // fontFamily: 'Lexend Deca',
+                        //             // color: Color(0xFF8B97A2),
+                        //             fontSize: 12,
+                        //             fontWeight: FontWeight.normal,
+                        //           ),
+                        //         ),
+                        //       )
+                        //     ],
+                        //   ),
+                        // ),
+                      ],
+                    ),
                   ),
                 ),
-              )
-            ],
+              ],
+            ),
           ),
         ),
       ),

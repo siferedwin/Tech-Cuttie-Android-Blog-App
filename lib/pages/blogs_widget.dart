@@ -35,7 +35,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                             itemCount: snapshot.data!.docs.length,
                             itemBuilder: (context, index) {
                               DocumentSnapshot doc = snapshot.data!.docs[index];
-                              String category = doc['category'].toString();
+                              String category = doc['category'][0];
                               String subHeading2 = doc['sub_heading2'];
                               String subHeading1 = doc['sub_heading1'];
                               String subHeading3 = doc['sub_heading3'];
@@ -64,15 +64,16 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                               String link = doc['link'];
                               String excerpt = doc['excerpt'];
                               String dateCreated = doc['date_created'];
-                              String tag = doc['tag'].toString();
+                              String tag = doc['tag'][0];
                               String commentStatus = doc['comment_status'];
-                              String comments = doc['comments'].toString();
+                              String comments = doc['comments'][0];
+                              String views = doc['views'].toString();
                               String dateLastmodified =
                                   doc['date_last_modified'];
-                              String views = doc['views'].toString();
-
                               return GestureDetector(
                                 onTap: () {
+                                  // ignore: prefer_typing_uninitialized_variables
+
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
@@ -158,62 +159,108 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                               fontWeight: FontWeight.normal,
                                               fontSize: 14,
                                             )),
-                                        Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            TextButton(
-                                                onPressed: () {},
-                                                child: Row(
-                                                  children: [
-                                                    IconButton(
-                                                      onPressed: () {},
-                                                      icon: const Icon(
-                                                        Icons.favorite,
-                                                        color:
-                                                            Colors.deepPurple,
-                                                      ),
-                                                    ),
-                                                    Text(doc['likes']
-                                                        .toString()),
-                                                  ],
-                                                )),
-                                            TextButton(
-                                                onPressed: () {},
-                                                child: Row(
-                                                  children: [
-                                                    IconButton(
-                                                      onPressed: () {},
-                                                      icon: const Icon(
-                                                        Icons
-                                                            .remove_red_eye_rounded,
-                                                        color:
-                                                            Colors.deepPurple,
-                                                      ),
-                                                    ),
-                                                    Text(doc['views']
-                                                        .toString()),
-                                                  ],
-                                                )),
-                                            TextButton(
-                                                onPressed: () {},
-                                                child: Row(
-                                                  children: [
-                                                    IconButton(
-                                                      onPressed: () {},
-                                                      icon: const Icon(
-                                                        Icons.chat,
-                                                        color:
-                                                            Colors.deepPurple,
-                                                      ),
-                                                    ),
-                                                    const Text('20')
-                                                  ],
-                                                )),
-                                          ],
-                                        )
+                                        // Row(
+                                        //   crossAxisAlignment:
+                                        //       CrossAxisAlignment.center,
+                                        //   mainAxisAlignment:
+                                        //       MainAxisAlignment.spaceEvenly,
+                                        //   children: [
+                                        //     TextButton(
+                                        //         onPressed: () {},
+                                        //         child: Row(
+                                        //           children: [
+                                        //             Container(
+                                        //               child: isLiked == true
+                                        //                   ? IconButton(
+                                        //                       onPressed: () {
+                                        //                         --l;
+                                        //                         FirebaseFirestore
+                                        //                             .instance
+                                        //                             .collection(
+                                        //                                 'Blogs')
+                                        //                             .doc(
+                                        //                                 'FMt0vowtlLa80K7oe4KA')
+                                        //                             .update({
+                                        //                           "likes": l
+                                        //                         });
+                                        //                         setState(() {
+                                        //                           isLiked =
+                                        //                               false;
+                                        //                         });
+                                        //                       },
+                                        //                       icon: const Icon(
+                                        //                         Icons.favorite,
+                                        //                         color: Colors
+                                        //                             .deepPurple,
+                                        //                       ),
+                                        //                     )
+                                        //                   : IconButton(
+                                        //                       onPressed: () {
+                                        //                         l++;
+                                        //                         print(l);
+
+                                        //                         FirebaseFirestore
+                                        //                             .instance
+                                        //                             .collection(
+                                        //                                 'Blogs')
+                                        //                             .doc(
+                                        //                                 'FMt0vowtlLa80K7oe4KA')
+                                        //                             .update({
+                                        //                           "likes": l
+                                        //                         });
+                                        //                         setState(() {
+                                        //                           isLiked =
+                                        //                               true;
+                                        //                         });
+                                        //                       },
+                                        //                       icon: const Icon(
+                                        //                         Icons
+                                        //                             .favorite_border_outlined,
+                                        //                         color: Colors
+                                        //                             .deepPurple,
+                                        //                       ),
+                                        //                     ),
+                                        //             ),
+                                        //             Text(doc['likes']
+                                        //                 .toString()),
+                                        //           ],
+                                        //         )),
+                                        //     TextButton(
+                                        //         onPressed: () {},
+                                        //         child: Row(
+                                        //           children: [
+                                        //             IconButton(
+                                        //               onPressed: () {},
+                                        //               icon: const Icon(
+                                        //                 Icons
+                                        //                     .remove_red_eye_rounded,
+                                        //                 color:
+                                        //                     Colors.deepPurple,
+                                        //               ),
+                                        //             ),
+                                        //             Text(doc['views']
+                                        //                 .toString()),
+                                        //           ],
+                                        //         )),
+                                        //     TextButton(
+                                        //         onPressed: () {},
+                                        //         child: Row(
+                                        //           children: [
+                                        //             IconButton(
+                                        //               onPressed: () {},
+                                        //               icon: const Icon(
+                                        //                 Icons.chat,
+                                        //                 color:
+                                        //                     Colors.deepPurple,
+                                        //               ),
+                                        //             ),
+                                        //             const Text('20')
+                                        //           ],
+                                        //         )),
+                                        //   ],
+                                        // )
+
+                                        const SizedBox(height: 30)
                                       ],
                                     ),
                                   ),
