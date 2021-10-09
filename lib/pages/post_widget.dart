@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
 
 class PostWidget extends StatefulWidget {
   final String category,
@@ -403,7 +403,7 @@ class _PostWidgetState extends State<PostWidget> {
                       ),
                       TextButton(
                           onPressed: () {
-                            launch(widget.link);
+                            Share.share(widget.link);
                           },
                           child: Row(
                             children: [
@@ -417,7 +417,7 @@ class _PostWidgetState extends State<PostWidget> {
                                   // size: 24,
                                 ),
                                 onPressed: () {
-                                  launch(widget.link);
+                                  Share.share(widget.link);
                                 },
                               ),
                             ],

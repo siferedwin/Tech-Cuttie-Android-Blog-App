@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
 
 class Abbreviations extends StatefulWidget {
   const Abbreviations({Key? key}) : super(key: key);
@@ -319,7 +319,7 @@ class _PostWidgetState extends State<AbbreviationsWidget> {
                       ),
                       TextButton(
                           onPressed: () {
-                            launch(widget.term);
+                            Share.share(widget.term);
                           },
                           child: Row(
                             children: [
@@ -333,7 +333,7 @@ class _PostWidgetState extends State<AbbreviationsWidget> {
                                   // size: 24,
                                 ),
                                 onPressed: () {
-                                  launch(widget.term);
+                                  Share.share(widget.term);
                                 },
                               ),
                             ],

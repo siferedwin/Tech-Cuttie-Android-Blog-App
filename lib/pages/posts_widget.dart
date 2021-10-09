@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
 
 class Posts extends StatefulWidget {
   final String imageurl, title, content, htmlContent, link;
@@ -29,7 +29,7 @@ class _PostState extends State<Posts> {
           like == false
               ? IconButton(
                   onPressed: () {
-                    launch('https://widgets.wp.com/likes/#');
+                    Share.share('https://widgets.wp.com/likes/#');
                     setState(() {
                       like = true;
                     });
@@ -37,7 +37,7 @@ class _PostState extends State<Posts> {
                   icon: const Icon(Icons.favorite_border_rounded))
               : IconButton(
                   onPressed: () {
-                    launch('https://widgets.wp.com/likes/#');
+                    Share.share('https://widgets.wp.com/likes/#');
                     setState(() {
                       like = false;
                     });
@@ -45,7 +45,7 @@ class _PostState extends State<Posts> {
                   icon: const Icon(Icons.favorite)),
           IconButton(
               onPressed: () {
-                launch(
+                Share.share(
                   widget.link,
                 );
               },

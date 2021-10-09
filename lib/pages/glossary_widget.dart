@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
 
 class Glossary extends StatefulWidget {
   const Glossary({Key? key}) : super(key: key);
@@ -511,7 +511,7 @@ class _PostWidgetState extends State<GlossaryWidget> {
                       ),
                       TextButton(
                           onPressed: () {
-                            launch(widget.name);
+                            Share.share(widget.name);
                           },
                           child: Row(
                             children: [
@@ -525,7 +525,7 @@ class _PostWidgetState extends State<GlossaryWidget> {
                                   // size: 24,
                                 ),
                                 onPressed: () {
-                                  launch(widget.name);
+                                  Share.share(widget.name);
                                 },
                               ),
                             ],

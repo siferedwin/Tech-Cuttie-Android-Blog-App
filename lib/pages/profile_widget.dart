@@ -392,7 +392,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   const EdgeInsetsDirectional
                                                       .fromSTEB(2, 2, 2, 2),
                                               child: ElevatedButton(
-                                                onPressed: () async {},
+                                                onPressed: () async {
+                                                  await FirebaseFirestore
+                                                      .instance
+                                                      .disableNetwork();
+                                                },
                                                 child: const Icon(
                                                     Icons.add_alert_rounded),
                                               ),

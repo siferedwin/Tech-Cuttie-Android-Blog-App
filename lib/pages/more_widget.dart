@@ -10,7 +10,6 @@ import 'package:tech_cuttie/pages/faq.dart';
 import 'package:tech_cuttie/pages/glossary_widget.dart';
 import 'package:tech_cuttie/pages/newsletter_widget.dart';
 import 'package:tech_cuttie/pages/privacy_widget.dart';
-import 'package:tech_cuttie/pages/quiz.dart';
 import 'package:tech_cuttie/pages/services_widget.dart';
 import 'package:tech_cuttie/pages/terms_widget.dart';
 import 'package:tech_cuttie/pages/tips_widget.dart';
@@ -115,48 +114,48 @@ class _MoreWidgetState extends State<MoreWidget> {
                       },
                     ),
                   ),
-                  Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: ListTile(
-                      leading: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: CachedNetworkImage(
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) => SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 15),
-                              child: CircularProgressIndicator(
-                                value: downloadProgress.progress,
-                              ),
-                            ),
-                          ),
-                          imageUrl:
-                              'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-2.jpeg?resize=301%2C167&ssl=1',
-                          width: 90,
-                          height: 90,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      title: const Text('Tech Cuttie Quizzes'),
-                      subtitle: const Text(
-                          'View available quizes and test yourself with any that youmay prefer.'),
-                      isThreeLine: false,
-                      onTap: () async {
-                        await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Quiz()));
-                      },
-                    ),
-                  ),
+                  // Card(
+                  //   clipBehavior: Clip.antiAliasWithSaveLayer,
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(40),
+                  //   ),
+                  //   child: ListTile(
+                  //     leading: ClipRRect(
+                  //       borderRadius: BorderRadius.circular(20),
+                  //       child: CachedNetworkImage(
+                  //         errorWidget: (context, url, error) =>
+                  //             const Icon(Icons.error),
+                  //         progressIndicatorBuilder:
+                  //             (context, url, downloadProgress) => SizedBox(
+                  //           height: 20,
+                  //           width: 20,
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.symmetric(
+                  //                 horizontal: 30, vertical: 15),
+                  //             child: CircularProgressIndicator(
+                  //               value: downloadProgress.progress,
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         imageUrl:
+                  //             'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-2.jpeg?resize=301%2C167&ssl=1',
+                  //         width: 90,
+                  //         height: 90,
+                  //         fit: BoxFit.contain,
+                  //       ),
+                  //     ),
+                  //     title: const Text('Tech Cuttie Quizzes'),
+                  //     subtitle: const Text(
+                  //         'View available quizes and test yourself with any that youmay prefer.'),
+                  //     isThreeLine: false,
+                  //     onTap: () async {
+                  //       await Navigator.push(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) => const Quiz()));
+                  //     },
+                  //   ),
+                  // ),
                   Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: RoundedRectangleBorder(
