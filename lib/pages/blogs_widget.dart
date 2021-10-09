@@ -3,9 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tech_cuttie/pages/post_widget.dart';
-import 'package:wordpress_api/wordpress_api.dart';
-
-WordPressAPI api = WordPressAPI('wp-site.com');
 
 class BlogsWidget extends StatefulWidget {
   const BlogsWidget({Key? key}) : super(key: key);
@@ -135,9 +132,15 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                               progressIndicatorBuilder:
                                                   (context, url,
                                                           downloadProgress) =>
-                                                      CircularProgressIndicator(
-                                                        value: downloadProgress
-                                                            .progress,
+                                                      SizedBox(
+                                                        height: 20,
+                                                        width: 20,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          value:
+                                                              downloadProgress
+                                                                  .progress,
+                                                        ),
                                                       ),
                                               fit: BoxFit.scaleDown,
                                               imageUrl: doc['featured_media']),
@@ -223,7 +226,10 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                     return Center(
                       child: Column(
                         children: const [
-                          CircularProgressIndicator(),
+                          SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: CircularProgressIndicator()),
                           Text('Fetching the latest Posts...')
                         ],
                       ),

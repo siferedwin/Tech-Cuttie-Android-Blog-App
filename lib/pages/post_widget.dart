@@ -126,16 +126,22 @@ class _PostWidgetState extends State<PostWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(16),
                                               child: CachedNetworkImage(
-                                                errorWidget:
-                                                  (context, url, error) =>
+                                                  errorWidget: (context, url,
+                                                          error) =>
                                                       const Icon(Icons.error),
-                                              progressIndicatorBuilder:
-                                                  (context, url,
-                                                          downloadProgress) =>
-                                                      CircularProgressIndicator(
-                                                        value: downloadProgress
-                                                            .progress,
-                                                      ),
+                                                  progressIndicatorBuilder:
+                                                      (context, url,
+                                                              downloadProgress) =>
+                                                          SizedBox(
+                                                            height: 20,
+                                                            width: 20,
+                                                            child:
+                                                                CircularProgressIndicator(
+                                                              value:
+                                                                  downloadProgress
+                                                                      .progress,
+                                                            ),
+                                                          ),
                                                   // width: double.infinity,
                                                   // height: double.infinity,
                                                   // fit: BoxFit.contain,

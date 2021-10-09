@@ -104,10 +104,14 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                       progressIndicatorBuilder:
                                                           (context, url,
                                                                   downloadProgress) =>
-                                                              CircularProgressIndicator(
-                                                                value:
-                                                                    downloadProgress
-                                                                        .progress,
+                                                              SizedBox(
+                                                                height: 20,
+                                                                width: 20,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  value: downloadProgress
+                                                                      .progress,
+                                                                ),
                                                               ),
                                                       imageUrl:
                                                           'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/cropped-Tech-Cuttie-2-2.png?fit=150%2C150&ssl=1'),
@@ -393,7 +397,14 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                               });
                                                             },
                                                             child: const Text(
-                                                                'Already have an account? Click here to login.')),
+                                                              'Already have an account? \nClick here to login.',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .clip,
+                                                            )),
                                                         const Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -443,8 +454,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                           2),
                                                                   child:
                                                                       Container(
-                                                                    width: 50,
-                                                                    height: 50,
+                                                                    width: 60,
+                                                                    height: 60,
                                                                     clipBehavior:
                                                                         Clip.antiAlias,
                                                                     decoration:
@@ -459,8 +470,12 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                               16),
                                                                       child: CachedNetworkImage(
                                                                           errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
-                                                                                value: downloadProgress.progress,
+                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                                                height: 20,
+                                                                                width: 20,
+                                                                                child: CircularProgressIndicator(
+                                                                                  value: downloadProgress.progress,
+                                                                                ),
                                                                               ),
                                                                           imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
                                                                     ),
@@ -489,8 +504,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                         2),
                                                                 child:
                                                                     Container(
-                                                                  width: 50,
-                                                                  height: 50,
+                                                                  width: 60,
+                                                                  height: 60,
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
@@ -505,8 +520,12 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                             16),
                                                                     child: CachedNetworkImage(
                                                                         errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                        progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
-                                                                              value: downloadProgress.progress,
+                                                                        progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                                              height: 20,
+                                                                              width: 20,
+                                                                              child: CircularProgressIndicator(
+                                                                                value: downloadProgress.progress,
+                                                                              ),
                                                                             ),
                                                                         imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
                                                                   ),
@@ -542,8 +561,8 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                           2),
                                                                   child:
                                                                       Container(
-                                                                    width: 50,
-                                                                    height: 50,
+                                                                    width: 60,
+                                                                    height: 60,
                                                                     clipBehavior:
                                                                         Clip.antiAlias,
                                                                     decoration:
@@ -558,8 +577,12 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                               16),
                                                                       child: CachedNetworkImage(
                                                                           errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
-                                                                                value: downloadProgress.progress,
+                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                                                height: 20,
+                                                                                width: 20,
+                                                                                child: CircularProgressIndicator(
+                                                                                  value: downloadProgress.progress,
+                                                                                ),
                                                                               ),
                                                                           imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
                                                                     ),
@@ -674,7 +697,14 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                               });
                                                             },
                                                             child: const Text(
-                                                                'Don\'t have an account? Click here to create one.')),
+                                                              'Don\'t have an account? \nClick here to create one.',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .clip,
+                                                            )),
                                                         const Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -726,9 +756,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                             2),
                                                                     child:
                                                                         Container(
-                                                                      width: 50,
+                                                                      width: 60,
                                                                       height:
-                                                                          50,
+                                                                          60,
                                                                       clipBehavior:
                                                                           Clip.antiAlias,
                                                                       decoration:
@@ -742,8 +772,12 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                             BorderRadius.circular(16),
                                                                         child: CachedNetworkImage(
                                                                             errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
-                                                                                  value: downloadProgress.progress,
+                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                                                  height: 20,
+                                                                                  width: 20,
+                                                                                  child: CircularProgressIndicator(
+                                                                                    value: downloadProgress.progress,
+                                                                                  ),
                                                                                 ),
                                                                             imageUrl: 'https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg'),
                                                                       ),
@@ -751,47 +785,56 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                              Card(
-                                                                clipBehavior: Clip
-                                                                    .antiAliasWithSaveLayer,
-                                                                // color: const Color(0xFF090F13),
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              50),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      const EdgeInsetsDirectional
-                                                                              .fromSTEB(
-                                                                          2,
-                                                                          2,
-                                                                          2,
-                                                                          2),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .all(
+                                                                        8.0),
+                                                                child: Card(
+                                                                  clipBehavior:
+                                                                      Clip.antiAliasWithSaveLayer,
+                                                                  // color: const Color(0xFF090F13),
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            50),
+                                                                  ),
                                                                   child:
-                                                                      Container(
-                                                                    width: 50,
-                                                                    height: 50,
-                                                                    clipBehavior:
-                                                                        Clip.antiAlias,
-                                                                    decoration:
-                                                                        const BoxDecoration(
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                    ),
+                                                                      Padding(
+                                                                    padding:
+                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                            2,
+                                                                            2,
+                                                                            2,
+                                                                            2),
                                                                     child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              16),
-                                                                      child: CachedNetworkImage(
-                                                                          errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                          progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
-                                                                                value: downloadProgress.progress,
-                                                                              ),
-                                                                          imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                                        Container(
+                                                                      width: 60,
+                                                                      height:
+                                                                          60,
+                                                                      clipBehavior:
+                                                                          Clip.antiAlias,
+                                                                      decoration:
+                                                                          const BoxDecoration(
+                                                                        shape: BoxShape
+                                                                            .circle,
+                                                                      ),
+                                                                      child:
+                                                                          ClipRRect(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16),
+                                                                        child: CachedNetworkImage(
+                                                                            errorWidget: (context, url, error) => const Icon(Icons.error),
+                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                                                  height: 20,
+                                                                                  width: 20,
+                                                                                  child: CircularProgressIndicator(
+                                                                                    value: downloadProgress.progress,
+                                                                                  ),
+                                                                                ),
+                                                                            imageUrl: 'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip'),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -824,9 +867,9 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                             2),
                                                                     child:
                                                                         Container(
-                                                                      width: 50,
+                                                                      width: 60,
                                                                       height:
-                                                                          50,
+                                                                          60,
                                                                       clipBehavior:
                                                                           Clip.antiAlias,
                                                                       decoration:
@@ -838,8 +881,12 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                                                           ClipRRect(
                                                                         child: CachedNetworkImage(
                                                                             errorWidget: (context, url, error) => const Icon(Icons.error),
-                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => CircularProgressIndicator(
-                                                                                  value: downloadProgress.progress,
+                                                                            progressIndicatorBuilder: (context, url, downloadProgress) => SizedBox(
+                                                                                  height: 20,
+                                                                                  width: 20,
+                                                                                  child: CircularProgressIndicator(
+                                                                                    value: downloadProgress.progress,
+                                                                                  ),
                                                                                 ),
                                                                             imageUrl: 'https://thumbs.dreamstime.com/b/facebook-icon-logo-white-background-editable-vector-illustration-facebook-icon-logo-141051712.jpg'),
                                                                       ),
@@ -944,15 +991,11 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                                               children: const [],
                                             ),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(20, 16, 20, 20),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: const [],
-                                            ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: const [],
                                           )
                                         ],
                                       ),
@@ -968,7 +1011,10 @@ class _LoginSignUpWidgetState extends State<LoginSignUpWidget> {
                               SizedBox(
                                 height: 200,
                               ),
-                              CircularProgressIndicator(),
+                              SizedBox(
+                                  height: 20,
+                                  width: 20,
+                                  child: CircularProgressIndicator()),
                               Text('Connecting... please wait!')
                             ],
                           ));

@@ -73,9 +73,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -232,9 +242,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image.webp?resize=768%2C768&ssl=1',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -318,9 +338,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i0.wp.com/www.ignytebrands.com/wp-content/uploads/the-power-of-copywriting-ignyte-branding-agency.jpg?w=740&ssl=1',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -403,9 +433,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-2.jpeg?resize=768%2C432&ssl=1',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -542,9 +582,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-2.png?resize=768%2C409&ssl=1',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -611,9 +661,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-3.jpeg?resize=275%2C183&ssl=1',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -690,9 +750,19 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i0.wp.com/www.designfreelogoonline.com/wp-content/uploads/2018/09/How-to-create-a-winning-Power-Point-presentation.jpg?resize=494%2C333',
-                              width: 100,
+                              width: 20,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -810,6 +880,16 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-5.jpeg?resize=768%2C432&ssl=1',
                               fit: BoxFit.cover,
@@ -898,6 +978,16 @@ class _ServicesState extends State<ServicesWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(30),
                             child: CachedNetworkImage(
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) => SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
                               imageUrl:
                                   'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/webdesign-development.jpg?w=726&ssl=1',
                               fit: BoxFit.fill,

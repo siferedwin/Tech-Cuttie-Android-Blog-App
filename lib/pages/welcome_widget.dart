@@ -38,8 +38,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           scrollDirection: Axis.horizontal,
                           children: [
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: 20,
+                              height: 20,
                               decoration: const BoxDecoration(),
                               child: Scrollbar(
                                 child: SingleChildScrollView(
@@ -67,8 +67,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                             downloadProgress) =>
                                                         Center(
                                                   child: SizedBox(
-                                                    height: 100,
-                                                    width: 100,
+                                                    height: 20,
+                                                    width: 20,
                                                     child:
                                                         CircularProgressIndicator(
                                                       value: downloadProgress
@@ -135,8 +135,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               ),
                             ),
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: 20,
+                              height: 20,
                               decoration: const BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -210,8 +210,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               ),
                             ),
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: 20,
+                              height: 20,
                               decoration: const BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,

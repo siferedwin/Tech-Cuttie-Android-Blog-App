@@ -74,9 +74,12 @@ class _ServicesState extends State<WebDesign> {
                             errorWidget: (context, url, error) =>
                                 const Icon(Icons.error),
                             progressIndicatorBuilder:
-                                (context, url, downloadProgress) =>
-                                    CircularProgressIndicator(
-                                      value: downloadProgress.progress,
+                                (context, url, downloadProgress) => SizedBox(
+                                      height: 20,
+                                      width: 20,
+                                      child: CircularProgressIndicator(
+                                        value: downloadProgress.progress,
+                                      ),
                                     ),
                             imageUrl:
                                 'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1'),

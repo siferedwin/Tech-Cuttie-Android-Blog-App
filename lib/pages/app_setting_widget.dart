@@ -125,7 +125,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
             //   },
             //   options: FFButtonOptions(
             //     width: 190,
-            //     height: 50,
+            //     height: 20,
             //   // color: const Color(0xFF4B39EF),
             //     // ignore: prefer_const_constructors
             //     textStyle: TextStyle(

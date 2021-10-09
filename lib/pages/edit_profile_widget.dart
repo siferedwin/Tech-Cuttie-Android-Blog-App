@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:tech_cuttie/pages/change_photo_widget.dart';
 import 'package:tech_cuttie/pages/picker.dart';
 import 'package:tech_cuttie/utils/validator.dart';
 
@@ -83,11 +82,11 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
         title: const Text(
           'Edit Profile',
           style: TextStyle(
-            // fontFamily: 'Lexend Deca',
-            // color: Color(0xFF14181B),
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
+              // fontFamily: 'Lexend Deca',
+              // color: Color(0xFF14181B),
+              // fontSize: 14,
+              // fontWeight: FontWeight.w500,
+              ),
         ),
         actions: const [],
         centerTitle: true,
@@ -141,8 +140,8 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 100,
-                                      height: 100,
+                                      width: 200,
+                                      height: 200,
                                       decoration: const BoxDecoration(
                                         // color: Color(0xFFDBE2E7),
                                         shape: BoxShape.circle,
@@ -151,8 +150,8 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(2, 2, 2, 2),
                                         child: Container(
-                                          width: 90,
-                                          height: 90,
+                                          // width: 90,
+                                          // height: 90,
                                           clipBehavior: Clip.antiAlias,
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
@@ -169,10 +168,14 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                                       progressIndicatorBuilder:
                                                           (context, url,
                                                                   downloadProgress) =>
-                                                              CircularProgressIndicator(
-                                                                value:
-                                                                    downloadProgress
-                                                                        .progress,
+                                                              SizedBox(
+                                                                height: 20,
+                                                                width: 20,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  value: downloadProgress
+                                                                      .progress,
+                                                                ),
                                                               ),
                                                       imageUrl: imageUrl),
                                                 )
@@ -196,7 +199,7 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      HomePage()));
+                                                      const HomePage()));
                                         },
                                         child: const Text('Change Photo'),
                                       ),
@@ -1043,7 +1046,10 @@ class _EditprofileWidgetState extends State<EditprofileWidget> {
                             );
                           }
                           return const Center(
-                            child: CircularProgressIndicator(),
+                            child: SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator()),
                           );
                         }),
                   ),

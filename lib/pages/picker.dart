@@ -1,11 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:path/path.dart' as path;
 import 'package:image_picker/image_picker.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -19,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     final picker = ImagePicker();
     PickedFile? pickedImage;
     try {
+      // ignore: deprecated_member_use
       pickedImage = await picker.getImage(
           source: inputSource == 'camera'
               ? ImageSource.camera
@@ -33,17 +38,18 @@ class _HomePageState extends State<HomePage> {
         await storage.ref(fileName).putFile(
             imageFile,
             SettableMetadata(customMetadata: {
-              'uploaded_by': 'A bad guy',
-              'description': 'Some description...'
+              'uploaded_by': FirebaseAuth.instance.currentUser!.uid,
+              'description': 'Uploaded image: $fileName'
             }));
 
         // Refresh the UI
         setState(() {});
+        // ignore: unused_catch_clause
       } on FirebaseException catch (error) {
-        print(error);
+        // print(error);
       }
     } catch (err) {
-      print(err);
+      // print(err);
     }
   }
 
@@ -61,9 +67,9 @@ class _HomePageState extends State<HomePage> {
       files.add({
         "url": fileUrl,
         "path": file.fullPath,
-        "uploaded_by": fileMeta.customMetadata?['uploaded_by'] ?? 'Nobody',
-        "description":
-            fileMeta.customMetadata?['description'] ?? 'No description'
+        "uploaded_by": fileMeta.customMetadata?['uploaded_by'] ??
+            '${FirebaseAuth.instance.currentUser!.email}',
+        "description": fileMeta.customMetadata?['description'] ?? 'Photo upload'
       });
     });
 
@@ -82,7 +88,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Change Photo'),
+        title: Text(
+          'Change Photo',
+          style: GoogleFonts.lobster(fontSize: 42, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -93,12 +102,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 ElevatedButton.icon(
                     onPressed: () => _upload('camera'),
-                    icon: Icon(Icons.camera),
-                    label: Text('camera')),
+                    icon: const Icon(Icons.camera),
+                    label: const Text('camera')),
                 ElevatedButton.icon(
                     onPressed: () => _upload('gallery'),
-                    icon: Icon(Icons.library_add),
-                    label: Text('Gallery')),
+                    icon: const Icon(Icons.library_add),
+                    label: const Text('Gallery')),
               ],
             ),
             Expanded(
@@ -114,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                             snapshot.data![index];
 
                         return Card(
-                          margin: EdgeInsets.symmetric(vertical: 10),
+                          // margin: const EdgeInsets.symmetric(vertical: 10),
                           child: ListTile(
                             dense: false,
                             leading: Image.network(image['url']),
@@ -122,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                             subtitle: Text(image['description']),
                             trailing: IconButton(
                               onPressed: () => _delete(image['path']),
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.delete,
                                 color: Colors.red,
                               ),
@@ -134,7 +143,15 @@ class _HomePageState extends State<HomePage> {
                   }
 
                   return Center(
-                    child: CircularProgressIndicator(),
+                    child: Column(
+                      children: const [
+                        SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator()),
+                        Text('Please wait...\nConnecting to your online images')
+                      ],
+                    ),
                   );
                 },
               ),

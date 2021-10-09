@@ -1,88 +1,193 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:share/share.dart';
 
 class FAQs extends StatefulWidget {
   const FAQs({Key? key}) : super(key: key);
 
   @override
-  _ServicesState createState() => _ServicesState();
+  _BlogsWidgetState createState() => _BlogsWidgetState();
 }
 
-class _ServicesState extends State<FAQs> {
+class _BlogsWidgetState extends State<FAQs> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final Stream<QuerySnapshot> _usersStream =
+      FirebaseFirestore.instance.collection('FAQs').snapshots();
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-          appBar: AppBar(
-            // backgroundColor: Colors.white,
-            automaticallyImplyLeading: false,
-            leading: IconButton(
-              // borderColor: Colors.transparent,
-              // borderRadius: 30,
-              // buttonSize: 46,
-              icon: const Icon(
-                Icons.arrow_back_rounded,
-                // color: Color(0xFF95A1AC),
-                size: 24,
-              ),
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-            ),
-            title: const Text(
-              'FAQs',
-              style: TextStyle(
-                // fontFamily: 'Lexend Deca',
-                // color: Color(0xFF151B1E),
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            actions: const [],
-            centerTitle: false,
-            elevation: 0,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Tech FAQs',
+            style:
+                GoogleFonts.lobster(fontSize: 42, fontWeight: FontWeight.bold),
           ),
-          // backgroundColor: const Color(0xFFF1F4F8),
-          body: SafeArea(
-              child: Scrollbar(
-            child: SingleChildScrollView(
-                child: Column(mainAxisSize: MainAxisSize.max, children: [
-              Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  // color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 3,
-                      // color: Color(0x39000000),
-                      offset: Offset(0, 1),
-                    )
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(12, 16, 12, 24),
-                  child: Row(
+        ),
+        key: scaffoldKey,
+        body: Center(
+          child: StreamBuilder<QuerySnapshot>(
+            stream: _usersStream,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Scrollbar(
+                  child: Center(
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.docs.length,
+                        itemBuilder: (context, index) {
+                          DocumentSnapshot doc = snapshot.data!.docs[index];
+                          String tag = doc['tag'];
+                          String title = doc['title'];
+                          String category = doc['category'];
+                          String answer = doc['answer'];
+
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => FAQsWidget(
+                                            category: category,
+                                            title: title,
+                                            answer: answer,
+                                            tag: tag,
+                                          )));
+                            },
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ExpansionTile(
+                                  title: Text(
+                                    category,
+                                    style: const TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  children: <Widget>[
+                                    ListTile(
+                                      title: ExpansionTile(
+                                        title: Text(
+                                          title,
+                                          style: const TextStyle(
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        children: <Widget>[
+                                          ListTile(
+                                            title: Column(
+                                              children: [
+                                                Text(
+                                                  answer,
+                                                  style: const TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                                OutlinedButton(
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    tag,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w700),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                );
+              } else {
+                return Center(
+                  child: Column(
+                    children: const [
+                      SizedBox(
+                          height: 20,
+                          width: 20,
+                          child: CircularProgressIndicator()),
+                      Text('Fetching the latest Posts...')
+                    ],
+                  ),
+                );
+              }
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class FAQsWidget extends StatefulWidget {
+  final String category, title, answer, tag;
+  const FAQsWidget(
+      {Key? key,
+      required this.category,
+      required this.tag,
+      required this.title,
+      required this.answer})
+      : super(key: key);
+
+  @override
+  _PostWidgetState createState() => _PostWidgetState();
+}
+
+class _PostWidgetState extends State<FAQsWidget> {
+  late String dropDownValue1;
+  late String dropDownValue2;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      // backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Scrollbar(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ClipRRect(borderRadius:
-                                              BorderRadius.circular(16),
-                            child: CachedNetworkImage(
-                              errorWidget:
-                                                    (context, url, error) =>
-                                                        const Icon(Icons.error),
-                                                progressIndicatorBuilder:
-                                                    (context, url,
-                                                            downloadProgress) =>
-                                                        CircularProgressIndicator(
-                                                          value: downloadProgress
-                                                              .progress,
-                                                        ),
-                                imageUrl:
-                                    'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1'),
+                      ExpansionTile(
+                        title: Text(
+                          widget.title,
+                          style: const TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.w500),
+                        ),
+                        children: <Widget>[
+                          ListTile(
+                            title: Column(
+                              children: [
+                                Text(
+                                  widget.answer,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                OutlinedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    widget.tag,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ),
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -90,8 +195,56 @@ class _ServicesState extends State<FAQs> {
                   ),
                 ),
               ),
-            ])),
-          )),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                // decoration: BoxDecoration(
+                //   // color: Color(0xFF14181B),
+                //   // boxShadow: const [
+                //   //   BoxShadow(
+                //   //     blurRadius: 4,
+                //   //     // color: Color(0x55000000),
+                //   //     offset: Offset(0, 2),
+                //   //   )
+                //   ],
+                //   borderRadius: BorderRadius.circular(16),
+                // ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Share.share(
+                                'Hello, here is something to learn about Tech Cuttie ${widget.title} \n ${widget.answer}');
+                          },
+                          child: Row(
+                            // crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              const Text('Share',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.share_rounded,
+                                  // color: Colors.deepPurple,
+                                  // size: 24,
+                                ),
+                                onPressed: () {
+                                  Share.share(
+                                      'Hello, here is something to learn about Tech Cuttie ${widget.title} \n ${widget.answer}');
+                                },
+                              ),
+                            ],
+                          ))
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

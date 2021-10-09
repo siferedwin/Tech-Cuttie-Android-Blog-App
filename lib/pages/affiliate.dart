@@ -92,7 +92,7 @@ class _ServicesState extends State<Affiliate> {
               ),
               Container(
                 width: 160,
-                height: 50,
+                height: 20,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(25),

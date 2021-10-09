@@ -67,8 +67,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             child: CachedNetworkImage(
                 errorWidget: (context, url, error) => const Icon(Icons.error),
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    CircularProgressIndicator(
-                      value: downloadProgress.progress,
+                    SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 30, vertical: 15),
+                        child: CircularProgressIndicator(
+                          value: downloadProgress.progress,
+                        ),
+                      ),
                     ),
                 imageUrl:
                     'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-3.png?resize=299%2C169&ssl=1'),
@@ -101,8 +109,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             child: CachedNetworkImage(
                 errorWidget: (context, url, error) => const Icon(Icons.error),
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    CircularProgressIndicator(
-                      value: downloadProgress.progress,
+                    SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(
+                        value: downloadProgress.progress,
+                      ),
                     ),
                 imageUrl:
                     'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1'),
@@ -295,8 +307,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 5),
                             child: Container(
-                              width: 50,
-                              height: 50,
+                              // width: 100,
+                              // height: 100,
                               clipBehavior: Clip.antiAlias,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
@@ -310,9 +322,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               const Icon(Icons.error),
                                           progressIndicatorBuilder: (context,
                                                   url, downloadProgress) =>
-                                              CircularProgressIndicator(
-                                                value:
-                                                    downloadProgress.progress,
+                                              SizedBox(
+                                                height: 20,
+                                                width: 20,
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                          .symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 5),
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    value: downloadProgress
+                                                        .progress,
+                                                  ),
+                                                ),
                                               ),
                                           imageUrl: imageUrl),
                                     )
@@ -324,7 +347,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           );
                         }
                         return const Center(
-                          child: CircularProgressIndicator(),
+                          child: SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                child: CircularProgressIndicator(),
+                              )),
                         );
                       }),
                 ),
@@ -347,21 +377,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               // ignore: prefer_const_literals_to_create_immutables
               items: [
                 const BottomNavigationBarItem(
-                  icon: Icon(Icons.home_outlined),
-                  label: 'Home',
-                ),
+                    icon: Icon(Icons.home_outlined),
+                    label: 'Home',
+                    activeIcon: Icon(Icons.home_rounded)),
                 const BottomNavigationBarItem(
-                  icon: Icon(Icons.ballot),
-                  label: 'Blogs',
-                ),
+                    icon: Icon(Icons.ballot_outlined),
+                    label: 'Blog',
+                    activeIcon: Icon(Icons.ballot_rounded)),
                 const BottomNavigationBarItem(
-                  icon: Icon(Icons.search_sharp),
-                  label: 'Search',
-                ),
+                    icon: Icon(Icons.search_outlined),
+                    label: 'Search',
+                    activeIcon: Icon(Icons.search_rounded)),
                 const BottomNavigationBarItem(
-                  icon: Icon(Icons.read_more_sharp),
-                  label: 'More',
-                ),
+                    icon: Icon(Icons.chrome_reader_mode_outlined),
+                    label: 'More',
+                    activeIcon: Icon(Icons.chrome_reader_mode_rounded)),
               ],
             ),
           ),

@@ -29,14 +29,6 @@ class _MoreWidgetState extends State<MoreWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.deepPurple,
-      //   automaticallyImplyLeading: true,
-      //   actions: const [],
-      //   centerTitle: true,
-      //   elevation: 4,
-      // ),
-      // backgroundColor: Color(# ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Scrollbar(
@@ -52,14 +44,24 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 30, vertical: 15),
+                                child: CircularProgressIndicator(
+                                  value: downloadProgress.progress,
+                                ),
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-6.jpeg?w=310&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -83,14 +85,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-1.jpeg?resize=269%2C187&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -118,14 +127,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-2.jpeg?resize=301%2C167&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -153,14 +169,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-13.jpeg?resize=300%2C168&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -188,14 +211,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/10/image.jpeg?resize=300%2C168&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -223,7 +253,7 @@ class _MoreWidgetState extends State<MoreWidget> {
                   //         imageUrl:
                   //             'https://i0.wp.com/brightpropertymanagement.com/wp-content/uploads/2019/04/yelp-reviews-wordpress.png?w=740&ssl=1',
                   //         width: 70,
-                  //         height: 100,
+                  //         height:50,
                   //         fit: BoxFit.fill,
                   //       ),
                   //     ),
@@ -251,14 +281,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image.jpeg?w=1000&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -286,14 +323,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-5.png?w=225&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -321,14 +365,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i2.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-7.jpeg?w=225&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -356,14 +407,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-17-edited.jpeg?resize=204%2C216&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -390,14 +448,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/image-8.jpeg?w=612&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -424,14 +489,19 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/awordjourneytranslation.com/wp-content/uploads/2018/10/certified-translation-services-company.png?w=740',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -459,14 +529,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-3.jpeg?resize=234%2C215&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -494,14 +571,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i1.wp.com/techcuttie.com/wp-content/uploads/2021/10/image-4.jpeg?resize=253%2C199&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -529,14 +613,21 @@ class _MoreWidgetState extends State<MoreWidget> {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                           progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                            value: downloadProgress.progress,
+                              (context, url, downloadProgress) => SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: CircularProgressIndicator(
+                                value: downloadProgress.progress,
+                              ),
+                            ),
                           ),
                           imageUrl:
                               'https://i0.wp.com/techcuttie.com/wp-content/uploads/2021/09/affiliate-word-written-wooden-blocks-refferals-marketing-business-concept-207854257-1.jpg?resize=1024%2C156&ssl=1',
-                          width: 70,
-                          height: 100,
+                          width: 90,
+                          height: 90,
                           fit: BoxFit.contain,
                         ),
                       ),

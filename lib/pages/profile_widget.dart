@@ -94,22 +94,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                       const Spacer(),
                                       TextButton(
-                                          onPressed: () async {
-                                            await FirebaseAuth.instance
-                                                .signOut();
-                                            Navigator.of(context)
-                                                .pushReplacement(
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const LoginSignUpWidget(),
-                                              ),
-                                            );
-                                          },
-                                          child: const Text('Sign Out',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.deepPurple))),
+                                        onPressed: () async {
+                                          await FirebaseAuth.instance.signOut();
+                                          Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const LoginSignUpWidget(),
+                                            ),
+                                          );
+                                        },
+                                        child: const Text('Sign Out'),
+                                      ),
                                       InkWell(
                                           onTap: () async {
                                             await FirebaseAuth.instance
@@ -158,21 +153,28 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 )
-                                              : ClipRRect(borderRadius:
-                                              BorderRadius.circular(16),
-                                                child: CachedNetworkImage(
-                                                  errorWidget:
-                                                    (context, url, error) =>
-                                                        const Icon(Icons.error),
-                                                progressIndicatorBuilder:
-                                                    (context, url,
-                                                            downloadProgress) =>
-                                                        CircularProgressIndicator(
-                                                          value: downloadProgress
-                                                              .progress,
-                                                        ),
-                                                    imageUrl: imageUrl),
-                                              )),
+                                              : ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(16),
+                                                  child: CachedNetworkImage(
+                                                      errorWidget: (context,
+                                                              url, error) =>
+                                                          const Icon(
+                                                              Icons.error),
+                                                      progressIndicatorBuilder:
+                                                          (context, url,
+                                                                  downloadProgress) =>
+                                                              SizedBox(
+                                                                height: 20,
+                                                                width: 20,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  value: downloadProgress
+                                                                      .progress,
+                                                                ),
+                                                              ),
+                                                      imageUrl: imageUrl),
+                                                )),
                                     ),
                                   ),
                                   Padding(
@@ -1065,7 +1067,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           }
 
                           return const Center(
-                              child: CircularProgressIndicator());
+                              child: SizedBox(
+                                  height: 20,
+                                  width: 20,
+                                  child: CircularProgressIndicator()));
                         }),
                   ),
                 ),

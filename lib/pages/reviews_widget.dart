@@ -227,8 +227,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             padding: const EdgeInsetsDirectional
                                                 .fromSTEB(2, 2, 2, 2),
                                             child: Container(
-                                              width: 50,
-                                              height: 50,
+                                              width: 20,
+                                              height: 20,
                                               clipBehavior: Clip.antiAlias,
                                               decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,
@@ -355,8 +355,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                             padding: const EdgeInsetsDirectional
                                                 .fromSTEB(2, 2, 2, 2),
                                             child: Container(
-                                              width: 50,
-                                              height: 50,
+                                              width: 20,
+                                              height: 20,
                                               clipBehavior: Clip.antiAlias,
                                               decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,
@@ -473,8 +473,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(2, 2, 2, 2),
                                         child: Container(
-                                          width: 50,
-                                          height: 50,
+                                          width: 20,
+                                          height: 20,
                                           clipBehavior: Clip.antiAlias,
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
@@ -588,8 +588,8 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(2, 2, 2, 2),
                                         child: Container(
-                                          width: 50,
-                                          height: 50,
+                                          width: 20,
+                                          height: 20,
                                           clipBehavior: Clip.antiAlias,
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.circle,

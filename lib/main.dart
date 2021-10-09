@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         //
-        //     DARK THEME
+        //     light THEME
         //
 
         primaryColor: Colors.deepPurple,
@@ -66,7 +66,10 @@ class MyApp extends StatelessWidget {
           primary: Colors.deepPurple,
           shadowColor: Colors.red,
           backgroundColor: Colors.transparent,
-          textStyle: const TextStyle(fontWeight: FontWeight.bold),
+          textStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontFamily: GoogleFonts.lobster().fontFamily),
           shape: const StadiumBorder(),
           side: const BorderSide(
               color: Colors.deepPurple, width: 3, style: BorderStyle.solid),
@@ -75,14 +78,17 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.deepPurple,
           elevation: 0,
-          selectedLabelStyle: const TextStyle(
-              color: Color(0xFFFFFFFF),
-              // fontFamily: 'Montserrat',
-              fontSize: 14.0),
+          selectedLabelStyle: TextStyle(
+              color: const Color(0xFFFFFFFF),
+              fontFamily: GoogleFonts.lobster().fontFamily,
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0),
           unselectedLabelStyle: TextStyle(
               color: Colors.grey[100],
+              fontFamily: GoogleFonts.lobster().fontFamily,
+              fontWeight: FontWeight.bold,
               // fontFamily: 'Montserrat',
-              fontSize: 12.0),
+              fontSize: 18.0),
           selectedItemColor: const Color(0xFFFFFFFF),
           unselectedItemColor: Colors.grey[400],
           showUnselectedLabels: true,
@@ -138,12 +144,26 @@ class MyApp extends StatelessWidget {
           },
         ),
         primaryColorBrightness: Brightness.light,
+        textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+          textStyle: TextStyle(
+              fontSize: 20,
+              fontFamily: GoogleFonts.lobster().fontFamily,
+              fontWeight: FontWeight.bold,
+              color: Colors.deepPurple),
+        )),
         primaryColorLight: Colors.white,
         canvasColor: Colors.white,
         bottomAppBarColor: Colors.deepPurple,
         focusColor: Colors.deepPurple[700],
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
+          style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+              textStyle: TextStyle(
+                fontSize: 20,
+                fontFamily: GoogleFonts.lobster().fontFamily,
+                fontWeight: FontWeight.bold,
+              )),
         ),
       ),
       //
@@ -158,21 +178,38 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.dark(
           primary: Colors.deepPurple,
         ),
-        appBarTheme: const AppBarTheme(
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
           color: Colors.deepPurple,
           elevation: 0,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: GoogleFonts.lobster().fontFamily,
+            fontSize: 42,
+          ),
         ),
+        textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+          textStyle: TextStyle(
+              fontSize: 20,
+              fontFamily: GoogleFonts.lobster().fontFamily,
+              fontWeight: FontWeight.bold,
+              color: Colors.deepPurple),
+        )),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.deepPurple,
           elevation: 0,
-          selectedLabelStyle: const TextStyle(
-              color: Color(0xFF000000),
-              // fontFamily: 'Montserrat',
-              fontSize: 14.0),
+          selectedLabelStyle: TextStyle(
+              color: const Color(0xFF000000),
+              fontFamily: GoogleFonts.lobster().fontFamily,
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0),
           unselectedLabelStyle: TextStyle(
+              fontFamily: GoogleFonts.lobster().fontFamily,
+              fontWeight: FontWeight.bold,
               color: Colors.grey[700],
               // fontFamily: 'Montserrat',
-              fontSize: 12.0),
+              fontSize: 18.0),
           selectedItemColor: const Color(0xFFFFFFFF),
           unselectedItemColor: Colors.grey[400],
           showUnselectedLabels: true,
@@ -197,7 +234,13 @@ class MyApp extends StatelessWidget {
           color: Colors.deepPurple,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(shape: const StadiumBorder()),
+          style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+              textStyle: TextStyle(
+                fontFamily: GoogleFonts.lobster().fontFamily,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(),
         fontFamily: GoogleFonts.varela().fontFamily,
@@ -239,7 +282,10 @@ class MyApp extends StatelessWidget {
             style: OutlinedButton.styleFrom(
           primary: Colors.deepPurple,
           backgroundColor: Colors.transparent,
-          textStyle: const TextStyle(fontWeight: FontWeight.bold),
+          textStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontFamily: GoogleFonts.lobster().fontFamily),
           shape: const StadiumBorder(),
           side: const BorderSide(
               color: Colors.deepPurple, width: 3, style: BorderStyle.solid),
