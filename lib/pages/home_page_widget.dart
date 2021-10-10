@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tech_cuttie/pages/add_blog_widget.dart';
 import 'package:tech_cuttie/pages/blogs_widget.dart';
 import 'package:tech_cuttie/pages/more_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
@@ -277,11 +278,57 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    children: const [
-                      Icon(
-                        Icons.help_rounded,
-                        // color: Colors.black,
-                        size: 30,
+                    children: [
+                      InkWell(
+                        onLongPress: () {
+                          showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: const Text('Admin Only'),
+                                content: const Text(''),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const AddBlogWidget())),
+                                    child: const Text(
+                                      'Ok',
+                                      style:
+                                          TextStyle(color: Colors.transparent),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: const Text('Need Help?'),
+                                content: const Text(
+                                    'Click on the more page to view other features.'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: const Text('Alright'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        child: const Icon(
+                          Icons.help_rounded,
+                          // color: Colors.black,
+                          size: 30,
+                        ),
                       ),
                     ],
                   ),
@@ -397,6 +444,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               // backgroundColor: Colors.deepPurple,
               type: BottomNavigationBarType.fixed,
               onTap: onTabTapped,
+
               currentIndex:
                   _currentIndex, // this will be set when a new tab is tapped
               // ignore: prefer_const_literals_to_create_immutables

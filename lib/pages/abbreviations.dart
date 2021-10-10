@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:share/share.dart';
 
 class Abbreviations extends StatefulWidget {
@@ -129,17 +128,21 @@ class _PostWidgetState extends State<AbbreviationsWidget> {
         child: Scrollbar(
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(24, 20, 24, 0),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Flexible(
                               child: Text(
@@ -156,98 +159,9 @@ class _PostWidgetState extends State<AbbreviationsWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Text(
-                              '123 Disney Way, Willingmington, WV 24921',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF8B97A2),
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            )
-                          ],
-                        ),
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(widget.full),
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            RatingBarIndicator(
-                              itemBuilder: (context, index) => const Icon(
-                                Icons.star_rounded,
-                                color: Color(0xFF320585),
-                              ),
-                              direction: Axis.horizontal,
-                              rating: 5,
-                              unratedColor: const Color(0xFFC964F4),
-                              itemCount: 5,
-                              itemSize: 24,
-                            ),
-                            const Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                              child: Text(
-                                '4/5 Reviews',
-                                style: TextStyle(
-                                  // fontFamily: 'Lexend Deca',
-                                  // color: Color(0xFF8B97A2),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Text(
-                              'DESCRIPTION',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF262D34),
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: const [
-                            Expanded(
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
-                                child: Text(
-                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.',
-                                  style: TextStyle(
-                                    // fontFamily: 'Lexend Deca',
-                                    // color: Color(0xFF8B97A2),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
                     ],
                   ),
                 ),
@@ -269,57 +183,11 @@ class _PostWidgetState extends State<AbbreviationsWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: const [
-                              Text(
-                                '\$156',
-                                style: TextStyle(
-                                  // fontFamily: 'Lexend Deca',
-                                  // color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
-                                child: Text(
-                                  '+ taxes',
-                                  style: TextStyle(
-                                    // fontFamily: 'Lexend Deca',
-                                    // color: Color(0xFF8B97A2),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          const Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
-                            child: Text(
-                              'per night',
-                              style: TextStyle(
-                                // fontFamily: 'Lexend Deca',
-                                // color: Color(0xFF8B97A2),
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
                       TextButton(
                           onPressed: () {
-                            Share.share(widget.term);
+                            Share.share(widget.term + '' + widget.full);
                           },
                           child: Row(
                             children: [

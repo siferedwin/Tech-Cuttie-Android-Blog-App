@@ -129,7 +129,11 @@ class MyApp extends StatelessWidget {
         ),
         popupMenuTheme: const PopupMenuThemeData(),
         scaffoldBackgroundColor: Colors.white,
-        scrollbarTheme: const ScrollbarThemeData(),
+        scrollbarTheme: ScrollbarThemeData(
+          radius: const Radius.circular(5),
+          interactive: true,
+          thickness: MaterialStateProperty.all(5.0),
+        ),
         visualDensity: const VisualDensity(vertical: 0.5, horizontal: 0.5),
         primarySwatch: const MaterialColor(
           0xFFF5E0C3,

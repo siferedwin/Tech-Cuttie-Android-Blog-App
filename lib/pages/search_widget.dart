@@ -299,7 +299,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         transitionCurve: Curves.easeInOutCubic, width: isPortrait ? 600 : 800,
         debounceDelay: const Duration(milliseconds: 500),
         accentColor: Colors.purpleAccent,
-        automaticallyImplyBackButton: true,
+        automaticallyImplyBackButton: false,
         border: const BorderSide(
             color: Colors.deepPurple, width: 2, style: BorderStyle.solid),
         // hintStyle: 1 > 2

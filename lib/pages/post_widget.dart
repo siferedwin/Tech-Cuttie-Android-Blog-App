@@ -5,10 +5,10 @@ import 'package:share/share.dart';
 
 class PostWidget extends StatefulWidget {
   final String category,
-      commentStatus,
-      comments,
-      dateCreated,
-      dateLastModified,
+      // commentStatus,
+      // comments,
+      // dateCreated,
+      // dateLastModified,
       essay1,
       essay2,
       essay3,
@@ -16,7 +16,7 @@ class PostWidget extends StatefulWidget {
       essay5,
       excerpt,
       featuredMedia,
-      format,
+      // format,
       heading1,
       heading2,
       heading3,
@@ -34,17 +34,17 @@ class PostWidget extends StatefulWidget {
       subHeading5,
       name,
       link,
-      likes,
-      status,
-      views,
+      // likes,
+      // status,
+      // views,
       tag;
   const PostWidget(
       {Key? key,
       required this.category,
-      required this.commentStatus,
-      required this.comments,
-      required this.dateCreated,
-      required this.dateLastModified,
+      // required this.commentStatus,
+      // required this.comments,
+      // required this.dateCreated,
+      // required this.dateLastModified,
       required this.essay1,
       required this.essay2,
       required this.essay3,
@@ -52,7 +52,7 @@ class PostWidget extends StatefulWidget {
       required this.essay5,
       required this.excerpt,
       required this.featuredMedia,
-      required this.format,
+      // required this.format,
       required this.heading1,
       required this.heading2,
       required this.heading3,
@@ -70,9 +70,9 @@ class PostWidget extends StatefulWidget {
       required this.subHeading5,
       required this.name,
       required this.link,
-      required this.likes,
-      required this.status,
-      required this.views,
+      // required this.likes,
+      // required this.status,
+      // required this.views,
       required this.tag})
       : super(key: key);
 
@@ -100,6 +100,7 @@ class _PostWidgetState extends State<PostWidget> {
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
@@ -264,6 +265,7 @@ class _PostWidgetState extends State<PostWidget> {
                               Share.share(widget.link);
                             },
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text('Share',
                                     style:
@@ -280,12 +282,27 @@ class _PostWidgetState extends State<PostWidget> {
                                 ),
                               ],
                             )),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('Categories:'),
+                        ),
                         OutlinedButton(
                             onPressed: () {},
                             child: Text(widget.category.replaceAll('[', ''))),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('Tags:'),
+                        ),
                         OutlinedButton(
                             onPressed: () {}, child: Text(widget.tag)),
-                        Text(widget.heading1),
+                        Text(
+                          widget.heading1,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        Text(
+                          widget.subHeading1,
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: CachedNetworkImage(
@@ -305,11 +322,20 @@ class _PostWidgetState extends State<PostWidget> {
                                       ),
                               imageUrl: widget.image1),
                         ),
-                        Text(widget.essay1),
+                        Text(
+                          widget.essay1.replaceAll("\\n", "\n"),
+                        ),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(widget.heading2),
+                        Text(
+                          widget.heading2,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        Text(
+                          widget.subHeading2,
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: CachedNetworkImage(
@@ -329,11 +355,18 @@ class _PostWidgetState extends State<PostWidget> {
                                       ),
                               imageUrl: widget.image2),
                         ),
-                        Text(widget.essay2),
+                        Text(widget.essay2.replaceAll("\\n", "\n")),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(widget.heading3),
+                        Text(
+                          widget.heading3,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        Text(
+                          widget.subHeading3,
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: CachedNetworkImage(
@@ -353,11 +386,18 @@ class _PostWidgetState extends State<PostWidget> {
                                       ),
                               imageUrl: widget.image3),
                         ),
-                        Text(widget.essay3),
+                        Text(widget.essay3.replaceAll("\\n", "\n")),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(widget.heading4),
+                        Text(
+                          widget.heading4,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        Text(
+                          widget.subHeading4,
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: CachedNetworkImage(
@@ -377,11 +417,18 @@ class _PostWidgetState extends State<PostWidget> {
                                       ),
                               imageUrl: widget.image4),
                         ),
-                        Text(widget.essay4),
+                        Text(widget.essay4.replaceAll("\\n", "\n")),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(widget.heading5),
+                        Text(
+                          widget.heading5,
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
+                        Text(
+                          widget.subHeading5,
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: CachedNetworkImage(
@@ -401,41 +448,7 @@ class _PostWidgetState extends State<PostWidget> {
                                       ),
                               imageUrl: widget.image5),
                         ),
-                        Text(widget.essay5),
-
-                        // Padding(
-                        //   padding:
-                        //       const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 0),
-                        //   child: Row(
-                        //     mainAxisSize: MainAxisSize.max,
-                        //     children: [
-                        //       // RatingBarIndicator(
-                        //       //   itemBuilder: (context, index) => const Icon(
-                        //       //     Icons.star_rounded,
-                        //       //     color: Color(0xFF320585),
-                        //       //   ),
-                        //       //   direction: Axis.horizontal,
-                        //       //   rating: 5,
-                        //       //   unratedColor: const Color(0xFFC964F4),
-                        //       //   itemCount: 5,
-                        //       //   itemSize: 24,
-                        //       // ),
-                        //       const Padding(
-                        //         padding:
-                        //             EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                        //         child: Text(
-                        //           '4/5 Reviews',
-                        //           style: TextStyle(
-                        //             // fontFamily: 'Lexend Deca',
-                        //             // color: Color(0xFF8B97A2),
-                        //             fontSize: 12,
-                        //             fontWeight: FontWeight.normal,
-                        //           ),
-                        //         ),
-                        //       )
-                        //     ],
-                        //   ),
-                        // ),
+                        Text(widget.essay5.replaceAll("\\n", "\n")),
                       ],
                     ),
                   ),
