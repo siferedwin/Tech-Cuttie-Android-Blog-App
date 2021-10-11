@@ -5,9 +5,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_cuttie/pages/login_sign_up_widget.dart';
-import 'package:wordpress_api/wordpress_api.dart';
 
-WordPressAPI api = WordPressAPI('techuttie.com');
 bool isReady = false;
 var brightness = SchedulerBinding.instance!.window.platformBrightness;
 bool isDarkMode = brightness == Brightness.dark;
@@ -17,8 +15,11 @@ bool isProcessing = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  // ignore: unused_local_variable
+  FirebaseFirestore base;
+  base = FirebaseFirestore.instance;
   FirebaseFirestore.instance.settings = const Settings(
-      persistenceEnabled: false, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
+      persistenceEnabled: true, cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.deepPurple,
       systemNavigationBarIconBrightness: Brightness.light,
@@ -263,7 +264,11 @@ class MyApp extends StatelessWidget {
         ),
         popupMenuTheme: const PopupMenuThemeData(),
         scaffoldBackgroundColor: Colors.black,
-        scrollbarTheme: const ScrollbarThemeData(),
+        scrollbarTheme: ScrollbarThemeData(
+          radius: const Radius.circular(5),
+          interactive: true,
+          thickness: MaterialStateProperty.all(5.0),
+        ),
         visualDensity: const VisualDensity(vertical: 0.5, horizontal: 0.5),
         primarySwatch: const MaterialColor(
           0xFFF5E0C3,

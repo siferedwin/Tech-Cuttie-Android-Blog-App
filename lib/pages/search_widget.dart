@@ -14,12 +14,6 @@ class _SearchWidgetState extends State<SearchWidget> {
   static const historyLength = 10;
 
 // The "raw" history that we don't access from the UI, prefilled with values
-  final List<String> _searchHistory = [
-    'Home',
-    'Blog',
-    'More Page',
-    'User profile',
-  ];
 
   // The filtered & ordered history that's accessed from the UI
   late List<String> filteredSearchHistory;
@@ -30,33 +24,33 @@ class _SearchWidgetState extends State<SearchWidget> {
   }) {
     if (filter != null && filter.isNotEmpty) {
       // Reversed because we want the last added items to appear first in the UI
-      return _searchHistory.reversed
+      return searchHistory.reversed
           .where((term) => term.startsWith(filter))
           .toList();
     } else {
-      return _searchHistory.reversed.toList();
+      return searchHistory.reversed.toList();
     }
   }
 
   void addSearchTerm(String term) {
-    if (_searchHistory.contains(term)) {
+    if (searchHistory.contains(term)) {
       // This method will be implemented soon
       putSearchTermFirst(term);
       return;
     }
     setState(() {
-      _searchHistory.add(term);
+      searchHistory.add(term);
     });
-    if (_searchHistory.length > historyLength) {
-      _searchHistory.removeRange(0, _searchHistory.length - historyLength);
+    if (searchHistory.length > historyLength) {
+      searchHistory.removeRange(0, searchHistory.length - historyLength);
     }
-    // Changes in _searchHistory mean that we have to update the filteredSearchHistory
+    // Changes in searchHistory mean that we have to update the filteredSearchHistory
     filteredSearchHistory = filterSearchTerms(filter: null);
   }
 
   void deleteSearchTerm(String term) {
     setState(() {
-      _searchHistory.removeWhere((t) => t == term);
+      searchHistory.removeWhere((t) => t == term);
     });
     filteredSearchHistory = filterSearchTerms(filter: null);
   }
@@ -124,7 +118,7 @@ class _SearchWidgetState extends State<SearchWidget> {
               },
             );
           });
-          // _searchHistory.add(selectedTerm);
+          // searchHistory.add(selectedTerm);
           controller.close();
         },
         onFocusChanged: (isFocused) {
@@ -310,3 +304,13 @@ class _SearchWidgetState extends State<SearchWidget> {
     );
   }
 }
+
+final List<String> searchHistory = [
+  'Home',
+  'Blog',
+  'More Page',
+  'Help',
+  'Services',
+  'Contact Us',
+  'About'
+];

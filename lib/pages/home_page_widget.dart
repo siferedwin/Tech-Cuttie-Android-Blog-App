@@ -285,7 +285,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             context: context,
                             builder: (alertDialogContext) {
                               return AlertDialog(
-                                title: const Text('Admin Only'),
+                                title: const Text('Tech Cuttie'),
                                 content: const Text(''),
                                 actions: [
                                   TextButton(

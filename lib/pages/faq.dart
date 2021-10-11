@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share/share.dart';
+import 'package:tech_cuttie/pages/search_widget.dart';
 
 class FAQs extends StatefulWidget {
   const FAQs({Key? key}) : super(key: key);
@@ -43,6 +44,10 @@ class _BlogsWidgetState extends State<FAQs> {
                           String title = doc['title'];
                           String category = doc['category'];
                           String answer = doc['answer'];
+                          if (searchHistory.contains(title)) {
+                          } else {
+                            searchHistory.add(title);
+                          }
 
                           return GestureDetector(
                             onTap: () {

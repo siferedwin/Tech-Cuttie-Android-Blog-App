@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tech_cuttie/pages/post_widget.dart';
+import 'package:tech_cuttie/pages/search_widget.dart';
 
 class BlogsWidget extends StatefulWidget {
   const BlogsWidget({Key? key}) : super(key: key);
@@ -59,6 +60,7 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                 String essay5 = doc['essay5'];
                                 // String format = doc['format'];
                                 String featuredMedia = doc['featured_media'];
+
                                 // String likes = doc['likes'].toString();
                                 String name = doc['name'];
                                 // String status = doc['status'];
@@ -66,6 +68,12 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                 String excerpt = doc['excerpt'];
                                 // String dateCreated = doc['date_created'];
                                 String tag = doc['tag'];
+
+                                if (searchHistory.contains(name)) {
+                                } else {
+                                  searchHistory.add(name);
+                                }
+
                                 // String commentStatus = doc['comment_status'];
                                 // String comments = doc['comments'][0];
                                 // String views = doc['views'].toString();

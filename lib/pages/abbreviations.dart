@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
+import 'package:tech_cuttie/pages/search_widget.dart';
 
 class Abbreviations extends StatefulWidget {
   const Abbreviations({Key? key}) : super(key: key);
@@ -41,6 +42,10 @@ class _BlogsWidgetState extends State<Abbreviations> {
 
                           String full = doc['full'];
                           String term = doc['term'];
+                          if (searchHistory.contains(full)) {
+                          } else {
+                            searchHistory.add(full);
+                          }
 
                           return GestureDetector(
                             onTap: () {

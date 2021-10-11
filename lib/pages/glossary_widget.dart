@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share/share.dart';
+import 'package:tech_cuttie/pages/search_widget.dart';
 
 class Glossary extends StatefulWidget {
   const Glossary({Key? key}) : super(key: key);
@@ -43,6 +44,10 @@ class _BlogsWidgetState extends State<Glossary> {
                           String _content = doc['content'];
                           String _image = doc['image'];
                           String _item = doc['item'];
+                          if (searchHistory.contains(_item)) {
+                          } else {
+                            searchHistory.add(_item);
+                          }
 
                           return GestureDetector(
                             onTap: () {
