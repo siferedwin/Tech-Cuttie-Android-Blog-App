@@ -1,5 +1,6 @@
 // ignore: unused_import
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tech_cuttie/pages/posts_widget.dart';
@@ -44,14 +45,29 @@ class _BlogsWidgetState extends State<Home> {
                   itemCount: snapshot.data!.length,
                   itemBuilder: (BuildContext context, int index) {
                     Map wppost = snapshot.data![index];
-                    var imageurl = wppost["jetpack_featured_media_url"];
+                    var featuredMedia = wppost["jetpack_featured_media_url"];
                     var title = wppost['title']['rendered'];
                     var link = wppost['link'];
-                    var content =
+                    var postId = wppost['id'];
+                    var excerpt =
                         parse((wppost['excerpt']['rendered']).toString())
                             .documentElement!
-                            .text;
+                            .text
+                            .replaceAll('Table of Contents ', '');
                     var htmlContent = wppost['content']['rendered'];
+                    if (postIds.contains(postId)) {
+                    } else {
+                      postIds.add(postId);
+                      FirebaseFirestore.instance
+                          .collection('Blog')
+                          .doc(postId.toString())
+                          .set({
+                        'featuredMedia': featuredMedia,
+                        'title': title,
+                        'link': link,
+                        'htmlContent': htmlContent
+                      });
+                    }
 
                     return GestureDetector(
                       onTap: () {
@@ -59,9 +75,9 @@ class _BlogsWidgetState extends State<Home> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => HomePost(
-                                      content: content,
+                                      content: excerpt,
                                       link: link,
-                                      imageurl: imageurl,
+                                      imageurl: featuredMedia,
                                       title: title,
                                       htmlContent: htmlContent,
                                     )));
@@ -79,7 +95,7 @@ class _BlogsWidgetState extends State<Home> {
                                 children: [
                                   FadeInImage.assetNetwork(
                                     placeholder: 'assets/images/loading.gif',
-                                    image: imageurl,
+                                    image: featuredMedia,
                                   ),
                                   Text(wppost['title']['rendered'],
                                       style: const TextStyle(
@@ -179,3 +195,5 @@ class _PostTileState extends State<PostTile> {
     );
   }
 }
+
+final List<int> postIds = [];

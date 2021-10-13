@@ -34,34 +34,6 @@ class _PostState extends State<HomePost> {
                     setState(() {
                       like = true;
                     });
-                    FirebaseFirestore.instance.collection('Blogs').doc().set({
-                      "category": '',
-                      "essay1": widget.htmlContent,
-                      "essay2": '',
-                      "essay3": '',
-                      "essay4": '',
-                      "essay5": '',
-                      "name": widget.title,
-                      "excerpt": widget.content,
-                      "featured_media": widget.imageurl,
-                      "heading1": '',
-                      "heading2": '',
-                      "heading3": '',
-                      "heading4": '',
-                      "heading5": '',
-                      "image1": '',
-                      "image2": '',
-                      "image3": '',
-                      "image4": '',
-                      "image5": '',
-                      "link": widget.link,
-                      "sub_heading1": '',
-                      "sub_heading2": '',
-                      "sub_heading3": '',
-                      "sub_heading4": '',
-                      "sub_heading5": '',
-                      "tag": '',
-                    });
                   },
                   icon: const Icon(Icons.favorite_border_rounded))
               : IconButton(
