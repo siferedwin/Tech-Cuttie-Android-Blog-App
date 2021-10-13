@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:share/share.dart';
 
 class PostWidget extends StatefulWidget {
@@ -303,152 +304,153 @@ class _PostWidgetState extends State<PostWidget> {
                           widget.subHeading1,
                           style: Theme.of(context).textTheme.headline5,
                         ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: CachedNetworkImage(
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 30, vertical: 15),
-                                          child: CircularProgressIndicator(
-                                            value: downloadProgress.progress,
-                                          ),
-                                        ),
-                                      ),
-                              imageUrl: widget.image1),
-                        ),
-                        Text(
-                          widget.essay1.replaceAll("\\n", "\n"),
-                        ),
+                        // ClipRRect(
+                        //   borderRadius: BorderRadius.circular(10),
+                        //   child: CachedNetworkImage(
+                        //       errorWidget: (context, url, error) =>
+                        //           const Icon(Icons.error),
+                        //       progressIndicatorBuilder:
+                        //           (context, url, downloadProgress) => SizedBox(
+                        //                 height: 20,
+                        //                 width: 20,
+                        //                 child: Padding(
+                        //                   padding: const EdgeInsets.symmetric(
+                        //                       horizontal: 30, vertical: 15),
+                        //                   child: CircularProgressIndicator(
+                        //                     value: downloadProgress.progress,
+                        //                   ),
+                        //                 ),
+                        //               ),
+                        //       imageUrl: widget.image1),
+                        // ),
+                        Html(data: widget.essay1),
+                        // Text(
+                        //   widget.essay1.replaceAll("\\n", "\n"),
+                        // ),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          widget.heading2,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        Text(
-                          widget.subHeading2,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: CachedNetworkImage(
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 30, vertical: 15),
-                                          child: CircularProgressIndicator(
-                                            value: downloadProgress.progress,
-                                          ),
-                                        ),
-                                      ),
-                              imageUrl: widget.image2),
-                        ),
-                        Text(widget.essay2.replaceAll("\\n", "\n")),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          widget.heading3,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        Text(
-                          widget.subHeading3,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: CachedNetworkImage(
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 30, vertical: 15),
-                                          child: CircularProgressIndicator(
-                                            value: downloadProgress.progress,
-                                          ),
-                                        ),
-                                      ),
-                              imageUrl: widget.image3),
-                        ),
-                        Text(widget.essay3.replaceAll("\\n", "\n")),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          widget.heading4,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        Text(
-                          widget.subHeading4,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: CachedNetworkImage(
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 30, vertical: 15),
-                                          child: CircularProgressIndicator(
-                                            value: downloadProgress.progress,
-                                          ),
-                                        ),
-                                      ),
-                              imageUrl: widget.image4),
-                        ),
-                        Text(widget.essay4.replaceAll("\\n", "\n")),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          widget.heading5,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        Text(
-                          widget.subHeading5,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: CachedNetworkImage(
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) => SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 30, vertical: 15),
-                                          child: CircularProgressIndicator(
-                                            value: downloadProgress.progress,
-                                          ),
-                                        ),
-                                      ),
-                              imageUrl: widget.image5),
-                        ),
-                        Text(widget.essay5.replaceAll("\\n", "\n")),
+                        // Text(
+                        //   widget.heading2,
+                        //   style: Theme.of(context).textTheme.headline4,
+                        // ),
+                        // Text(
+                        //   widget.subHeading2,
+                        //   style: Theme.of(context).textTheme.headline5,
+                        // ),
+                        // ClipRRect(
+                        //   borderRadius: BorderRadius.circular(10),
+                        //   child: CachedNetworkImage(
+                        //       errorWidget: (context, url, error) =>
+                        //           const Icon(Icons.error),
+                        //       progressIndicatorBuilder:
+                        //           (context, url, downloadProgress) => SizedBox(
+                        //                 height: 20,
+                        //                 width: 20,
+                        //                 child: Padding(
+                        //                   padding: const EdgeInsets.symmetric(
+                        //                       horizontal: 30, vertical: 15),
+                        //                   child: CircularProgressIndicator(
+                        //                     value: downloadProgress.progress,
+                        //                   ),
+                        //                 ),
+                        //               ),
+                        //       imageUrl: widget.image2),
+                        // ),
+                        // Text(widget.essay2.replaceAll("\\n", "\n")),
+                        // const SizedBox(
+                        //   height: 10,
+                        // ),
+                        // Text(
+                        //   widget.heading3,
+                        //   style: Theme.of(context).textTheme.headline4,
+                        // ),
+                        // Text(
+                        //   widget.subHeading3,
+                        //   style: Theme.of(context).textTheme.headline5,
+                        // ),
+                        // ClipRRect(
+                        //   borderRadius: BorderRadius.circular(10),
+                        //   child: CachedNetworkImage(
+                        //       errorWidget: (context, url, error) =>
+                        //           const Icon(Icons.error),
+                        //       progressIndicatorBuilder:
+                        //           (context, url, downloadProgress) => SizedBox(
+                        //                 height: 20,
+                        //                 width: 20,
+                        //                 child: Padding(
+                        //                   padding: const EdgeInsets.symmetric(
+                        //                       horizontal: 30, vertical: 15),
+                        //                   child: CircularProgressIndicator(
+                        //                     value: downloadProgress.progress,
+                        //                   ),
+                        //                 ),
+                        //               ),
+                        //       imageUrl: widget.image3),
+                        // ),
+                        // // Text(widget.essay3.replaceAll("\\n", "\n")),
+                        // const SizedBox(
+                        //   height: 10,
+                        // ),
+                        // Text(
+                        //   widget.heading4,
+                        //   style: Theme.of(context).textTheme.headline4,
+                        // ),
+                        // Text(
+                        //   widget.subHeading4,
+                        //   style: Theme.of(context).textTheme.headline5,
+                        // ),
+                        // ClipRRect(
+                        //   borderRadius: BorderRadius.circular(10),
+                        //   child: CachedNetworkImage(
+                        //       errorWidget: (context, url, error) =>
+                        //           const Icon(Icons.error),
+                        //       progressIndicatorBuilder:
+                        //           (context, url, downloadProgress) => SizedBox(
+                        //                 height: 20,
+                        //                 width: 20,
+                        //                 child: Padding(
+                        //                   padding: const EdgeInsets.symmetric(
+                        //                       horizontal: 30, vertical: 15),
+                        //                   child: CircularProgressIndicator(
+                        //                     value: downloadProgress.progress,
+                        //                   ),
+                        //                 ),
+                        //               ),
+                        //       imageUrl: widget.image4),
+                        // ),
+                        // Text(widget.essay4.replaceAll("\\n", "\n")),
+                        // const SizedBox(
+                        //   height: 10,
+                        // ),
+                        // Text(
+                        //   widget.heading5,
+                        //   style: Theme.of(context).textTheme.headline4,
+                        // ),
+                        // Text(
+                        //   widget.subHeading5,
+                        //   style: Theme.of(context).textTheme.headline5,
+                        // ),
+                        // ClipRRect(
+                        //   borderRadius: BorderRadius.circular(10),
+                        //   child: CachedNetworkImage(
+                        //       errorWidget: (context, url, error) =>
+                        //           const Icon(Icons.error),
+                        //       progressIndicatorBuilder:
+                        //           (context, url, downloadProgress) => SizedBox(
+                        //                 height: 20,
+                        //                 width: 20,
+                        //                 child: Padding(
+                        //                   padding: const EdgeInsets.symmetric(
+                        //                       horizontal: 30, vertical: 15),
+                        //                   child: CircularProgressIndicator(
+                        //                     value: downloadProgress.progress,
+                        //                   ),
+                        //                 ),
+                        //               ),
+                        //       imageUrl: widget.image5),
+                        // ),
+                        // Text(widget.essay5.replaceAll("\\n", "\n")),
                       ],
                     ),
                   ),

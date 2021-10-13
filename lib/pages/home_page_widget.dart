@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_cuttie/pages/add_blog_widget.dart';
+import 'package:tech_cuttie/pages/blog.dart';
 import 'package:tech_cuttie/pages/blogs_widget.dart';
 import 'package:tech_cuttie/pages/more_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
@@ -246,10 +247,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               // backgroundColor: Colors.deepPurple,
               // automaticallyImplyLeading: true,
               title: Center(
-                  child: Text(
-                'Tech Cuttie',
-                style: GoogleFonts.lobster(
-                    fontSize: 42, fontWeight: FontWeight.bold),
+                  child: InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Home()));
+                },
+                child: Text(
+                  'Tech Cuttie',
+                  style: GoogleFonts.lobster(
+                      fontSize: 42, fontWeight: FontWeight.bold),
+                ),
               )),
               actions: [
                 InkWell(
