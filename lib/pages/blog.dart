@@ -46,9 +46,10 @@ class _BlogsWidgetState extends State<Home> {
                 itemBuilder: (BuildContext context, int index) {
                   Map wppost = snapshot.data![index];
                   var featuredMedia = wppost["jetpack_featured_media_url"];
-                  var title = wppost['title']['rendered'];
+                  String title = wppost['title']['rendered'];
                   var link = wppost['link'];
                   var postId = wppost['id'].toString();
+                  title = '<b>' '$title' '<b>';
 
                   var excerpt =
                       parse((wppost['excerpt']['rendered']).toString())

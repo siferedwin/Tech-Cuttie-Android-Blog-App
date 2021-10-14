@@ -1,7 +1,9 @@
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:tech_cuttie/pages/post_widget.dart';
 import 'package:tech_cuttie/pages/search_widget.dart';
 
@@ -119,11 +121,9 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Text(doc['title'],
-                                                style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
-                                                )),
+                                            child: Html(
+                                              data: doc['title'],
+                                            ),
                                           ),
                                           Text(
                                               doc['excerpt'].toString().replaceAll(

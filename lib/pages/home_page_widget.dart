@@ -248,7 +248,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               // automaticallyImplyLeading: true,
               title: Center(
                   child: InkWell(
-                onTap: () {
+                onLongPress: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Home()));
                 },

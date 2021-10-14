@@ -193,14 +193,8 @@ class _PostWidgetState extends State<PostWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Flexible(
-                                child: Text(
-                                  widget.title,
-                                  style: const TextStyle(
-                                    // fontFamily: 'Lexend Deca',
-                                    // color: Color(0xFF090F13),
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                child: Html(
+                                  data: widget.title,
                                 ),
                               )
                             ],
