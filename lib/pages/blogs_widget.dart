@@ -15,7 +15,7 @@ class BlogsWidget extends StatefulWidget {
 class _BlogsWidgetState extends State<BlogsWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('Blogs').snapshots();
+      FirebaseFirestore.instance.collection('Blog').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -33,45 +33,27 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                         child: Center(
                           child: ListView.builder(
                               shrinkWrap: true,
+                              // reverse: true,
+                              // itemExtent: 0,
                               itemCount: snapshot.data!.docs.length,
                               itemBuilder: (context, index) {
                                 DocumentSnapshot doc =
                                     snapshot.data!.docs[index];
-                                String category = doc['category'];
-                                String subHeading2 = doc['sub_heading2'];
-                                String subHeading1 = doc['sub_heading1'];
-                                String subHeading3 = doc['sub_heading3'];
-                                String subHeading4 = doc['sub_heading4'];
-                                String subHeading5 = doc['sub_heading5'];
-                                String heading1 = doc['heading1'];
-                                String heading2 = doc['heading2'];
-                                String heading3 = doc['heading3'];
-                                String heading4 = doc['heading4'];
-                                String heading5 = doc['heading5'];
-                                String image1 = doc['image1'];
-                                String image2 = doc['image2'];
-                                String image3 = doc['image3'];
-                                String image4 = doc['image4'];
-                                String image5 = doc['image5'];
-                                String essay1 = doc['essay1'];
-                                String essay2 = doc['essay2'];
-                                String essay3 = doc['essay3'];
-                                String essay4 = doc['essay4'];
-                                String essay5 = doc['essay5'];
+
                                 // String format = doc['format'];
-                                String featuredMedia = doc['featured_media'];
+                                String featuredMedia = doc['featuredMedia'];
 
                                 // String likes = doc['likes'].toString();
-                                String name = doc['name'];
+                                String title = doc['title'];
                                 // String status = doc['status'];
                                 String link = doc['link'];
                                 String excerpt = doc['excerpt'];
+                                String htmlContent = doc['htmlContent'];
                                 // String dateCreated = doc['date_created'];
-                                String tag = doc['tag'];
 
-                                if (searchHistory.contains(name)) {
+                                if (searchHistory.contains(title)) {
                                 } else {
-                                  searchHistory.add(name);
+                                  searchHistory.add(title);
                                 }
 
                                 // String commentStatus = doc['comment_status'];
@@ -87,36 +69,16 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) => PostWidget(
-                                                  category: category,
-                                                  subHeading5: subHeading5,
-                                                  essay4: essay4,
                                                   // format: format,
-                                                  heading5: heading5,
-                                                  heading4: heading4,
-                                                  heading2: heading2,
-                                                  heading1: heading1,
-                                                  image2: image2,
-                                                  image1: image1,
-                                                  essay3: essay3,
+
                                                   featuredMedia: featuredMedia,
-                                                  image5: image5,
-                                                  // likes: likes,
-                                                  subHeading1: subHeading1,
-                                                  name: name,
+                                                  htmlContent: htmlContent,
+                                                  excerpt: excerpt,
+
+                                                  title: title,
                                                   // status: status,
                                                   link: link,
-                                                  subHeading3: subHeading3,
-                                                  image3: image3,
-                                                  subHeading2: subHeading2,
-                                                  excerpt: excerpt,
-                                                  image4: image4,
-                                                  heading3: heading3,
-                                                  essay5: essay5,
-                                                  essay1: essay1,
-                                                  // dateCreated: dateCreated,
-                                                  subHeading4: subHeading4,
-                                                  tag: tag,
-                                                  essay2: essay2,
+
                                                   // commentStatus: commentStatus,
                                                   // comments: comments,
                                                   // dateLastModified:
@@ -153,18 +115,20 @@ class _BlogsWidgetState extends State<BlogsWidget> {
                                                           ),
                                                         ),
                                                 fit: BoxFit.scaleDown,
-                                                imageUrl:
-                                                    doc['featured_media']),
+                                                imageUrl: doc['featuredMedia']),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Text(doc['name'],
+                                            child: Text(doc['title'],
                                                 style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 18,
                                                 )),
                                           ),
-                                          Text(doc['excerpt'],
+                                          Text(
+                                              doc['excerpt'].toString().replaceAll(
+                                                  'Click Your preferred platform to share:PocketTelegramWhatsAppTweetPrintShare on Tumblr',
+                                                  ''),
                                               style: const TextStyle(
                                                 fontWeight: FontWeight.normal,
                                                 fontSize: 14,

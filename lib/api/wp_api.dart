@@ -10,10 +10,10 @@ Future<List> fetchWpPosts() async {
   return convertDatatoJson;
 }
 
-Future<List> fetchWpTags() async {
+Future<List> fetchWpFags() async {
   final response = await http.get(
       Uri.parse(
-          'https://techcuttie.com/index.php/wp-json/wp/v2/tags?per_page=100'),
+          'https://techcuttie.com/index.php/wp-json/wp/v2/helpie_faq?per_page=100'),
       headers: {"Accept": "application/json"});
   var convertDatatoJson = jsonDecode(response.body);
   return convertDatatoJson;

@@ -5,77 +5,40 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:share/share.dart';
 
 class PostWidget extends StatefulWidget {
-  final String category,
+  final String
       // commentStatus,
       // comments,
       // dateCreated,
       // dateLastModified,
-      essay1,
-      essay2,
-      essay3,
-      essay4,
-      essay5,
+
       excerpt,
       featuredMedia,
-      // format,
-      heading1,
-      heading2,
-      heading3,
-      heading4,
-      heading5,
-      image1,
-      image2,
-      image3,
-      image4,
-      image5,
-      subHeading1,
-      subHeading2,
-      subHeading3,
-      subHeading4,
-      subHeading5,
-      name,
-      link,
+      title,
+      htmlContent,
+      link
       // likes,
       // status,
       // views,
-      tag;
-  const PostWidget(
-      {Key? key,
-      required this.category,
-      // required this.commentStatus,
-      // required this.comments,
-      // required this.dateCreated,
-      // required this.dateLastModified,
-      required this.essay1,
-      required this.essay2,
-      required this.essay3,
-      required this.essay4,
-      required this.essay5,
-      required this.excerpt,
-      required this.featuredMedia,
-      // required this.format,
-      required this.heading1,
-      required this.heading2,
-      required this.heading3,
-      required this.heading4,
-      required this.heading5,
-      required this.image1,
-      required this.image2,
-      required this.image3,
-      required this.image4,
-      required this.image5,
-      required this.subHeading1,
-      required this.subHeading2,
-      required this.subHeading3,
-      required this.subHeading4,
-      required this.subHeading5,
-      required this.name,
-      required this.link,
-      // required this.likes,
-      // required this.status,
-      // required this.views,
-      required this.tag})
-      : super(key: key);
+      ;
+  const PostWidget({
+    Key? key,
+
+    // required this.commentStatus,
+    // required this.comments,
+    // required this.dateCreated,
+    // required this.dateLastModified,
+
+    required this.title,
+    required this.htmlContent,
+    required this.excerpt,
+    required this.featuredMedia,
+    // required this.format,
+
+    required this.link,
+    // required this.likes,
+    // required this.status,
+    // required this.views,
+  }) : super(key: key);
 
   @override
   _PostWidgetState createState() => _PostWidgetState();
@@ -231,7 +194,7 @@ class _PostWidgetState extends State<PostWidget> {
                             children: [
                               Flexible(
                                 child: Text(
-                                  widget.name,
+                                  widget.title,
                                   style: const TextStyle(
                                     // fontFamily: 'Lexend Deca',
                                     // color: Color(0xFF090F13),
@@ -283,27 +246,7 @@ class _PostWidgetState extends State<PostWidget> {
                                 ),
                               ],
                             )),
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text('Categories:'),
-                        ),
-                        OutlinedButton(
-                            onPressed: () {},
-                            child: Text(widget.category.replaceAll('[', ''))),
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text('Tags:'),
-                        ),
-                        OutlinedButton(
-                            onPressed: () {}, child: Text(widget.tag)),
-                        Text(
-                          widget.heading1,
-                          style: Theme.of(context).textTheme.headline4,
-                        ),
-                        Text(
-                          widget.subHeading1,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
+
                         // ClipRRect(
                         //   borderRadius: BorderRadius.circular(10),
                         //   child: CachedNetworkImage(
@@ -323,7 +266,7 @@ class _PostWidgetState extends State<PostWidget> {
                         //               ),
                         //       imageUrl: widget.image1),
                         // ),
-                        Html(data: widget.essay1),
+                        Html(data: widget.htmlContent),
                         // Text(
                         //   widget.essay1.replaceAll("\\n", "\n"),
                         // ),

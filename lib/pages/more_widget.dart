@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'package:tech_cuttie/pages/abbreviations.dart';
 import 'package:tech_cuttie/pages/about_widget.dart';
 // ignore: unused_import
@@ -14,6 +16,7 @@ import 'package:tech_cuttie/pages/privacy_widget.dart';
 import 'package:tech_cuttie/pages/services_widget.dart';
 import 'package:tech_cuttie/pages/terms_widget.dart';
 import 'package:tech_cuttie/pages/tips_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MoreWidget extends StatefulWidget {
   const MoreWidget({Key? key}) : super(key: key);
@@ -24,6 +27,9 @@ class MoreWidget extends StatefulWidget {
 
 class _MoreWidgetState extends State<MoreWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  CollectionReference settings =
+      FirebaseFirestore.instance.collection('Settings');
+  int version = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +42,40 @@ class _MoreWidgetState extends State<MoreWidget> {
             children: [
               Column(
                 children: [
+                  FutureBuilder(
+                      future: settings.doc('config').get(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<DocumentSnapshot> snapshot) {
+                        if (snapshot.hasError) {
+                          return const Text("Something went wrong");
+                        }
+                        if (snapshot.hasData && !snapshot.data!.exists) {
+                          return const Text('User not in database');
+                        }
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          Map<String, dynamic> data =
+                              snapshot.data!.data() as Map<String, dynamic>;
+                          // String appLogo = "${data['app_logo']}";
+                          // String appName = "${data['app_name']}";
+                          String appVersion = "${data['app_version']}";
+                          String downloadLink = "${data['download_link']}";
+                          // String downloadQr = "${data['download_qr']}";
+                          int appVersio = int.parse(appVersion);
+                          return Center(
+                            child: version < appVersio
+                                ? TextButton(
+                                    onPressed: () {
+                                      launch(downloadLink);
+                                    },
+                                    child: const Text(
+                                        'App Update available!\nClick to Download New App'),
+                                  )
+                                : const SizedBox(),
+                          );
+                        }
+                        return const SizedBox();
+                      }),
+
                   TextButton(
                     onPressed: () async {
                       await FirebaseAuth.instance.signOut();

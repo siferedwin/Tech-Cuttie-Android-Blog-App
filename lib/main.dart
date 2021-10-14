@@ -15,6 +15,7 @@ bool isProcessing = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   // ignore: unused_local_variable
   FirebaseFirestore base;
   base = FirebaseFirestore.instance;

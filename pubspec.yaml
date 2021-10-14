@@ -42,6 +42,8 @@ dependencies:
   html: ^0.15.0
   wordpress_api: ^1.2.0
   flutter_html: ^2.1.4
+  firebase_messaging: ^10.0.8
+  flutter_local_notifications: ^9.0.0
 
 dev_dependencies:
   flutter_test:
